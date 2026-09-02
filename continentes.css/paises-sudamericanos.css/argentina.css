@@ -1,0 +1,524 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #080808;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================
+   BOTÓN ATRÁS
+========================= */
+
+.atras {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    z-index: 20;
+}
+
+.atras a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 12px 20px;
+
+    color: white;
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 30px;
+
+    backdrop-filter: blur(10px);
+
+    transition: all 0.3s ease;
+}
+
+.atras a:hover {
+    background: rgba(5, 238, 255, 0.478);
+
+    transform: translateX(-4px);
+
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+
+/* =========================
+   CONTENEDOR PRINCIPAL
+========================= */
+
+.contenedor-paisaje {
+    width: 100%;
+    min-height: 100vh;
+    
+    padding: 100px 7% 50px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1.2fr 1fr;
+
+    gap: 22px;
+
+    align-items: stretch;
+}
+
+
+/* =========================
+   TARJETAS DE IMAGEN
+========================= */
+
+.tarjetas {
+    position: relative;
+
+    min-height: 600px;
+
+    border-radius: 28px;
+
+    overflow: hidden;
+
+    background: #111;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.5);
+
+    transition: transform 0.5s ease;
+}
+
+.tarjetas img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+    
+    transition: transform 0.4s ease;
+}
+
+
+/* Zoom de imagen */
+
+.tarjetas:hover img {
+    transform: scale(1.08);
+    
+}
+
+
+/* =========================
+   DEGRADADO SOBRE LAS IMÁGENES
+========================= */
+
+.tarjetas::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+        to bottom,
+        transparent 50%,
+        rgba(0, 0, 0, 0.65)
+    );
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   TARJETA CENTRAL
+========================= */
+
+.tarjeta-contenido {
+    min-height: 600px;
+    padding: 40px;
+    top: 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    /* CENTRAR TODO */
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    border-radius: 28px;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(124, 58, 237, 0.18),
+            transparent 40%
+        ),
+        linear-gradient(
+            145deg,
+            #181818,
+            #0e0e0e
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+/* =========================
+   MINI TÍTULO
+========================= */
+
+.mini-titulo {
+    display: inline-block;
+    justify-content: center;
+    text-align: center;
+    
+
+    margin-bottom: 22px;
+
+    color: #f7f7f8;
+
+    font-size: 12px;
+
+    font-weight: bolder;
+
+    letter-spacing: 4px;
+}
+
+
+/* =========================
+   TÍTULO ARGENTINA
+========================= */
+
+.tarjetas-contenido h2 {
+  
+    height: 100pxpx;
+    margin-bottom: 25px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: clamp(45px, 5vw, 75px);
+
+    line-height: 0.95;
+
+    font-weight: bold;
+
+    letter-spacing: -3px;
+
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #9c9c9c
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* =========================
+   DESCRIPCIÓN
+========================= */
+
+.tarjetas-contenido > p {
+    max-width: 430px;
+    justify-content: center;
+    text-align: center;
+
+    margin-bottom: 35px;
+
+    color: #a5a5a5;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   LUGARES
+========================= */
+
+.lugares {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-bottom: 40px;
+}
+
+.lugares span {
+    padding: 9px 15px;
+
+    color: #d5d5d5;
+
+    font-size: 12px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    transition: all 0.3s ease;
+}
+
+.lugares span:hover {
+    color: white;
+
+    background: rgba(124, 58, 237, 0.15);
+
+    border-color: #7c3aed;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   DATOS
+========================= */
+
+.datos-espana {
+    display: flex;
+
+    gap: 60px;
+
+    margin-bottom: 40px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.datos-espana div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.datos-espana small {
+    color: #666;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.datos-espana strong {
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   BOTÓN DESCUBRIR
+========================= */
+
+.boton-espana {
+    width: 100%;
+    position: relative;
+    left: 70px;
+    display: flex;
+
+    align-items: center;
+    text-align: center;
+
+    justify-content: center;
+
+    padding: 17px 20px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    background: linear-gradient(
+        135deg,
+        #00f7ff,
+        #ffffff74
+    );
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 10px 30px rgba(13, 13, 13, 0.735);
+
+    transition: all 0.35s ease;
+}
+
+.boton-espana span {
+    font-size: 22px;
+
+    transition: transform 0.3s ease;
+}
+
+.boton-espana:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 40px rgba(242, 247, 247, 0.4);
+}
+
+.boton-espana:hover span {
+    transform: translateX(6px);
+}
+
+
+/* =========================
+   EFECTO HOVER TARJETAS
+========================= */
+
+.tarjetas:hover {
+    transform: translateY(-6px);
+}
+
+
+/* =========================
+   RESPONSIVE TABLET
+========================= */
+
+@media (max-width: 1000px) {
+
+    .contenedor-paisaje {
+        grid-template-columns: 1fr 1fr;
+
+        padding: 100px 30px 40px;
+    }
+
+    .tarjeta-contenido {
+        grid-column: span 2;
+
+        min-height: auto;
+
+        padding: 50px;
+    }
+
+    .tarjetas {
+        min-height: 450px;
+    }
+}
+
+
+/* =========================
+   RESPONSIVE CELULAR
+========================= */
+
+@media (max-width: 650px) {
+
+    .atras {
+        top: 20px;
+        left: 20px;
+    }
+
+    .contenedor-paisaje {
+        grid-template-columns: 1fr;
+
+        padding: 90px 18px 30px;
+
+        gap: 15px;
+    }
+
+    .tarjeta-contenido {
+        grid-column: auto;
+
+        min-height: auto;
+
+        padding: 40px 25px;
+    }
+
+    .tarjetas {
+        min-height: 380px;
+
+        border-radius: 20px;
+    }
+
+    .tarjeta-contenido h2 {
+        font-size: 50px;
+    }
+
+    .datos-espana {
+        gap: 35px;
+    }
+
+}
+.tarjeta-contenido .mini-titulo {
+    margin-bottom: 20px;
+}
+
+.tarjeta-contenido h2 {
+    margin-bottom: 15px;
+}
+
+.tarjeta-contenido p {
+    max-width: 400px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.lugares {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.datos-espana {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+
+    width: 100%;
+
+    margin-bottom: 30px;
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.datos-espana div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.boton-espana {
+    width: 90%;
+    max-width: 320px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+
+    text-align: center;
+}
