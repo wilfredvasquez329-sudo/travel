@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Playas paradisíacas | Leonet Travel</title>
+
+  <link rel="stylesheet" href="playas css/playas.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+     
+</head>
+
+<body>
+
+<header>
+        
+<!-- ================= HEADER ================= -->
+
+<div class="logo-header">
+              <img src="imagenes continentes/ChatGPT Image 30 ago 2026, 07_42_31 p.m..png" alt="">
+        </div>
+     
+        
+             
+
+ <nav>
+     <a href="index.html">Inicio</a>
+    <!-- DESTINOS -->
+    <div class="submenu-contenedor">
+
+        <a href="#">Destinos</a>
+
+        <div class="submenu">
+            <a href="continente-norteamericano.html">Norteamérica</a>
+            <a href="continente-sudamericano.html">Sudamérica</a>
+            <a href="continente-europa.html">Europa</a>
+      <a href="continente-asia.html">Asia</a>
+             <a href="continente-africa.html">Africa</a>
+              <a href="continente-oceania.html">Oceania</a>
+        </div>
+
+    </div>
+
+
+    <!-- OFERTAS -->
+    <div class="submenu-contenedor">
+
+        <a href="#">Ofertas</a>
+
+        <div class="submenu">
+            <a href="ofertas-especiales.html">Ofertas de temporada</a>
+            <a href="paquetes-turisticos.html">Paquetes turísticos</a>
+            <a href="#">Vuelos baratos</a>
+            <a href="#">Hoteles en oferta</a>
+            <a href="#">Última hora</a>
+        </div>
+
+    </div>
+
+
+    <!-- RESTO DEL MENÚ -->
+    <a href="hoteles.html">Hoteles</a>
+
+    <a href="vuelos.html">Vuelos</a>
+
+    <a href="#">Blog</a>
+
+
+    <!-- CONTACTO -->
+    <button id="contacto" onclick="abrirMenu()">
+        Contacto
+    </button>
+
+
+    <div id="fondo" onclick="cerrarMenu()"></div>
+
+
+    <!-- REDES -->
+    <div id="redes">
+
+        <a href="#">
+            <i class="fa-brands fa-facebook"></i>
+        </a>
+
+        <a href="#">
+            <i class="fa-brands fa-tiktok"></i>
+        </a>
+
+        <a href="#">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+
+    </div>
+
+</nav>
+           
+ </header>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-contenido">
+
+        <span class="etiqueta">
+            LEONET TRAVEL
+        </span>
+
+        <h1>
+            PLAYAS<span class="playa">🏝️</span><br>
+            <span>PARADISÍACAS</span>
+        </h1>
+
+        <p>
+            Descubre aguas cristalinas, playas de ensueño
+            y experiencias que recordarás para siempre.
+        </p>
+
+        <button class="btn-explorar"
+                onclick="irDestinos()">
+
+            EXPLORAR DESTINOS
+            <span>↓</span>
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= BUSCADOR ================= -->
+
+<section class="buscador-section">
+
+    <div class="buscador">
+
+        <div class="campo">
+
+            <span>🌍</span>
+
+            <div>
+                <small>DESTINO</small>
+
+                <input
+                    type="text"
+                    id="buscar"
+                    placeholder="¿Dónde quieres ir?"
+                >
+
+            </div>
+
+        </div>
+
+
+        <div class="campo">
+
+            <span>💰</span>
+
+            <div>
+
+                <small>PRESUPUESTO</small>
+              
+
+              
+                <select id="precio">
+       
+                    <option value="todos">
+                        Cualquier precio
+                    </option>
+
+                    <option value="economico">
+                        Menos de $800
+                    </option>
+
+                    <option value="medio">
+                        $800 - $1.500
+                    </option>
+
+                    <option value="premium">
+                        Más de $1.500
+                    </option>
+
+                </select>
+            </div>
+         
+
+        </div>
+
+
+        <button
+            class="btn-buscar"
+            onclick="buscarDestinos()">
+
+            BUSCAR
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= DESTINOS ================= -->
+
+<section class="destinos" id="destinos">
+
+    <div class="titulo-section">
+
+        <span>DESCUBRE EL PARAÍSO</span>
+
+        <h2>
+            Destinos destacados
+        </h2>
+
+        <p>
+            Hemos seleccionado algunos de los lugares
+            más increíbles del planeta.
+        </p>
+
+    </div>
+
+
+
+    <!-- TARJETAS -->
+
+    <div class="contenedor-tarjetas" id="contenedorTarjetas">
+
+
+
+        <!-- ========== MALDIVAS ========== -->
+
+        <article
+            class="tarjeta"
+            data-nombre="maldivas"
+            data-precio="premium"
+        >
+
+            <div class="imagenes">
+
+                <img
+                    class="imagen imagen-principal"
+                    src="playas imagenes/4536207-captains-houses-2858329_1920.jpg"
+                    alt="Maldivas"
+                >
+
+                <img
+                    class="imagen imagen-secundaria"
+                    src="playas imagenes/einfach-eve-las-galeras-2100152_1920.jpg"
+                    alt="Maldivas experiencia"
+                >
+
+            </div>
+
+
+            <div class="degradado"></div>
+
+
+            <div class="info">
+
+                <span class="pais">
+                    🇲🇻 MALDIVAS
+                </span>
+
+                <h3>
+                    Maldivas
+                </h3>
+
+                <div class="estrellas">
+                    ★★★★★
+                    <span>4.9</span>
+                </div>
+
+                <p>
+                    Relájate en playas de arena blanca
+                    y aguas turquesas.
+                </p>
+
+
+                <div class="datos">
+
+                    <span>
+                        📅 7 días
+                    </span>
+
+                    <span>
+                        🏨 Resort
+                    </span>
+
+                </div>
+
+
+                <div class="precio">
+
+                    <div>
+
+                        <small>
+                            DESDE
+                        </small>
+
+                        <strong>
+                            $1.299
+                        </strong>
+
+                        <small>
+                            USD
+                        </small>
+
+                    </div>
+                      <button onclick="window.location.href='maldivas.html'">
+                          VER VIAJE →
+                   </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- ========== BORA BORA ========== -->
+
+        <article
+            class="tarjeta"
+            data-nombre="bora bora"
+            data-precio="premium"
+        >
+
+            <div class="imagenes">
+
+                <img
+                    class="imagen imagen-principal"
+                    src="playas imagenes/kanenori-beach-6292382_1920.jpg"
+                    alt="Bora Bora"
+                >
+
+                <img
+                    class="imagen imagen-secundaria"
+                    src="playas imagenes/luckyalves-beach-2102025_1920.jpg"
+                    alt="Bora Bora experiencia"
+                >
+
+            </div>
+
+
+            <div class="degradado"></div>
+
+
+            <div class="info">
+
+                <span class="pais">
+                    🇵🇫 POLINESIA FRANCESA
+                </span>
+
+                <h3>
+                    Bora Bora
+                </h3>
+
+                <div class="estrellas">
+                    ★★★★★
+                    <span>4.8</span>
+                </div>
+
+                <p>
+                    Vive una experiencia exclusiva
+                    rodeado de naturaleza.
+                </p>
+
+
+                <div class="datos">
+
+                    <span>
+                        📅 5 días
+                    </span>
+
+                    <span>
+                        🏨 Resort
+                    </span>
+
+                </div>
+
+
+                <div class="precio">
+
+                    <div>
+
+                        <small>
+                            DESDE
+                        </small>
+
+                        <strong>
+                            $1.899
+                        </strong>
+
+                        <small>
+                            USD
+                        </small>
+
+                    </div>
+
+                    <button onclick="verViaje('Bora Bora')">
+
+                        VER VIAJE →
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- ========== CANCÚN ========== -->
+
+        <article
+            class="tarjeta"
+            data-nombre="cancun méxico"
+            data-precio="economico"
+        >
+
+            <div class="imagenes">
+
+                <img
+                    class="imagen imagen-principal"
+                    src="playas imagenes/manusama-almeria-5333790_1920.jpg"
+                    alt="Cancún"
+                >
+
+                <img
+                    class="imagen imagen-secundaria"
+                    src="playas imagenes/romanlarrode-wedding-venues-2615239_1920.jpg"
+                    alt="Cancún experiencia"
+                >
+
+            </div>
+
+
+            <div class="degradado"></div>
+
+
+            <div class="info">
+
+                <span class="pais">
+                    🇲🇽 MÉXICO
+                </span>
+
+                <h3>
+                    Cancún
+                </h3>
+
+                <div class="estrellas">
+                    ★★★★★
+                    <span>4.7</span>
+                </div>
+
+                <p>
+                    Caribe, playas increíbles y
+                    experiencias inolvidables.
+                </p>
+
+
+                <div class="datos">
+
+                    <span>
+                        📅 6 días
+                    </span>
+
+                    <span>
+                        🏨 Hotel
+                    </span>
+
+                </div>
+
+
+                <div class="precio">
+
+                    <div>
+
+                        <small>
+                            DESDE
+                        </small>
+
+                        <strong>
+                            $699
+                        </strong>
+
+                        <small>
+                            USD
+                        </small>
+
+                    </div>
+
+                    <button onclick="verViaje('Cancún')">
+
+                        VER VIAJE →
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= EXPERIENCIAS ================= -->
+
+<section class="experiencias">
+
+    <div class="titulo-section">
+
+        <span>VIVE AL MÁXIMO</span>
+
+        <h2>
+            Más que unas vacaciones
+        </h2>
+
+    </div>
+
+
+    <div class="experiencias-grid">
+
+
+        <div class="experiencia">
+
+            <div class="icono">
+                🤿
+            </div>
+
+            <h3>
+                Snorkel
+            </h3>
+
+            <p>
+                Explora el mundo submarino.
+            </p>
+
+        </div>
+
+
+        <div class="experiencia">
+
+            <div class="icono">
+                🚤
+            </div>
+
+            <h3>
+                Paseos en barco
+            </h3>
+
+            <p>
+                Descubre el mar desde otra perspectiva.
+            </p>
+
+        </div>
+
+
+        <div class="experiencia">
+
+            <div class="icono">
+                🏄
+            </div>
+
+            <h3>
+                Surf
+            </h3>
+
+            <p>
+                Siente la adrenalina de las olas.
+            </p>
+
+        </div>
+
+
+        <div class="experiencia">
+
+            <div class="icono">
+                🌅
+            </div>
+
+            <h3>
+                Atardeceres
+            </h3>
+
+            <p>
+                Momentos únicos frente al océano.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="playas. javascrip/playas.js"></script>
+
+</body>
+
+</html>

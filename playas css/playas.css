@@ -1,0 +1,1443 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 20% 30%, #0066ff 0%, transparent 35%),
+        radial-gradient(circle at 80% 20%, #f6f5f6 0%, transparent 35%),
+        radial-gradient(circle at 50% 80%, #00ffee 0%, transparent 35%),
+        radial-gradient(circle at 90% 90%, #f4eff1 0%, transparent 35%),
+        #050505;
+
+    background-size: 200% 200%;
+    animation: colores 12s ease-in-out infinite;
+}
+
+@keyframes colores {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* ================= HEADER ================= */
+
+.logo {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* Capa oscura sobre el fondo */
+
+
+
+
+/* =========================================================
+   LOGO DEL HEADER
+========================================================= */
+
+.logo-header {
+    position: absolute;
+    top: 5px;
+    left: 30px;
+    z-index: 10000;
+}
+
+.logo-header img {
+    width: 100px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 50%;
+    
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header-hoteles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+
+    transition: top 0.4s ease;
+}
+
+/* Cuando baja */
+.header-hoteles.ocultar {
+    top: -100px;
+}
+
+/* =========================================================
+   NAV
+========================================================= */
+
+nav {
+    position: relative;
+
+    width: 100%;
+    min-height: 80px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 30px;
+
+    padding: 0 120px;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    border-bottom: 1px solid rgba(0, 212, 255, 0.15);
+
+    z-index: 100;
+}
+
+
+/* ENLACES PRINCIPALES */
+
+nav > a,
+.submenu-contenedor > a {
+
+    position: relative;
+
+    display: inline-block;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 19px;
+
+    padding: 8px 0;
+
+    transition: 0.3s;
+}
+
+
+/* Hover */
+
+nav > a:hover,
+.submenu-contenedor > a:hover {
+
+    color: #ffcc00;
+}
+
+
+/* =========================================================
+   LÍNEA NEÓN
+========================================================= */
+
+nav > a::after,
+.submenu-contenedor > a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    width: 0;
+    height: 0.5px;
+
+    background: #00d4ff;
+
+    transform: translateX(-50%);
+
+    box-shadow:
+        0 0 5px #00d4ff,
+        0 0 10px #00d4ff,
+        0 0 20px #00d4ff;
+
+    transition: width 0.4s ease;
+}
+
+
+/* Línea al pasar mouse */
+
+nav > a:hover::after,
+.submenu-contenedor:hover > a::after {
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   CONTENEDOR SUBMENÚ
+========================================================= */
+
+.submenu-contenedor {
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    height: 80px;
+}
+
+
+/* =========================================================
+   SUBMENÚ
+========================================================= */
+
+.submenu {
+
+    position: absolute;
+
+    top: 100%;
+    left: 50%;
+
+    transform:
+        translateX(-50%)
+        translateY(15px);
+
+    width: 220px;
+
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+
+    background:
+        rgba(3, 12, 20, 0.96);
+
+    border:
+        1px solid
+        rgba(0, 212, 255, 0.6);
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.8),
+        0 0 20px rgba(0, 212, 255, 0.15);
+
+    backdrop-filter: blur(15px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        visibility 0.3s ease;
+
+    z-index: 9999;
+}
+
+
+/* APARECER */
+
+.submenu-contenedor:hover > .submenu {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+
+
+/* =========================================================
+   ENLACES DEL SUBMENÚ
+========================================================= */
+
+.submenu a {
+
+    display: block;
+
+    width: 100%;
+
+    padding: 12px;
+
+    color: white;
+
+    text-decoration: none;
+
+    text-align: center;
+
+    font-size: 15px;
+
+    border-radius: 8px;
+
+    transition: 0.3s;
+}
+
+
+.submenu a::after {
+    display: none;
+}
+
+
+.submenu a:hover {
+
+    background:
+        rgba(0, 212, 255, 0.12);
+
+    color: #00d4ff;
+
+    box-shadow:
+        inset 0 0 10px
+        rgba(0, 212, 255, 0.08);
+}
+
+
+/* =========================================================
+   BOTÓN CONTACTO
+========================================================= */
+
+#contacto {
+
+    position: relative;
+
+    padding: 8px 0;
+
+    color: white;
+
+    background: none;
+
+    border: none;
+
+    font-size: 19px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+#contacto:hover {
+
+    color: #ffcc00;
+}
+
+
+#contacto::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    width: 0;
+    height: 0.4px;
+
+    background: #00d4ff;
+
+    transform: translateX(-50%);
+
+    box-shadow:
+        0 0 5px #00d4ff,
+        0 0 10px #00d4ff,
+        0 0 20px #00d4ff;
+
+    transition: 0.4s;
+}
+
+
+#contacto:hover::after {
+
+    width: 100%;
+}
+
+#redes {
+
+    position:
+        fixed;
+
+    top:
+        0;
+
+    right:
+        0;
+
+    width:
+        170px;
+
+    height:
+        100vh;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    gap:
+        40px;
+
+    background:
+        rgba(0, 198, 252, 0.378);
+
+    backdrop-filter:
+        blur(20px);
+
+    border-left:
+        1px solid
+        rgba(0,212,255,0.25);
+
+    transform:
+        translateX(100%);
+
+    transition:
+        transform 0.4s ease;
+
+    z-index:
+        1001;
+}
+
+
+#redes.mostrar {
+
+    transform:
+        translateX(0);
+}
+
+
+/* FONDO */
+
+#fondo {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    background:
+        rgba(5,5,5,0.54);
+
+    opacity:
+        0;
+
+    visibility:
+        hidden;
+
+    transition:
+        0.4s;
+
+    z-index:
+        1000;
+}
+
+
+#fondo.mostrar {
+
+    opacity:
+        1;
+
+    visibility:
+        visible;
+}
+
+
+/* REDES */
+
+#redes a {
+
+    position:
+        relative;
+
+    width:
+        70px;
+
+    height:
+        70px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    color:
+        white;
+
+    text-decoration:
+        none;
+
+    font-size:
+        50px;
+
+    transition:
+        0.3s;
+}
+
+
+#redes a:hover {
+
+    transform:
+        scale(1.3);
+}
+
+
+#redes a i {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    transition:
+        0.3s;
+}
+
+
+#redes a:hover i {
+
+    color:
+        #080808;
+
+    filter:
+        drop-shadow(
+            0 0 5px #f4f802
+        )
+        drop-shadow(
+            0 0 15px #00d4ff
+        );
+}
+
+
+/* CÍRCULO */
+
+#redes a::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        65px;
+
+    height:
+        65px;
+
+    border:
+        3px solid
+        transparent;
+
+    border-top-color:
+        #00d4ff;
+
+    border-right-color:
+        white;
+
+    border-radius:
+        50%;
+
+    opacity:
+        0;
+
+    transition:
+        0.3s;
+}
+
+
+#redes a:hover::after {
+
+    opacity:
+        1;
+
+    animation:
+        girarRed 1s linear infinite;
+}
+
+
+@keyframes girarRed {
+
+    from {
+        transform:
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+}
+
+
+
+/* ================= HERO ================= */
+
+.hero {
+
+    height: 750px;
+
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+
+        linear-gradient(
+            rgba(0,0,0,.35),
+            rgba(0,0,0,.85)
+        ),
+
+        url("img/playa1.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+}
+
+
+.hero-contenido {
+
+    max-width: 850px;
+
+    padding: 30px;
+
+    animation: aparecer 1.2s ease;
+
+}
+
+
+.etiqueta {
+
+    color: #00d9ff;
+
+    letter-spacing: 6px;
+
+    font-size: 14px;
+
+}
+
+
+.hero h1 {
+
+    font-size: clamp(60px, 9vw, 125px);
+
+    line-height: .9;
+
+    margin: 25px 0;
+
+    letter-spacing: 5px;
+
+       background: linear-gradient(
+        90deg,
+        #ffee00,
+        #ff0004,
+        #8a2be2,
+        #ff00cc,
+        #00d4ff
+    );
+
+    background-size: 300% auto;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: moverColor 5s linear infinite;
+}
+
+@keyframes moverColor {
+    0% {
+        background-position: 0% center;
+    }
+
+    100% {
+        background-position: 300% center;
+    }
+}
+
+
+
+
+.hero h1 span {
+
+    color: transparent;
+
+    -webkit-text-stroke: 2px white;
+
+}
+
+
+.hero p {
+
+    max-width: 600px;
+
+    margin: auto;
+
+    color: #ddd;
+
+    font-size: 20px;
+
+    line-height: 1.6;
+
+}
+
+
+.btn-explorar {
+
+    margin-top: 35px;
+
+    padding: 15px 30px;
+
+    border: 1px solid #00d9ff;
+
+    border-radius: 30px;
+
+    background: rgba(0,0,0,.3);
+
+    color: white;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: .4s;
+
+}
+
+
+.btn-explorar:hover {
+
+    background: #00d9ff;
+
+    color: black;
+
+    box-shadow: 0 0 30px rgba(0,217,255,.5);
+
+}
+
+
+
+/* ================= BUSCADOR ================= */
+
+.buscador-section {
+
+    position: relative;
+
+    margin-top: -55px;
+
+    z-index: 10;
+
+    padding: 0 8%;
+
+}
+
+
+.buscador {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 20px;
+
+    border-radius: 20px;
+
+    background: rgba(15,20,22,.9);
+
+    backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255,255,255,.1);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    box-shadow: 0 20px 60px rgba(0,0,0,.5);
+
+}
+
+
+.campo {
+
+    flex: 1;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.campo > span {
+
+    font-size: 25px;
+
+}
+
+
+.campo small {
+
+    display: block;
+
+    color: #00d9ff;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.campo input,
+.campo select {
+
+    width: 100%;
+
+    background: transparent;
+
+    color: white;
+
+    border: none;
+
+    outline: none;
+
+    font-size: 15px;
+
+}
+
+
+.campo select {
+    background: rgba(0, 0, 0, 0.45);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 35px 10px 12px;
+    outline: none;
+    cursor: pointer;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.campo select option {
+    border: none;
+    background: rgba(4, 4, 4, 0.94);
+    color: white;
+    
+}
+
+.btn-buscar {
+
+    padding: 15px 30px;
+
+    background: #00d9ff;
+
+    color: black;
+
+    border: none;
+
+    border-radius: 10px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+
+.btn-buscar:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 25px rgba(0,217,255,.3);
+
+}
+
+
+
+/* ================= DESTINOS ================= */
+
+.destinos {
+
+    padding: 130px 7% 100px;
+
+}
+
+
+.titulo-section {
+
+    text-align: center;
+
+    margin-bottom: 60px;
+
+}
+
+
+.titulo-section span {
+
+    color: #00d9ff;
+
+    font-size: 12px;
+
+    letter-spacing: 5px;
+
+}
+
+
+.titulo-section h2 {
+
+    font-size: 50px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: white;
+
+ }
+
+
+.titulo-section p {
+
+    color: #aaa;
+
+}
+
+
+
+/* ================= TARJETAS ================= */
+
+.contenedor-tarjetas {
+
+    max-width: 1300px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+
+}
+
+
+.tarjeta {
+
+    height: 600px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    background: #111;
+
+    cursor: pointer;
+
+    border: 1px solid rgba(255,255,255,.12);
+
+    transition: .5s;
+
+}
+
+
+.tarjeta:hover {
+
+    transform: translateY(-12px);
+
+    border-color: rgba(0,217,255,.6);
+
+    box-shadow:
+
+        0 25px 60px rgba(0,0,0,.6),
+
+        0 0 30px rgba(0,217,255,.08);
+
+}
+
+
+
+/* ================= IMÁGENES ================= */
+
+.imagenes {
+
+    position: absolute;
+
+    inset: 0;
+
+}
+
+
+.imagen {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+
+        opacity .8s ease,
+
+        transform 1.2s ease;
+
+}
+
+
+.imagen-principal {
+
+    opacity: 1;
+
+}
+
+
+.imagen-secundaria {
+
+    opacity: 0;
+
+    transform: scale(1);
+
+}
+
+
+/*
+    CUANDO JAVASCRIPT
+    DETECTA 1 SEGUNDO
+*/
+
+.tarjeta.cambiar .imagen-principal {
+
+    opacity: 0;
+
+    transform: scale(1.08);
+
+}
+
+
+.tarjeta.cambiar .imagen-secundaria {
+
+    opacity: 1;
+
+    transform: scale(1.08);
+
+}
+
+
+
+/* ================= DEGRADADO ================= */
+
+.degradado {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        linear-gradient(
+            transparent 25%,
+            rgba(0,0,0,.2) 40%,
+            rgba(0,0,0,.95) 100%
+        );
+
+    z-index: 2;
+
+}
+
+
+
+/* ================= INFORMACIÓN ================= */
+
+.info {
+
+    position: absolute;
+
+    z-index: 3;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    padding: 30px;
+
+}
+
+
+.pais {
+
+    color: #00d9ff;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+}
+
+
+.info h3 {
+
+    font-size: 38px;
+
+    margin: 10px 0;
+    color: white;
+
+}
+
+
+.estrellas {
+
+    color: #ffd700;
+
+    font-size: 14px;
+
+}
+
+
+.estrellas span {
+
+    color: white;
+
+    margin-left: 5px;
+
+}
+
+
+.info p {
+
+    color: #ddd;
+
+    line-height: 1.5;
+
+    margin: 15px 0;
+
+}
+
+
+.datos {
+
+    display: flex;
+
+    gap: 20px;
+
+    font-size: 13px;
+
+    color: #ccc;
+
+    margin-bottom: 20px;
+
+}
+
+
+.precio {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+    color: rgb(85, 255, 97);
+   
+}
+
+
+.precio small {
+
+    color: #f2ecec;
+
+    font-size: 9px;
+
+}
+
+
+.precio strong {
+
+    font-size: 25px;
+
+    display: block;
+
+}
+
+
+.precio button {
+
+    padding: 11px 18px;
+
+    border: 1px solid #00d9ff;
+
+    border-radius: 25px;
+
+    background: transparent;
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+
+.precio button:hover {
+
+    background: #00d9ff;
+
+    color: black;
+
+}
+
+
+
+/* ================= EXPERIENCIAS ================= */
+
+.experiencias {
+
+    padding: 100px 7%;
+
+    background: #080d10;
+
+}
+
+
+.experiencias-grid {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4,1fr);
+
+    gap: 20px;
+
+}
+
+
+.experiencia {
+
+    padding: 35px 20px;
+
+    text-align: center;
+
+    border: 1px solid rgba(255,255,255,.1);
+
+    border-radius: 20px;
+
+    background: rgba(255,255,255,.02);
+
+    transition: .4s;
+    color: white;
+
+}
+
+
+.experiencia:hover {
+
+    transform: translateY(-10px);
+
+    border-color: #00d9ff8c;
+    background: #00d9ff76;
+    color: white;
+
+}
+
+
+.icono {
+
+    font-size: 40px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.experiencia h3 {
+
+    margin-bottom: 10px;
+
+}
+
+
+.experiencia p {
+
+    color: #999;
+
+    font-size: 14px;
+
+}
+
+
+
+/* ================= ANIMACIÓN ================= */
+
+@keyframes aparecer {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(30px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width: 900px) {
+
+    nav {
+
+        display: none;
+
+    }
+
+    .menu-btn {
+
+        display: block;
+
+    }
+
+    .contenedor-tarjetas {
+
+        grid-template-columns: 1fr;
+
+        max-width: 500px;
+
+    }
+
+    .experiencias-grid {
+
+        grid-template-columns: repeat(2,1fr);
+
+    }
+
+    .buscador {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+}
+
+
+@media(max-width: 500px) {
+
+    .hero h1 {
+
+        font-size: 55px;
+
+    }
+
+    .hero p {
+
+        font-size: 16px;
+
+    }
+
+    .experiencias-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .datos {
+
+        flex-direction: column;
+
+        gap: 5px;
+
+    }
+
+}
+.playa{
+    display: inline-block;
+    animation: flotar 4s alternate infinite;
+    transition: 0.4s;
+}
+@keyframes flotar{
+    from{
+        transform: translateY(0);
+    }to{
+        transform: translateY(-40px);
+    }
+}

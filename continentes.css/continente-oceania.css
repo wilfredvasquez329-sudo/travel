@@ -1,0 +1,859 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+font-family: Arial, sans-serif;
+background:black;
+color: white;
+}
+
+
+.logo-header img {
+    position: absolute;
+    width: 80px;
+    left: 30px;
+    top: 15px;
+    z-index: 102;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100px;
+
+    background: transparent;
+
+    z-index: 101;
+}
+header.ocultar{
+    top: -100px;
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 30px;
+
+    padding: 15px;
+
+    background: transparent;
+
+    z-index: 1000;
+}
+nav a {
+    position: relative;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    
+}
+
+nav a:hover {
+    color: rgb(255, 204, 0);
+    
+}
+
+nav > a::after,
+.submenu-contenedor > a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -5px;
+
+    width: 0;
+    height: 1px;
+
+    background: #00d4ff;
+
+    transform: translateX(-50%);
+
+    box-shadow:
+        0 0 5px #00d4ff,
+        0 0 10px #00d4ff,
+        0 0 20px #00d4ff;
+
+    transition: 0.4s;
+}
+
+
+nav > a:hover::after,
+.submenu-contenedor:hover > a::after {
+    width: 100%;
+}
+/* CONTENEDOR DE CADA OPCIÓN */
+.submenu-contenedor {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+
+/* SUBMENU */
+.submenu {
+    position: absolute;
+
+    top: calc(100% + 15px);
+    left: 50%;
+
+    transform: translateX(-50%) translateY(10px);
+
+    width: 210px;
+
+    background: rgba(0, 10, 20, 0.95);
+
+    border: 1px solid #00d4ff;
+
+    border-radius: 10px;
+
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.3s ease;
+
+    z-index: 9999;
+}
+
+
+/* APARECER */
+.submenu-contenedor:hover .submenu {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+
+
+/* ENLACES */
+.submenu a {
+
+    display: block;
+
+    width: 100%;
+
+    padding: 10px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    text-align: center;
+
+    border-radius: 7px;
+
+}
+
+
+/* HOVER */
+.submenu a:hover {
+
+    background: rgba(0, 212, 255, 0.2);
+
+    color: #00d4ff;
+
+}
+#fondo {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.57);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.4s;
+
+    z-index: 1000;
+}
+#redes {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    width: 170px;
+    height: 100vh;
+
+    background: #00d5ff75;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 40px;
+
+    transform: translateX(100%);
+    transition: transform 0.4s ease;
+
+    z-index: 1001;
+}
+#redes a {
+    position: relative;
+
+    width: 70px;
+    height: 70px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+#redes a::after {
+    content: "";
+
+    position: absolute;
+
+    width: 65px;
+    height: 65px;
+
+    border: 3px solid transparent;
+    border-top-color: #00d4ff;
+    border-right-color: rgb(248, 251, 247);
+
+    border-radius: 50%;
+
+    opacity: 0;
+
+    transition: 0.3s;
+}
+
+
+/* Cuando pasas el mouse */
+#redes a:hover {
+    transform: scale(1.30);
+}
+
+
+/* Brillo del logo */
+#redes a:hover i {
+    color: #0c0c0c;
+
+    filter:
+        drop-shadow(0 0 5px #fbb003)
+        drop-shadow(0 0 15px #f9c003);
+}
+
+
+/* Activar círculo */
+#redes a:hover::after {
+    opacity: 1;
+
+    animation: girarRed 1s linear infinite;
+}
+
+
+@keyframes girarRed {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+#redes.mostrar {
+    transform: translateX(0);
+}
+
+#fondo.mostrar {
+    opacity: 1;
+    visibility: visible;
+}
+#redes i {
+    font-size: 50px;
+    color: white;
+
+    transition: 0.3s;
+
+    z-index: 2;
+}
+#contacto{
+position: relative;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+#contacto:hover {
+    color: rgb(255, 204, 0);
+}
+#contacto::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    width: 0;
+    height: 0.4px;
+    background: #00d4ff;
+    transform: translateX(-50%);
+    box-shadow: 
+        0 0 5px #00d4ff,
+        0 0 10px #00d4ff,
+        0 0 20px #00d4ff;
+    transition: 0.4s;
+}
+
+#contacto:hover::after {
+    width: 100%;
+}
+/* =========================
+PORTADA
+========================= */
+
+.hero-europa {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+
+    z-index: 1;
+}
+/* VIDEOS */
+.video {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    opacity: 0;
+    transition: opacity 1s ease;
+
+    z-index: 0;
+}
+
+.video.activo {
+
+
+opacity: 1;
+
+}
+
+/* OSCURECER */
+
+
+.overlay {
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        90deg,
+        rgba(0,0,0,0.75),
+        rgba(0,0,0,0.25),
+        rgba(0,0,0,0.65)
+    );
+
+    z-index: 1;
+}
+/* CONTENIDO */
+.contenido-hero {
+    position: absolute;
+    z-index: 5;
+
+    top: 50%;
+    left: 10%;
+
+    transform: translateY(-50%);
+
+    max-width: 650px;
+}
+
+.contenido-hero span {
+
+color: #00d4ff;
+
+font-size: 14px;
+
+letter-spacing: 6px;
+
+font-weight: bold;
+
+
+}
+
+.contenido-hero h1 {
+
+
+font-size:80px;
+
+letter-spacing: 10px;
+
+margin: 10px 0;
+
+}
+
+.contenido-hero p {
+
+max-width: 500px;
+
+color: #ddd;
+
+font-size: 18px;
+
+line-height: 1.7;
+
+
+}
+
+/* BOTÓN */
+
+.boton {
+
+display: inline-block;
+
+margin-top: 30px;
+
+padding: 14px 30px;
+
+border: 1px solid #00d4ff;
+
+border-radius: 30px;
+
+color: white;
+
+text-decoration: none;
+
+font-size: 13px;
+
+letter-spacing: 2px;
+
+transition: 0.3s;
+
+}
+
+.boton:hover {
+
+
+background: #00d4ff;
+
+color: black;
+
+box-shadow:
+    0 0 15px #00d4ff,
+    0 0 30px #00d4ff;
+
+
+}
+
+/* =========================
+CONTROLES
+========================= */
+
+.controles {
+
+position: absolute;
+
+right: 40px;
+bottom: 50px;
+
+z-index: 10;
+
+display: flex;
+
+gap: 10px;
+
+}
+
+.controles button {
+
+
+width: 50px;
+height: 50px;
+
+border-radius: 50%;
+
+border: 1px solid white;
+
+background: rgba(0,0,0,0.4);
+
+color: white;
+
+font-size: 30px;
+
+cursor: pointer;
+
+transition: 0.3s;
+
+
+}
+
+.controles button:hover {
+
+
+background: #00d4ff;
+
+color: black;
+
+
+}
+
+/* =========================
+INDICADORES
+========================= */
+
+.indicadores {
+
+
+position: absolute;
+
+z-index: 10;
+
+bottom: 55px;
+
+left: 50%;
+
+transform: translateX(-50%);
+
+display: flex;
+
+gap: 10px;
+
+}
+
+.indicadores span {
+
+width: 30px;
+
+height: 3px;
+
+background: white;
+
+opacity: 0.4;
+
+transition: 0.3s;
+
+
+}
+
+.indicadores span.activo {
+
+
+width: 60px;
+
+background: #00d4ff;
+
+opacity: 1;
+
+}
+
+/* =========================
+DESTINOS
+========================= */
+
+.destinos {
+    position: relative;
+    z-index: 10;
+
+    padding: 120px 8%;
+
+   
+}
+.titulo {
+    position: relative;
+    z-index: 11;
+
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.titulo span {
+    display: block;
+    color: #00d4ff;
+    font-size: 16px;
+    letter-spacing: 5px;
+    font-weight: bold;
+    text-shadow: 0 15px 35px rgb(0, 0, 0);
+}
+
+.titulo h2 {
+    display: block;
+    color: white;
+    font-size: 50px;
+    margin: 15px 0;
+}
+
+.titulo p {
+    display: block;
+    color: #d8d6d6;
+    font-size: 20px;
+    font-weight: bolder;
+    font: bolder;
+    background: #0c0c0ca4;
+    border-radius: 30px;
+    padding: 26px 15px;
+    
+}
+/* GRID */
+
+.contenedor-destinos {
+
+max-width: 1250px;
+
+margin: auto;
+
+display: grid;
+
+grid-template-columns:
+    repeat(4, 1fr);
+
+gap: 25px;
+
+}
+
+/* TARJETA */
+
+.destino {
+
+
+position: relative;
+
+height: 500px;
+
+overflow: hidden;
+
+border-radius: 18px;
+
+background: #111;
+
+
+}
+
+.destino img {
+
+
+width: 100%;
+height: 100%;
+
+object-fit: cover;
+
+transition: 0.6s;
+
+
+
+}
+
+.destino:hover img {
+
+transform: scale(1.5);
+
+
+}
+
+/* INFO */
+
+.info {
+
+position: absolute;
+
+inset: 0;
+
+padding: 30px;
+
+display: flex;
+
+flex-direction: column;
+
+justify-content: flex-end;
+
+background:
+    linear-gradient(
+        transparent 35%,
+        rgba(0,0,0,0.9)
+    );
+
+transition: 0.4s ease;
+}
+.info:hover{
+    transform: translateY(-40px);
+    color: #fbb003;
+
+   
+}
+
+.info span {
+
+
+color: #00d4ff;
+
+font-size: 12px;
+
+letter-spacing: 2px;
+
+}
+
+.info h3 {
+
+font-size: 32px;
+
+margin: 8px 0;
+
+
+}
+
+.info p {
+
+
+color: #ccc;
+
+line-height: 1.5;
+
+margin-bottom: 20px;
+
+
+}
+
+.info a {
+
+
+width: fit-content;
+
+padding: 10px 20px;
+
+border: 1px solid #00d4ff;
+
+border-radius: 20px;
+
+color: white;
+
+text-decoration: none;
+
+font-size: 12px;
+
+transition: 0.3s;
+
+}
+
+.info a:hover {
+
+
+background: #00d4ff;
+
+color: black;
+
+}
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+.contenedor-destinos {
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+}
+
+
+}
+
+@media (max-width: 600px) {
+
+
+.contenido-hero {
+
+    left: 25px;
+    right: 25px;
+
+}
+
+.contenido-hero h1 {
+
+    font-size: 70px;
+
+}
+
+.contenedor-destinos {
+
+    grid-template-columns: 1fr;
+
+}
+
+.titulo h2 {
+
+    font-size: 35px;
+
+}
+
+
+}
+.footer {
+    position: relative;
+    z-index: 50;
+
+    min-height: 220px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    padding: 50px 8%;
+
+    background: rgba(0, 0, 0, 0.90);
+
+    border-top: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.footer h2 {
+
+    color:
+        white;
+
+    letter-spacing:
+        2px;
+}
+
+
+.footer p {
+
+    margin-top:
+        10px;
+
+    color:
+        #777;
+}
+

@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Maldivas | Leonet Travel</title>
+
+    <link rel="stylesheet" href="playas css/playa-malvidas.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="logo">
+            Leonet <span>Travel</span>
+        </div>
+
+        <a href="index.html" class="volver">
+            ← Volver
+        </a>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="hero-contenido">
+
+            <p class="categoria">
+                🌴 DESTINO PARADISÍACO
+            </p>
+
+            <h1>
+                Maldivas
+            </h1>
+
+            <p class="descripcion">
+                Descubre playas de arena blanca, aguas cristalinas
+                y una experiencia inolvidable en uno de los destinos
+                más espectaculares del mundo.
+            </p>
+
+            <a href="#reserva" class="btn-principal">
+                Planear mi viaje
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= INFORMACIÓN ================= -->
+
+    <section class="informacion">
+
+        <div class="titulo-seccion">
+
+            <p>DESCUBRE EL DESTINO</p>
+
+            <h2>
+                Vive Maldivas
+            </h2>
+
+        </div>
+
+
+        <div class="caracteristicas">
+
+            <div class="caracteristica">
+
+                <span>🏝️</span>
+
+                <h3>
+                    Playas paradisíacas
+                </h3>
+
+                <p>
+                    Arena blanca y aguas turquesas.
+                </p>
+
+            </div>
+
+
+            <div class="caracteristica">
+
+                <span>🤿</span>
+
+                <h3>
+                    Aventuras
+                </h3>
+
+                <p>
+                    Explora el increíble mundo submarino.
+                </p>
+
+            </div>
+
+
+            <div class="caracteristica">
+
+                <span>🌅</span>
+
+                <h3>
+                    Atardeceres
+                </h3>
+
+                <p>
+                    Paisajes que recordarás para siempre.
+                </p>
+
+            </div>
+
+
+            <div class="caracteristica">
+
+                <span>🏨</span>
+
+                <h3>
+                    Resorts
+                </h3>
+
+                <p>
+                    Hospedajes frente al océano.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= RESERVA ================= -->
+
+    <!-- ================= RESERVA ================= -->
+
+<section class="reserva" id="reserva">
+
+    <div class="reserva-contenedor">
+
+        <!-- INFORMACIÓN DEL PAQUETE -->
+
+        <div class="paquete">
+
+            <p class="mini-titulo">
+                PAQUETE DESTACADO
+            </p>
+
+            <h2>
+                Maldivas Premium
+            </h2>
+
+            <p class="texto-paquete">
+                Disfruta una experiencia completa en Maldivas
+                durante 7 días y 6 noches.
+            </p>
+
+            <div class="datos-paquete">
+
+                <div>
+                    <span>📅</span>
+                    <strong>7 días</strong>
+                </div>
+
+                <div>
+                    <span>🏨</span>
+                    <strong>6 noches</strong>
+                </div>
+
+                <div>
+                    <span>🍽️</span>
+                    <strong>Desayuno</strong>
+                </div>
+
+                <div>
+                    <span>✈️</span>
+                    <strong>Vuelo incluido</strong>
+                </div>
+
+            </div>
+
+            <div class="precio-base">
+
+                <small>
+                    Desde
+                </small>
+
+                <strong>
+                    $4.500.000
+                </strong>
+
+                <span>
+                    COP / persona
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- CALCULADORA -->
+
+        <div class="calculadora">
+
+            <h2>
+                Planifica tu viaje
+            </h2>
+
+
+            <!-- FECHA -->
+
+            <label>
+                Fecha del viaje
+            </label>
+
+            <input
+                type="date"
+                id="fecha"
+            >
+
+
+            <!-- VIAJEROS -->
+
+            <label>
+                Viajeros
+            </label>
+
+            <div class="viajeros">
+
+                <button
+                    type="button"
+                    id="menos"
+                >
+                    −
+                </button>
+
+                <span id="cantidad">
+                    1
+                </span>
+
+                <button
+                    type="button"
+                    id="mas"
+                >
+                    +
+                </button>
+
+            </div>
+
+
+            <!-- RESUMEN -->
+
+            <div class="resumen">
+
+                <div>
+
+                    <span>
+                        Hotel seleccionado
+                    </span>
+
+                    <strong id="hotelSeleccionado">
+                        Resort Maldives Premium
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Viajeros
+                    </span>
+
+                    <strong id="resumenViajeros">
+                        1
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Precio paquete
+                    </span>
+
+                    <strong id="precioPaquete">
+                        $4.500.000
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Suplemento hotel
+                    </span>
+
+                    <strong id="suplementoHotel">
+                        $0
+                    </strong>
+
+                </div>
+
+
+                <div class="total">
+
+                    <span>
+                        Total
+                    </span>
+
+                    <strong id="total">
+                        $4.500.000
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- BOTÓN RESERVAR -->
+
+            <button
+                type="button"
+                class="btn-reservar"
+                id="reservar"
+            >
+                Reservar viaje
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= GALERÍA MALDIVAS ================= -->
+
+<section class="galeria">
+
+    <div class="titulo-seccion">
+
+        <p>EXPLORA MALDIVAS</p>
+
+        <h2>
+            Un paraíso por descubrir
+        </h2>
+
+    </div>
+
+
+    <div class="galeria-grid">
+
+        <!-- IMAGEN PRINCIPAL -->
+
+        <div class="foto foto-grande">
+
+            <img
+                src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8"
+                alt="Maldivas">
+
+            <div class="foto-info">
+
+                <span>01</span>
+
+                <h3>
+                    Aguas cristalinas
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOTO 2 -->
+
+        <div class="foto">
+
+            <img
+                src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd"
+                alt="Resort Maldivas">
+
+            <div class="foto-info">
+
+                <span>02</span>
+
+                <h3>
+                    Resorts sobre el océano
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOTO 3 -->
+
+        <div class="foto">
+
+            <img
+                src="https://images.unsplash.com/photo-1578922746465-3a80a228f223"
+                alt="Playa Maldivas">
+
+            <div class="foto-info">
+
+                <span>03</span>
+
+                <h3>
+                    Playas paradisíacas
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOTO 4 -->
+
+        <div class="foto">
+
+            <img
+                src="https://images.unsplash.com/photo-1540202404-a2f29016b523"
+                alt="Islas Maldivas">
+
+            <div class="foto-info">
+
+                <span>04</span>
+
+                <h3>
+                    Descubre las islas
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOTO 5 -->
+
+        <div class="foto">
+
+            <img
+                src="https://images.unsplash.com/photo-1530789253388-582c481c54b0"
+                alt="Viaje a Maldivas">
+
+            <div class="foto-info">
+
+                <span>05</span>
+
+                <h3>
+                    Una experiencia inolvidable
+                </h3>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= ITINERARIO ================= -->
+
+<section class="itinerario">
+
+    <div class="titulo-seccion">
+
+        <p>VIVE LA EXPERIENCIA</p>
+
+        <h2>Itinerario de 7 días</h2>
+
+    </div>
+
+
+    <div class="itinerario-contenedor">
+
+        <!-- DÍAS -->
+
+        <div class="dias">
+
+            <button class="dia activo" data-dia="1">
+                <span>DÍA</span>
+                01
+            </button>
+
+            <button class="dia" data-dia="2">
+                <span>DÍA</span>
+                02
+            </button>
+
+            <button class="dia" data-dia="3">
+                <span>DÍA</span>
+                03
+            </button>
+
+            <button class="dia" data-dia="4">
+                <span>DÍA</span>
+                04
+            </button>
+
+            <button class="dia" data-dia="5">
+                <span>DÍA</span>
+                05
+            </button>
+
+            <button class="dia" data-dia="6">
+                <span>DÍA</span>
+                06
+            </button>
+
+            <button class="dia" data-dia="7">
+                <span>DÍA</span>
+                07
+            </button>
+
+        </div>
+
+
+        <!-- INFORMACIÓN DEL DÍA -->
+
+        <div class="detalle-dia">
+
+            <div class="numero-dia" id="numeroDia">
+                01
+            </div>
+
+            <div>
+
+                <p class="etiqueta-dia">
+                    DÍA 01
+                </p>
+
+                <h3 id="tituloDia">
+                    Llegada a Maldivas
+                </h3>
+
+                <p id="descripcionDia">
+                    Llegada al aeropuerto internacional de Malé.
+                    Traslado en lancha o hidroavión hasta el resort.
+                    Check-in y tiempo libre para disfrutar de la isla.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= INCLUYE ================= -->
+
+<section class="incluye">
+
+    <div class="titulo-seccion">
+
+        <p>PAQUETE MALDIVAS PREMIUM</p>
+
+        <h2>
+            Todo lo que incluye
+        </h2>
+
+        <span class="subtitulo">
+            Una experiencia diseñada para que solo tengas
+            que preocuparte por disfrutar.
+        </span>
+
+    </div>
+
+
+    <div class="incluye-contenedor">
+
+
+        <!-- INCLUYE -->
+
+        <div class="incluye-card">
+
+            <div class="icono-incluye">
+                ✓
+            </div>
+
+            <h3>
+                Tu viaje incluye
+            </h3>
+
+
+            <ul>
+
+                <li>
+                    <span>✈️</span>
+                    Vuelo internacional
+                </li>
+
+                <li>
+                    <span>🏨</span>
+                    6 noches de alojamiento
+                </li>
+
+                <li>
+                    <span>🍽️</span>
+                    Desayuno diario
+                </li>
+
+                <li>
+                    <span>🚤</span>
+                    Traslado aeropuerto - resort
+                </li>
+
+                <li>
+                    <span>🤿</span>
+                    Actividad de snorkel
+                </li>
+
+                <li>
+                    <span>🌅</span>
+                    Excursión al atardecer
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- NO INCLUYE -->
+
+        <div class="incluye-card no-incluye">
+
+            <div class="icono-incluye">
+                !
+            </div>
+
+            <h3>
+                No incluye
+            </h3>
+
+
+            <ul>
+
+                <li>
+                    <span>✕</span>
+                    Seguro de viaje
+                </li>
+
+                <li>
+                    <span>✕</span>
+                    Gastos personales
+                </li>
+
+                <li>
+                    <span>✕</span>
+                    Actividades adicionales
+                </li>
+
+                <li>
+                    <span>✕</span>
+                    Consumos no especificados
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <!-- NOTA -->
+
+    <div class="nota-paquete">
+
+        <span>💡</span>
+
+        <p>
+            Los servicios pueden variar según el hotel,
+            temporada y disponibilidad. Consulta las
+            condiciones antes de reservar.
+        </p>
+
+    </div>
+
+</section>
+
+<section class="hoteles">
+
+    <div class="titulo-seccion">
+        <p>ALOJAMIENTO</p>
+        <h2>Hoteles recomendados</h2>
+        <span class="subtitulo">
+            Selecciona el alojamiento perfecto para vivir
+            una experiencia inolvidable en Maldivas.
+        </span>
+    </div>
+
+    <div class="hoteles-grid">
+
+        <!-- HOTEL 1 -->
+        <article class="hotel-card">
+
+            <div class="hotel-imagen">
+                <img
+                    src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd"
+                    alt="Resort de lujo en Maldivas"
+                >
+
+                <span class="hotel-etiqueta">
+                    ⭐ RECOMENDADO
+                </span>
+            </div>
+
+            <div class="hotel-contenido">
+
+                <div class="estrellas">
+                    ★★★★★
+                </div>
+
+                <h3>Resort Maldives Premium</h3>
+
+                <p class="hotel-ubicacion">
+                    📍 Maldivas · Playa privada
+                </p>
+
+                <div class="servicios-hotel">
+                    <span>🏝️ Playa privada</span>
+                    <span>🍽️ Desayuno</span>
+                    <span>🏊 Piscina</span>
+                </div>
+
+                <div class="hotel-pie">
+
+                    <div class="hotel-precio">
+                        <small>Desde</small>
+                        <strong>$850.000</strong>
+                        <span>/ noche</span>
+                    </div>
+
+                   <button
+    type="button"
+    class="btn-hotel elegir-hotel"
+    data-hotel="Resort Maldives Premium"
+    data-suplemento="0"
+>
+    Elegir este hotel →
+</button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- HOTEL 2 -->
+        <article class="hotel-card">
+
+            <div class="hotel-imagen">
+
+                <img
+                    src="https://images.unsplash.com/photo-1540202404-a2f29016b523"
+                    alt="Hotel sobre el océano en Maldivas"
+                >
+
+                <span class="hotel-etiqueta">
+                    💎 LUJO
+                </span>
+
+            </div>
+
+            <div class="hotel-contenido">
+
+                <div class="estrellas">
+                    ★★★★★
+                </div>
+
+                <h3>Ocean Paradise Resort</h3>
+
+                <p class="hotel-ubicacion">
+                    📍 Maldivas · Villa sobre el agua
+                </p>
+
+                <div class="servicios-hotel">
+                    <span>🌊 Overwater Villa</span>
+                    <span>🍽️ Restaurante</span>
+                    <span>💆 Spa</span>
+                </div>
+
+                <div class="hotel-pie">
+
+                    <div class="hotel-precio">
+                        <small>Desde</small>
+                        <strong>$1.250.000</strong>
+                        <span>/ noche</span>
+                    </div>
+
+                   <button
+    type="button"
+    class="btn-hotel elegir-hotel"
+    data-hotel="Ocean Paradise Resort"
+    data-suplemento="750000"
+>
+    Elegir este hotel →
+</button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- HOTEL 3 -->
+        <article class="hotel-card">
+
+            <div class="hotel-imagen">
+
+                <img
+                    src="https://images.unsplash.com/photo-1578922746465-3a80a228f223"
+                    alt="Hotel paradisíaco en Maldivas"
+                >
+
+                <span class="hotel-etiqueta">
+                    🔥 POPULAR
+                </span>
+
+            </div>
+
+            <div class="hotel-contenido">
+
+                <div class="estrellas">
+                    ★★★★★
+                </div>
+
+                <h3>Maldives Island Resort</h3>
+
+                <p class="hotel-ubicacion">
+                    📍 Maldivas · Isla privada
+                </p>
+
+                <div class="servicios-hotel">
+                    <span>🏝️ Isla privada</span>
+                    <span>🤿 Snorkel</span>
+                    <span>🍹 Bar</span>
+                </div>
+
+                <div class="hotel-pie">
+
+                    <div class="hotel-precio">
+                        <small>Desde</small>
+                        <strong>$980.000</strong>
+                        <span>/ noche</span>
+                    </div>
+
+                   <button
+    type="button"
+    class="btn-hotel elegir-hotel"
+    data-hotel="Maldives Island Resort"
+    data-suplemento="350000"
+>
+    Elegir este hotel →
+</button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 Leonet Travel
+        </p>
+
+        <p>
+            Viaja. Descubre. Vive.
+        </p>
+
+    </footer>
+
+
+    <script src="playas. javascrip/maldivas.js"></script>
+
+</body>
+
+</html>
