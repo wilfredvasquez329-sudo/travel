@@ -1,0 +1,1663 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+
+    background: #050b12;
+
+    color: white;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 20px 6%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    z-index: 1000;
+
+    background: rgba(0, 0, 0, 0.35);
+
+    backdrop-filter: blur(12px);
+}
+
+
+.logo {
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+
+.logo span {
+
+    color: #35d6ff;
+}
+
+
+.volver {
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 10px 20px;
+
+    border: 1px solid rgba(255,255,255,.4);
+
+    border-radius: 30px;
+
+    transition: .3s;
+}
+
+
+.volver:hover {
+
+    background: white;
+
+    color: black;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 120px 8%;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.75),
+            rgba(0,0,0,.25)
+        ),
+        url("https://images.unsplash.com/photo-1514282401047-d79a71a590e8")
+        center/cover;
+
+}
+
+
+.hero-contenido {
+
+    max-width: 700px;
+
+    animation: aparecer 1s ease;
+}
+
+
+.categoria {
+
+    color: #39d8ff;
+
+    font-size: 14px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+}
+
+
+.hero h1 {
+
+    font-size: clamp(60px, 10vw, 130px);
+
+    line-height: .9;
+
+    margin-bottom: 30px;
+}
+
+
+.descripcion {
+
+    font-size: 19px;
+
+    line-height: 1.7;
+
+    color: #ddd;
+
+    margin-bottom: 35px;
+
+    max-width: 600px;
+}
+
+
+.btn-principal {
+
+    display: inline-block;
+
+    padding: 15px 30px;
+
+    background: #35d6ff;
+
+    color: #001018;
+
+    text-decoration: none;
+
+    border-radius: 30px;
+
+    font-weight: bold;
+
+    transition: .3s;
+}
+
+
+.btn-principal:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 30px
+        rgba(53,214,255,.4);
+}
+
+
+/* =========================
+   INFORMACIÓN
+========================= */
+
+.informacion {
+
+    padding: 100px 7%;
+
+    background: #08131c;
+}
+
+
+.titulo-seccion {
+
+    text-align: center;
+
+    margin-bottom: 60px;
+}
+
+
+.titulo-seccion p {
+
+    color: #35d6ff;
+
+    letter-spacing: 3px;
+
+    font-size: 13px;
+}
+
+
+.titulo-seccion h2 {
+
+    font-size: 45px;
+
+    margin-top: 10px;
+}
+
+
+.caracteristicas {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+
+.caracteristica {
+
+    padding: 35px 25px;
+
+    background:
+        rgba(255,255,255,.04);
+
+    border:
+        1px solid rgba(255,255,255,.08);
+
+    border-radius: 20px;
+
+    transition: .3s;
+}
+
+
+.caracteristica:hover {
+
+    transform:
+        translateY(-10px);
+
+    border-color:
+        rgba(53,214,255,.5);
+}
+
+
+.caracteristica span {
+
+    font-size: 35px;
+
+    display: block;
+
+    margin-bottom: 20px;
+}
+
+
+.caracteristica h3 {
+
+    margin-bottom: 10px;
+}
+
+
+.caracteristica p {
+
+    color: #aaa;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   RESERVA
+========================= */
+
+.reserva {
+
+    padding: 100px 7%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #061018,
+            #0b1e29
+        );
+}
+
+
+.reserva-contenedor {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 50px;
+
+    align-items: center;
+}
+
+
+/* =========================
+   PAQUETE
+========================= */
+
+.mini-titulo {
+
+    color: #35d6ff;
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+}
+
+
+.paquete h2 {
+
+    font-size: 45px;
+
+    margin-bottom: 20px;
+}
+
+
+.texto-paquete {
+
+    color: #aaa;
+
+    line-height: 1.7;
+
+    margin-bottom: 30px;
+}
+
+
+.datos-paquete {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 15px;
+}
+
+
+.datos-paquete div {
+
+    display: flex;
+
+    gap: 10px;
+
+    align-items: center;
+
+    color: #ddd;
+}
+
+
+.precio-base {
+
+    margin-top: 40px;
+
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 10px;
+}
+
+
+.precio-base small {
+
+    color: #aaa;
+}
+
+
+.precio-base strong {
+
+    font-size: 32px;
+
+    color: #35d6ff;
+}
+
+
+.precio-base span {
+
+    color: #888;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   CALCULADORA
+========================= */
+
+.calculadora {
+
+    background:
+        rgba(255,255,255,.06);
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.1);
+
+    backdrop-filter: blur(15px);
+}
+
+
+.calculadora h2 {
+
+    margin-bottom: 30px;
+}
+
+
+.calculadora label {
+
+    display: block;
+
+    margin-top: 20px;
+
+    margin-bottom: 8px;
+
+    color: #aaa;
+
+    font-size: 14px;
+}
+
+
+.calculadora input {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border-radius: 10px;
+
+    border: none;
+
+    outline: none;
+
+    background: #fff;
+
+    color: #111;
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   VIAJEROS
+========================= */
+
+.viajeros {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+}
+
+
+.viajeros button {
+
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-size: 25px;
+
+    background: #35d6ff;
+
+    transition: .2s;
+}
+
+
+.viajeros button:hover {
+
+    transform: scale(1.1);
+}
+
+
+.viajeros span {
+
+    font-size: 25px;
+
+    min-width: 30px;
+
+    text-align: center;
+}
+
+
+/* =========================
+   RESUMEN
+========================= */
+
+.resumen {
+
+    margin-top: 30px;
+
+    padding-top: 20px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.1);
+}
+
+
+.resumen div {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 15px;
+}
+
+
+.resumen span {
+
+    color: #aaa;
+}
+
+
+.resumen strong {
+
+    color: white;
+}
+
+
+.resumen .total {
+
+    margin-top: 20px;
+
+    padding-top: 20px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.1);
+}
+
+
+.resumen .total strong {
+
+    color: #35d6ff;
+
+    font-size: 25px;
+}
+
+
+/* =========================
+   BOTÓN RESERVAR
+========================= */
+
+.btn-reservar {
+
+    width: 100%;
+
+    padding: 16px;
+
+    margin-top: 25px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: #35d6ff;
+
+    color: #001018;
+
+    font-weight: bold;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+
+.btn-reservar:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 30px
+        rgba(53,214,255,.35);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    padding: 30px 7%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #777;
+
+    background: #03070b;
+}
+
+
+/* =========================
+   ANIMACIÓN
+========================= */
+
+@keyframes aparecer {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+    .caracteristicas {
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    .reserva-contenedor {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .hero h1 {
+
+        font-size: 70px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .caracteristicas {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .datos-paquete {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    footer {
+
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+}
+/* =========================
+   GALERÍA
+========================= */
+
+.galeria {
+
+    padding: 100px 7%;
+
+    background: #050b12;
+
+}
+
+
+/* CONTENEDOR */
+
+.galeria-grid {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr;
+
+    grid-template-rows:
+        280px 280px;
+
+    gap: 15px;
+
+}
+
+
+/* FOTOS */
+
+.foto {
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+
+}
+
+
+/* IMAGEN */
+
+.foto img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform .7s ease;
+
+}
+
+
+/* ZOOM */
+
+.foto:hover img {
+
+    transform:
+        scale(1.12);
+
+}
+
+
+/* CAPA OSCURA */
+
+.foto::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            transparent 35%,
+            rgba(0,0,0,.85)
+        );
+
+    opacity: .7;
+
+    transition: .4s;
+
+}
+
+
+.foto:hover::after {
+
+    opacity: 1;
+
+}
+
+
+/* FOTO PRINCIPAL */
+
+.foto-grande {
+
+    grid-row:
+        span 2;
+
+}
+
+
+/* INFORMACIÓN */
+
+.foto-info {
+
+    position: absolute;
+
+    left: 25px;
+
+    bottom: 20px;
+
+    z-index: 2;
+
+    transform:
+        translateY(10px);
+
+    opacity: .8;
+
+    transition: .4s;
+
+}
+
+
+.foto:hover .foto-info {
+
+    transform:
+        translateY(0);
+
+    opacity: 1;
+
+}
+
+
+.foto-info span {
+
+    color: #35d6ff;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.foto-info h3 {
+
+    margin-top: 8px;
+
+    font-size: 20px;
+
+}
+
+
+/* =========================
+   GALERÍA RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+    .galeria-grid {
+
+        grid-template-columns:
+            1fr 1fr;
+
+        grid-template-rows:
+            250px 250px 250px;
+
+    }
+
+
+    .foto-grande {
+
+        grid-column:
+            span 2;
+
+        grid-row:
+            span 1;
+
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .galeria-grid {
+
+        display: block;
+
+    }
+
+
+    .foto {
+
+        height: 280px;
+
+        margin-bottom: 15px;
+
+    }
+
+}
+/* =========================
+   ITINERARIO
+========================= */
+
+.itinerario {
+
+    padding: 110px 7%;
+
+    background: #08131c;
+
+}
+
+
+.itinerario-contenedor {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+}
+
+
+/* =========================
+   BOTONES DE DÍAS
+========================= */
+
+.dias {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(7, 1fr);
+
+    gap: 10px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.dia {
+
+    padding: 18px 10px;
+
+    border: 1px solid
+        rgba(255,255,255,.12);
+
+    border-radius: 15px;
+
+    background:
+        rgba(255,255,255,.04);
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+
+.dia span {
+
+    display: block;
+
+    font-size: 10px;
+
+    color: #888;
+
+    margin-bottom: 5px;
+
+}
+
+
+.dia:hover {
+
+    border-color: #35d6ff;
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+.dia.activo {
+
+    background: #35d6ff;
+
+    color: #001018;
+
+    border-color: #35d6ff;
+
+}
+
+
+.dia.activo span {
+
+    color: #003747;
+
+}
+
+
+/* =========================
+   DETALLE
+========================= */
+
+.detalle-dia {
+
+    min-height: 250px;
+
+    padding: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 40px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.07),
+            rgba(255,255,255,.02)
+        );
+
+    border: 1px solid
+        rgba(255,255,255,.1);
+
+    animation:
+        aparecerDia .4s ease;
+}
+
+
+.numero-dia {
+
+    font-size: 90px;
+
+    font-weight: bold;
+
+    color: #35d6ff;
+
+    opacity: .25;
+
+}
+
+
+.etiqueta-dia {
+
+    color: #35d6ff;
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.detalle-dia h3 {
+
+    font-size: 32px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.detalle-dia p:last-child {
+
+    max-width: 650px;
+
+    color: #aaa;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================
+   ANIMACIÓN
+========================= */
+
+@keyframes aparecerDia {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(10px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+
+    .dias {
+
+        grid-template-columns:
+            repeat(4, 1fr);
+
+    }
+
+
+    .detalle-dia {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 30px;
+
+    }
+
+
+    .numero-dia {
+
+        font-size: 60px;
+
+    }
+
+}
+/* =========================
+   INCLUYE
+========================= */
+
+.incluye {
+
+    padding: 110px 7%;
+
+    background: #050b12;
+
+}
+
+
+.subtitulo {
+
+    display: block;
+
+    max-width: 650px;
+
+    margin: 15px auto 0;
+
+    color: #888;
+
+    line-height: 1.6;
+
+}
+
+
+/* CONTENEDOR */
+
+.incluye-contenedor {
+
+    max-width: 1000px;
+
+    margin: 60px auto 0;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+
+}
+
+
+/* CARD */
+
+.incluye-card {
+
+    padding: 40px;
+
+    border-radius: 25px;
+
+    background:
+        rgba(255,255,255,.05);
+
+    border: 1px solid
+        rgba(255,255,255,.1);
+
+    transition: .3s;
+
+}
+
+
+.incluye-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(53,214,255,.4);
+
+}
+
+
+.icono-incluye {
+
+    width: 45px;
+
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #35d6ff;
+
+    color: #001018;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    margin-bottom: 20px;
+
+}
+
+
+.incluye-card h3 {
+
+    font-size: 25px;
+
+    margin-bottom: 25px;
+
+}
+
+
+/* LISTA */
+
+.incluye-card ul {
+
+    list-style: none;
+
+}
+
+
+.incluye-card li {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 14px 0;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.07);
+
+    color: #ccc;
+
+}
+
+
+.incluye-card li span {
+
+    width: 25px;
+
+    text-align: center;
+
+    font-size: 18px;
+
+}
+
+
+/* NO INCLUYE */
+
+.no-incluye .icono-incluye {
+
+    background: #ffb84d;
+
+}
+
+
+.no-incluye li span {
+
+    color: #ffb84d;
+
+}
+
+
+/* NOTA */
+
+.nota-paquete {
+
+    max-width: 1000px;
+
+    margin: 30px auto 0;
+
+    padding: 20px 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    border-radius: 15px;
+
+    background:
+        rgba(53,214,255,.05);
+
+    border:
+        1px solid
+        rgba(53,214,255,.1);
+
+}
+
+
+.nota-paquete span {
+
+    font-size: 25px;
+
+}
+
+
+.nota-paquete p {
+
+    color: #888;
+
+    line-height: 1.5;
+
+    font-size: 14px;
+
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+
+    .incluye-contenedor {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .incluye-card {
+
+        padding: 30px 25px;
+
+    }
+
+
+    .nota-paquete {
+
+        align-items: flex-start;
+
+    }
+
+}
+/* ============================= */
+/* HOTELES */
+/* ============================= */
+
+.hoteles {
+    padding: 110px 7%;
+    background: #08131c;
+}
+
+.hoteles-grid {
+    max-width: 1200px;
+    margin: 60px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+
+/* TARJETA */
+
+.hotel-card {
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    border-radius: 25px;
+
+    transition: .4s ease;
+}
+
+.hotel-card:hover {
+    transform: translateY(-10px);
+
+    border-color: rgba(53, 214, 255, .5);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, .4);
+}
+
+
+/* IMAGEN */
+
+.hotel-imagen {
+    height: 250px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.hotel-imagen img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform .7s ease;
+}
+
+.hotel-card:hover .hotel-imagen img {
+    transform: scale(1.12);
+}
+
+
+/* ETIQUETA */
+
+.hotel-etiqueta {
+    position: absolute;
+
+    top: 18px;
+    left: 18px;
+
+    padding: 8px 13px;
+
+    border-radius: 30px;
+
+    background: rgba(0, 0, 0, .7);
+
+    backdrop-filter: blur(8px);
+
+    color: white;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+}
+
+
+/* CONTENIDO */
+
+.hotel-contenido {
+    padding: 25px;
+}
+
+.estrellas {
+    color: #35d6ff;
+
+    letter-spacing: 3px;
+
+    font-size: 14px;
+
+    margin-bottom: 12px;
+}
+
+.hotel-contenido h3 {
+    font-size: 23px;
+
+    margin-bottom: 8px;
+}
+
+.hotel-ubicacion {
+    color: #888;
+
+    font-size: 14px;
+
+    margin-bottom: 20px;
+}
+
+
+/* SERVICIOS */
+
+.servicios-hotel {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-bottom: 25px;
+}
+
+.servicios-hotel span {
+    padding: 7px 10px;
+
+    border-radius: 8px;
+
+    background: rgba(255, 255, 255, .05);
+
+    color: #aaa;
+
+    font-size: 12px;
+}
+
+
+/* PIE */
+
+.hotel-pie {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(255, 255, 255, .08);
+}
+
+
+/* PRECIO */
+
+.hotel-precio small {
+    display: block;
+
+    color: #777;
+
+    font-size: 11px;
+}
+
+.hotel-precio strong {
+    display: block;
+
+    font-size: 21px;
+
+    margin: 3px 0;
+}
+
+.hotel-precio span {
+    color: #777;
+
+    font-size: 11px;
+}
+
+
+/* BOTÓN */
+
+.btn-hotel {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 12px 17px;
+
+    border-radius: 12px;
+
+    background: #35d6ff;
+
+    color: #001018;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    transition: .3s ease;
+}
+
+.btn-hotel:hover {
+    transform: scale(1.05);
+
+    box-shadow:
+        0 0 25px rgba(53, 214, 255, .35);
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 950px) {
+
+    .hoteles-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .hoteles {
+        padding: 80px 5%;
+    }
+
+    .hoteles-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hotel-imagen {
+        height: 230px;
+    }
+
+}
