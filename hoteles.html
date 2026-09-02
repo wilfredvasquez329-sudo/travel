@@ -1,0 +1,847 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Hoteles | Travel World</title>
+
+    <!-- CSS PRINCIPAL -->
+    <link rel="stylesheet"
+          href="hoteles.css">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="hoteles.css">
+</head>
+
+
+<body>
+
+
+<!-- =====================================
+     FONDO
+===================================== -->
+
+  <div class="logo">
+            <img src="imagenes/falco-madrid-327979_1920.jpg" alt="">
+        </div>
+       
+      
+
+
+
+<!-- =====================================
+     HEADER
+===================================== -->
+
+<header class="header-hoteles">
+     <div class="logo-header">
+              <img src="imagenes continentes/ChatGPT Image 30 ago 2026, 07_42_31 p.m..png" alt="">
+        </div>
+
+    <div class="logo-hotel">
+
+        <a href="index.html">
+
+          
+        </a>
+
+    </div>
+
+
+    <nav>
+   <a href="index.html">Inicio</a>
+    <!-- DESTINOS -->
+    <div class="submenu-contenedor">
+
+        <a href="#">Destinos</a>
+
+        <div class="submenu">
+            <a href="continente-norteamericano.html">Norteamérica</a>
+            <a href="continente-sudamericano.html">Sudamérica</a>
+            <a href="continente-europa.html">Europa</a>
+            <a href="continente-asia.html">Asia</a>
+            <a href="continente-africa.html">Africa</a>
+            <a href="continente-oceania.html">Oceania</a>
+        </div>
+
+    </div>
+
+
+    <!-- OFERTAS -->
+    <div class="submenu-contenedor">
+
+        <a href="#">Ofertas</a>
+
+        <div class="submenu">
+            <a href="ofertas-especiales.html">Ofertas de temporada</a>
+            <a href="#">Paquetes turísticos</a>
+            <a href="#">Vuelos baratos</a>
+            <a href="#">Hoteles en oferta</a>
+            <a href="#">Última hora</a>
+        </div>
+
+    </div>
+
+
+    <!-- RESTO DEL MENÚ -->
+    <a href="hoteles.html">Hoteles</a>
+
+    <a href="vuelos.html">Vuelos</a>
+
+    <a href="#">Blog</a>
+
+
+    <!-- CONTACTO -->
+    <button id="contacto" onclick="abrirMenu()">
+        Contacto
+    </button>
+
+
+    <div id="fondo" onclick="cerrarMenu()"></div>
+
+
+    <!-- REDES -->
+    <div id="redes">
+
+        <a href="#">
+            <i class="fa-brands fa-facebook"></i>
+        </a>
+
+        <a href="#">
+            <i class="fa-brands fa-tiktok"></i>
+        </a>
+
+        <a href="#">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+
+    </div>
+
+</nav>
+
+</header>
+
+
+
+<!-- =====================================
+     HERO
+===================================== -->
+
+<section class="hero-hoteles">
+
+    <div class="hero-contenido">
+
+        <span class="mini-titulo">
+            LEO TRAVEL
+        </span>
+
+        <h1>
+            TU PRÓXIMA ESTADÍA
+            <br>
+            COMIENZA AQUÍ
+        </h1>
+
+        <p>
+            Descubre hoteles increíbles,
+            lugares únicos y experiencias
+            que harán de tu viaje algo inolvidable.
+        </p>
+
+
+        <a href="#buscar"
+           class="btn-explorar">
+
+            EXPLORAR HOTELES
+
+            <i class="fa-solid fa-arrow-down"></i>
+
+        </a>
+
+    </div>
+
+
+    <div class="hero-icono">
+
+        <i class="fa-solid fa-hotel"></i>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     BUSCADOR
+===================================== -->
+
+<section class="busqueda"
+         id="buscar">
+
+    <div class="titulo-seccion">
+
+        <span>1
+            ENCUENTRA TU LUGAR
+        </span>
+
+        <h2>
+            BUSCA EL HOTEL PERFECTO
+        </h2>
+
+        <p>
+            Encuentra alojamiento en cualquier
+            parte del mundo.
+        </p>
+
+    </div>
+
+
+    <div class="buscador">
+
+
+        <!-- DESTINO -->
+
+        <div class="campo">
+
+            <i class="fa-solid fa-location-dot"></i>
+
+            <div>
+
+                <label>
+                    DESTINO
+                </label>
+
+                <input
+                    type="text"
+                    placeholder="¿Dónde quieres ir?">
+
+            </div>
+
+        </div>
+
+
+        <!-- CHECK IN -->
+
+        <div class="campo">
+
+            <i class="fa-solid fa-calendar"></i>
+
+            <div>
+
+                <label>
+                    ENTRADA
+                </label>
+
+                <input
+                    type="date">
+
+            </div>
+
+        </div>
+
+
+        <!-- CHECK OUT -->
+
+        <div class="campo">
+
+            <i class="fa-solid fa-calendar-check"></i>
+
+            <div>
+
+                <label>
+                    SALIDA
+                </label>
+
+                <input
+                    type="date">
+
+            </div>
+
+        </div>
+
+
+        <!-- HUÉSPEDES -->
+
+        <div class="campo">
+
+            <i class="fa-solid fa-user-group"></i>
+
+            <div>
+
+                <label>
+                    HUÉSPEDES
+                </label>
+
+                <select>
+
+                    <option>
+                        1 huésped
+                    </option>
+
+                    <option>
+                        2 huéspedes
+                    </option>
+
+                    <option>
+                        3 huéspedes
+                    </option>
+
+                    <option>
+                        4 huéspedes
+                    </option>
+
+                    <option>
+                        5+ huéspedes
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <button class="btn-buscar">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            BUSCAR
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     DESTINOS
+===================================== -->
+
+<section class="destinos-hotel">
+
+    <div class="titulo-seccion">
+
+        <span>
+            DESTINOS MÁS BUSCADOS
+        </span>
+
+        <h2>
+            DESCUBRE DÓNDE DORMIR
+        </h2>
+
+    </div>
+
+
+    <div class="grid-destinos">
+
+
+        <div class="destino-hotel">
+
+            <img
+                src="imagenes continentes/monicalopezoliveros-cartagena-3514191_1920.jpg"
+                alt="Cartagena">
+
+            <div>
+
+                <span>
+                    🇨🇴 COLOMBIA
+                </span>
+
+                <h3>
+                    Cartagena
+                </h3>
+
+                <p>
+                    Hoteles frente al mar
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="destino-hotel">
+
+            <img
+                src="imagenes continentes/selenee51-paris-4507622_1920.jpg"
+                alt="Madrid">
+
+            <div>
+
+                <span>
+                    🇪🇸 ESPAÑA
+                </span>
+
+                <h3>
+                    Madrid
+                </h3>
+
+                <p>
+                    Cultura y elegancia
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="destino-hotel">
+
+            <img
+                src="imagenes continentes/ajgpfotografia-church-6757964_1920.jpg"
+                alt="París">
+
+            <div>
+
+                <span>
+                    🇫🇷 FRANCIA
+                </span>
+
+                <h3>
+                    París
+                </h3>
+
+                <p>
+                    Una ciudad para enamorarse
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="destino-hotel">
+
+            <img
+                src="imagenes continentes/tammon-miami-1198921_1920.jpg"
+                alt="Miami">
+
+            <div>
+
+                <span>
+                    🇺🇸 USA
+                </span>
+
+                <h3>
+                    Miami
+                </h3>
+
+                <p>
+                    Playa y entretenimiento
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     HOTELES DESTACADOS
+===================================== -->
+
+<section class="hoteles-destacados">
+
+    <div class="titulo-seccion">
+
+        <span>
+            SELECCIÓN TRAVEL WORLD
+        </span>
+
+        <h2>
+            HOTELES DESTACADOS
+        </h2>
+
+        <p>
+            Lugares seleccionados para hacer
+            tu viaje aún más especial.
+        </p>
+
+    </div>
+
+
+    <div class="grid-hoteles">
+
+
+        <!-- HOTEL 1 -->
+
+        <article class="hotel-card">
+
+            <div class="hotel-imagen">
+
+                <img
+                    src="imagenes/julius_silver-bora-bora-3023437_1920.jpg"
+                    alt="Hotel">
+
+                <span class="badge">
+                    ⭐ DESTACADO
+                </span>
+
+                <button class="favorito">
+
+                    <i class="fa-regular fa-heart"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="hotel-info">
+
+                <span class="ubicacion">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    Cartagena, Colombia
+
+                </span>
+
+                <h3>
+                    Ocean Paradise Resort
+                </h3>
+
+                <div class="estrellas">
+
+                    ★★★★★
+
+                    <span>
+                        4.9
+                    </span>
+
+                </div>
+
+                <p>
+                    Resort frente al mar con
+                    piscina, spa y habitaciones
+                    de lujo.
+                </p>
+
+
+                <div class="hotel-abajo">
+
+                    <div>
+
+                        <strong>
+                            $380.000
+                        </strong>
+
+                        <small>
+                            / noche
+                        </small>
+
+                    </div>
+
+                    <a href="#">
+                        VER HOTEL
+                        →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- HOTEL 2 -->
+
+        <article class="hotel-card">
+
+            <div class="hotel-imagen">
+
+                <img
+                    src="imagenes/dpaolaphoto-ipanema-10117990_1920.jpg"
+                    alt="Hotel">
+
+                <span class="badge">
+                    🔥 POPULAR
+                </span>
+
+                <button class="favorito">
+
+                    <i class="fa-regular fa-heart"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="hotel-info">
+
+                <span class="ubicacion">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    Madrid, España
+
+                </span>
+
+                <h3>
+                    Royal Madrid Palace
+                </h3>
+
+                <div class="estrellas">
+
+                    ★★★★★
+
+                    <span>
+                        4.8
+                    </span>
+
+                </div>
+
+                <p>
+                    Elegancia, gastronomía y
+                    ubicación privilegiada.
+                </p>
+
+
+                <div class="hotel-abajo">
+
+                    <div>
+
+                        <strong>
+                            $620.000
+                        </strong>
+
+                        <small>
+                            / noche
+                        </small>
+
+                    </div>
+
+                    <a href="#">
+                        VER HOTEL
+                        →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- HOTEL 3 -->
+
+        <article class="hotel-card">
+
+            <div class="hotel-imagen">
+
+                <img
+                    src="imagenes/marietab92-paris-3974650_1920.jpg"
+                    alt="Hotel">
+
+                <span class="badge">
+                    💎 PREMIUM
+                </span>
+
+                <button class="favorito">
+
+                    <i class="fa-regular fa-heart"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="hotel-info">
+
+                <span class="ubicacion">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    París, Francia
+
+                </span>
+
+                <h3>
+                    Lumière Paris
+                </h3>
+
+                <div class="estrellas">
+
+                    ★★★★★
+
+                    <span>
+                        4.9
+                    </span>
+
+                </div>
+
+                <p>
+                    Una experiencia elegante
+                    en el corazón de París.
+                </p>
+
+
+                <div class="hotel-abajo">
+
+                    <div>
+
+                        <strong>
+                            $850.000
+                        </strong>
+
+                        <small>
+                            / noche
+                        </small>
+
+                    </div>
+
+                    <a href="#">
+                        VER HOTEL
+                        →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     BENEFICIOS
+===================================== -->
+
+<section class="beneficios">
+
+    <div class="titulo-seccion">
+
+        <span>
+            TRAVEL WORLD
+        </span>
+
+        <h2>
+            ¿POR QUÉ RESERVAR CON NOSOTROS?
+        </h2>
+
+    </div>
+
+
+    <div class="grid-beneficios">
+
+
+        <div class="beneficio">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            <h3>
+                Reserva segura
+            </h3>
+
+            <p>
+                Protegemos tus datos y
+                tu reserva.
+            </p>
+
+        </div>
+
+
+        <div class="beneficio">
+
+            <i class="fa-solid fa-tag"></i>
+
+            <h3>
+                Mejores ofertas
+            </h3>
+
+            <p>
+                Encuentra precios
+                especiales.
+            </p>
+
+        </div>
+
+
+        <div class="beneficio">
+
+            <i class="fa-solid fa-headset"></i>
+
+            <h3>
+                Atención
+            </h3>
+
+            <p>
+                Estamos contigo durante
+                tu viaje.
+            </p>
+
+        </div>
+
+
+        <div class="beneficio">
+
+            <i class="fa-solid fa-earth-americas"></i>
+
+            <h3>
+                Todo el mundo
+            </h3>
+
+            <p>
+                Miles de destinos
+                disponibles.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     FOOTER
+===================================== -->
+
+<footer class="footer">
+
+    <div>
+
+        <h2>
+            TRAVEL WORLD 🌎
+        </h2>
+
+        <p>
+            Descubre el mundo.
+            Vive la aventura.
+        </p>
+
+    </div>
+
+
+  
+
+</footer>
+<script src="hoteles.js"></script>
+<script src="paginaprincipal.js"></script>
+
+
+
+
+</body>
+
+</html>
+

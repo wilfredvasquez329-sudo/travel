@@ -1,0 +1,228 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.video {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    object-fit: cover;
+
+    z-index: 0;
+}
+.vuelo {
+    position: absolute;
+    width: 100%;
+    height: 300px;
+    top: 150px;
+    left: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* =========================================================
+   MAPA DE VIAJE
+========================================================= */
+
+.ruta-vuelo {
+    position: fixed;
+    inset: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    pointer-events: none;
+
+    z-index: 9999;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   SVG
+========================================================= */
+
+.mapa-ruta {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    inset: 0;
+}
+
+
+/* =========================================================
+   RUTA BASE
+========================================================= */
+
+.ruta-base {
+
+    fill: none;
+
+    stroke: rgba(255,255,255,.12);
+
+    stroke-width: 2;
+
+    stroke-dasharray: 8 12;
+}
+
+
+/* =========================================================
+   RUTA LUMINOSA
+========================================================= */
+
+.ruta-animada {
+
+    fill: none;
+
+    stroke: #61dafb;
+
+    stroke-width: 3;
+
+    stroke-linecap: round;
+
+    filter:
+        drop-shadow(0 0 5px #61dafb)
+        drop-shadow(0 0 12px #61dafb)
+        drop-shadow(0 0 25px #61dafb);
+
+    stroke-dasharray: 1800;
+
+    stroke-dashoffset: 1800;
+
+    animation: dibujarRuta 12s linear infinite;
+}
+
+
+@keyframes dibujarRuta {
+
+    0% {
+        stroke-dashoffset: 1800;
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    90% {
+        stroke-dashoffset: 0;
+        opacity: 1;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================================================
+   AVIÓN
+========================================================= */
+
+.avion-vuelo {
+
+    position: absolute;
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 32px;
+
+    color: white;
+
+    filter:
+        drop-shadow(0 0 4px white)
+        drop-shadow(0 0 10px #61dafb)
+        drop-shadow(0 0 22px #61dafb);
+
+    animation: moverAvion 12s linear infinite;
+
+}
+
+
+/* =========================================================
+   MOVIMIENTO
+========================================================= */
+
+@keyframes moverAvion {
+
+    0% {
+
+        left: -4%;
+        top: 80%;
+
+        transform: rotate(-20deg);
+
+    }
+
+    20% {
+
+        left: 17%;
+        top: 63%;
+
+        transform: rotate(-55deg);
+
+    }
+
+    35% {
+
+        left: 31%;
+        top: 37%;
+
+        transform: rotate(15deg);
+
+    }
+
+    50% {
+
+        left: 48%;
+        top: 55%;
+
+        transform: rotate(35deg);
+
+    }
+
+    65% {
+
+        left: 63%;
+        top: 36%;
+
+        transform: rotate(-35deg);
+
+    }
+
+    80% {
+
+        left: 81%;
+        top: 17%;
+
+        transform: rotate(-20deg);
+
+    }
+
+    100% {
+
+        left: 105%;
+        top: 25%;
+
+        transform: rotate(10deg);
+
+    }
+
+}

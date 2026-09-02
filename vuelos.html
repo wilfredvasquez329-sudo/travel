@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vuelos</title>
+    <link rel="stylesheet" href="vuelos.css">
+    <link rel="stylesheet" href="paginaprincipal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        
+        <div class="logo-header">
+              <img src="imagenes continentes/ChatGPT Image 30 ago 2026, 07_42_31 p.m..png" alt="">
+        </div>
+      
+        
+               <nav>
+
+    <a href="index.html">Inicio</a>
+
+
+    <!-- DESTINOS -->
+    <div class="submenu-contenedor">
+
+        <a href="#">Destinos</a>
+
+        <div class="submenu">
+            <a href="continente-norteamericano.html">Norteamérica</a>
+            <a href="continente-sudamericano.html">Sudamérica</a>
+            <a href="continente-europa.html">Europa</a>
+            <a href="continente-asia.html">Asia</a>
+            <a href="continente-africa.html">Africa</a>
+            <a href="continente-oceania.html">Oceania</a>
+        </div>
+
+    </div>
+
+
+    <!-- OFERTAS -->
+    <div class="submenu-contenedor">
+
+        <a href="#">Ofertas</a>
+
+        <div class="submenu">
+            <a href="ofertas-especiales.html">Ofertas de temporada</a>
+            <a href="paquetes-turisticos.html">Paquetes turísticos</a>
+            <a href="#">Vuelos baratos</a>
+            <a href="#">Hoteles en oferta</a>
+            <a href="#">Última hora</a>
+        </div>
+
+    </div>
+
+
+    <!-- RESTO DEL MENÚ -->
+    <a href="hoteles.html">Hoteles</a>
+
+    <a href="">Vuelos</a>
+
+    <a href="#">Blog</a>
+
+
+    <!-- CONTACTO -->
+    <button id="contacto" onclick="abrirMenu()">
+        Contacto
+    </button>
+
+
+    <div id="fondo" onclick="cerrarMenu()"></div>
+
+
+    <!-- REDES -->
+    <div id="redes">
+
+        <a href="#">
+            <i class="fa-brands fa-facebook"></i>
+        </a>
+
+        <a href="#">
+            <i class="fa-brands fa-tiktok"></i>
+        </a>
+
+        <a href="#">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+
+    </div>
+
+</nav>
+           
+   
+    </header>
+<video class="video" autoplay muted loop playsinline>
+    <source src="videos/205873_medium.mp4" type="video/mp4">
+</video>
+    <section class="vuelos">
+
+    <div class="titulo-vuelos">
+
+        <span>PREPARA TU VIAJE</span>
+
+        <h2>ENCUENTRA TU PRÓXIMO VUELO <span class="avi"></span></h2>
+
+        <p>
+            Busca tu próximo destino y comienza una nueva aventura.
+        </p>
+
+    </div>
+  
+
+  
+
+    <div class="buscador-vuelos">
+
+        <!-- TIPO DE VIAJE -->
+
+        <div class="tipo-vuelo">
+
+            <label>
+                <input type="radio" name="tipo" checked>
+                Ida y vuelta
+            </label>
+
+            <label>
+                <input type="radio" name="tipo">
+                Solo ida
+            </label>
+
+        </div>
+
+
+        <!-- CAMPOS -->
+
+        <div class="campos-vuelo">
+
+
+            <!-- ORIGEN -->
+
+            <div class="campo-vuelo">
+
+                <span class="icono-campo">🛫</span>
+
+                <div>
+
+                    <small>DESDE</small>
+
+                    <input
+                        type="text"
+                        placeholder="Ciudad de origen"
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <!-- INTERCAMBIAR -->
+
+            <button
+                class="intercambiar"
+                type="button"
+                title="Intercambiar ciudades"
+            >
+                ⇄
+            </button>
+
+
+
+            <!-- DESTINO -->
+
+            <div class="campo-vuelo">
+
+                <span class="icono-campo">🛬</span>
+
+                <div>
+
+                    <small>HASTA</small>
+
+                    <input
+                        type="text"
+                        placeholder="Ciudad de destino"
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FECHA -->
+
+            <div class="campo-vuelo">
+
+                <span class="icono-campo">📅</span>
+
+                <div>
+
+                    <small>FECHA</small>
+
+                    <input
+                        type="date"
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PASAJEROS -->
+
+            <div class="campo-vuelo">
+
+                <span class="icono-campo">👤</span>
+
+                <div>
+
+                    <small>PASAJEROS</small>
+
+                    <select>
+
+                        <option>
+                            1 pasajero
+                        </option>
+
+                        <option>
+                            2 pasajeros
+                        </option>
+
+                        <option>
+                            3 pasajeros
+                        </option>
+
+                        <option>
+                            4 pasajeros
+                        </option>
+
+                        <option>
+                            5+ pasajeros
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- BOTÓN -->
+
+        <button
+            class="buscar-vuelo"
+            type="button"
+        >
+
+            🔍 BUSCAR VUELOS
+
+        </button>
+
+    </div>
+
+
+
+    <!-- DESTINOS RÁPIDOS -->
+
+    <div class="destinos-rapidos">
+
+        <p>DESTINOS POPULARES</p>
+
+        <div>
+
+            <button>🇨🇴 Bogotá</button>
+
+            <button>🇨🇴 Cartagena</button>
+
+            <button>🇺🇸 Miami</button>
+
+            <button>🇪🇸 Madrid</button>
+
+            <button>🇫🇷 París</button>
+
+        </div>
+
+    </div>
+
+</section>
+<script src="paginaprincipal.js"></script>
+</body>
+</html>

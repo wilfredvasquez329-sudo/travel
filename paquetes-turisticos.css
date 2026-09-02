@@ -1,0 +1,631 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.logo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.logo-header img{
+    position: absolute;
+    width: 80px;
+    border-radius: 50%;
+  left: 30px;
+  top: 15px;
+  z-index: 1000;
+}
+
+.header {
+    width: 100%;
+    padding: 0;
+    position: relative;
+    z-index: 10;
+    transition: 0.4s ease;
+}
+header.ocultar{
+    top: -100px;
+}
+
+nav {
+    position: relative;
+
+    width: 100%;
+    height: 80px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 30px;
+
+    padding: 0 15px ;
+
+    background: rgba(0, 0, 0, 0.50);
+
+    z-index: 100;
+}
+nav a {
+    position: relative;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+}
+
+nav a:hover {
+    color: rgb(255, 204, 0);
+}
+
+nav > a::after,
+.submenu-contenedor > a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -5px;
+
+    width: 0;
+    height: 1px;
+
+    background: #00d4ff;
+
+    transform: translateX(-50%);
+
+    box-shadow:
+        0 0 5px #00d4ff,
+        0 0 10px #00d4ff,
+        0 0 20px #00d4ff;
+
+    transition: 0.4s;
+}
+
+
+nav > a:hover::after,
+.submenu-contenedor:hover > a::after {
+    width: 100%;
+}
+/* CONTENEDOR DE CADA OPCIÓN */
+.submenu-contenedor {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+
+/* SUBMENU */
+.submenu {
+    position: absolute;
+
+    top: calc(100% + 15px);
+    left: 50%;
+
+    transform: translateX(-50%) translateY(10px);
+
+    width: 210px;
+
+    background: rgba(0, 10, 20, 0.95);
+
+    border: 1px solid #00d4ff;
+
+    border-radius: 10px;
+
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.3s ease;
+
+    z-index: 9999;
+}
+
+
+/* APARECER */
+.submenu-contenedor:hover .submenu {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+
+
+/* ENLACES */
+.submenu a {
+
+    display: block;
+
+    width: 100%;
+
+    padding: 10px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    text-align: center;
+
+    border-radius: 7px;
+
+}
+
+
+/* HOVER */
+.submenu a:hover {
+
+    background: rgba(0, 212, 255, 0.2);
+
+    color: #00d4ff;
+
+}
+#redes {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    width: 170px;
+    height: 100vh;
+
+    background: #00d5ff75;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 40px;
+
+    transform: translateX(100%);
+    transition: transform 0.4s ease;
+
+    z-index: 1001;
+}
+#redes a {
+    position: relative;
+
+    width: 70px;
+    height: 70px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+#redes a::after {
+    content: "";
+
+    position: absolute;
+
+    width: 65px;
+    height: 65px;
+
+    border: 3px solid transparent;
+    border-top-color: #00d4ff;
+    border-right-color: rgb(248, 251, 247);
+
+    border-radius: 50%;
+
+    opacity: 0;
+
+    transition: 0.3s;
+}
+
+
+/* Cuando pasas el mouse */
+#redes a:hover {
+    transform: scale(1.30);
+}
+
+
+/* Brillo del logo */
+#redes a:hover i {
+    color: #0c0c0c;
+
+    filter:
+        drop-shadow(0 0 5px #fbb003)
+        drop-shadow(0 0 15px #f9c003);
+}
+
+
+/* Activar círculo */
+#redes a:hover::after {
+    opacity: 1;
+
+    animation: girarRed 1s linear infinite;
+}
+
+
+@keyframes girarRed {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+#fondo {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.57);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.4s;
+
+    z-index: 1000;
+}
+
+#redes.mostrar {
+    transform: translateX(0);
+}
+
+#fondo.mostrar {
+    opacity: 1;
+    visibility: visible;
+}
+#redes i {
+    font-size: 50px;
+    color: white;
+
+    transition: 0.3s;
+
+    z-index: 2;
+}
+#contacto{
+position: relative;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+#contacto:hover {
+    color: rgb(255, 204, 0);
+}
+#contacto::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    width: 0;
+    height: 0.4px;
+    background: #00d4ff;
+    transform: translateX(-50%);
+    box-shadow: 
+        0 0 5px #00d4ff,
+        0 0 10px #00d4ff,
+        0 0 20px #00d4ff;
+    transition: 0.4s;
+}
+
+#contacto:hover::after {
+    width: 100%;
+}
+.seccion-paquetes {
+
+    padding: 100px 5%;
+
+   
+    overflow: hidden;
+}
+
+
+/* TITULO */
+
+.titulo-paquetes {
+
+    text-align: center;
+    
+    margin-bottom: 50px;
+    background: #111111b0;
+    padding: 20px 0;
+    border-radius: 35px;
+}
+
+.titulo-paquetes h5 {
+
+    font-size: 16px;
+
+    letter-spacing: 4px;
+
+    color: #04a5fc;
+    transition: 0.4ms ease-in;
+    animation: bajo 4s ease;
+}
+@keyframes bajo{
+    from{
+        transform: translateY(-900px);
+    }to{
+        transform: translateY(0);
+    }
+}
+
+.titulo-paquetes h2 {
+
+    font-size: 45px;
+
+    margin: 10px 0;
+
+    color: #ffffff;
+    transition: 0.4ms;
+    animation: salidad 4s ease;
+}
+@keyframes salidad{
+    from{
+        transform: translateX(800px);
+    }to{
+        transform: translateX(0);
+    }
+}
+.titulo-paquetes p {
+
+    color: #e4dede;
+    font-weight: bold;
+    font-size: 20px;
+    animation: mover 3s ease;
+    transition: 0.4s;
+}
+@keyframes mover{
+    from{
+        transform: translateX(-800px);
+    }to{
+        transform: translateX(0);
+    }
+}
+
+/* CARRUSEL */
+
+.carrusel {
+
+    position: relative;
+
+    max-width: 1300px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+/* CONTENEDOR */
+
+.paquetes-contenedor {
+
+    display: flex;
+
+    gap: 25px;
+
+    width: 100%;
+
+    overflow: hidden;
+}
+
+
+/* TARJETA */
+
+.paquete {
+
+    min-width: calc((100% - 50px) / 3);
+
+    background: white;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.08);
+
+    transition: .5s;
+
+
+}
+.paquete:hover{
+    transform: translateY(-15px);
+    
+}
+
+/* IMAGEN */
+
+.paquete img {
+
+    width: 100%;
+
+    height: 250px;
+
+    object-fit: cover;
+
+    display: block;
+    transition: 0.4s;
+    
+}
+
+
+
+/* INFORMACION */
+
+.paquete-info {
+
+    padding: 25px;
+}
+
+.paquete-info span {
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    color: #888;
+}
+
+.paquete-info h3 {
+
+    font-size: 30px;
+
+    margin: 8px 0;
+}
+
+.paquete-info p {
+
+    color: #777;
+
+    margin-bottom: 15px;
+}
+
+.paquete-info strong {
+
+    display: block;
+
+    margin-bottom: 20px;
+}
+
+
+/* BOTON */
+
+.paquete-info a {
+
+    display: inline-block;
+
+    text-decoration: none;
+
+    color: white;
+
+    background: #111;
+
+    padding: 12px 20px;
+
+    border-radius: 30px;
+
+    font-size: 11px;
+
+    transition: .3s;
+}
+
+.paquete-info a:hover {
+
+    transform: translateX(5px);
+    background: rgb(247, 141, 3);
+    color: #0c0c0c;
+
+}
+
+
+/* ====================
+   FLECHAS
+==================== */
+
+.flecha {
+
+    position: absolute;
+
+    z-index: 10;
+
+    width: 50px;
+
+    height: 50px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    background: white;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.15);
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.flecha:hover {
+
+    transform: scale(1.1);
+
+    background: #111;
+
+    color: white;
+}
+
+
+.izquierda {
+
+    left: -25px;
+}
+
+
+.derecha {
+
+    right: -25px;
+}
+
+
+/* ====================
+   TABLET
+==================== */
+
+@media(max-width: 900px) {
+
+    .paquete {
+
+        min-width: calc((100% - 25px) / 2);
+
+    }
+
+}
+
+
+/* ====================
+   CELULAR
+==================== */
+
+@media(max-width: 600px) {
+
+    .paquete {
+
+        min-width: 100%;
+
+    }
+
+    .titulo-paquetes h2 {
+
+        font-size: 35px;
+
+    }
+
+}

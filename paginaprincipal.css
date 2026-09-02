@@ -1,0 +1,2460 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.logo-header img{
+    position: absolute;
+    width: 150px;
+    border-radius: 50%;
+  left: 30px;
+  top: 5px;
+  z-index: 1000;
+}
+
+.header {
+    width: 100%;
+    padding: 0;
+    position: relative;
+    z-index: 10;
+    transition: 0.4s ease;
+}
+header.ocultar{
+    top: -100px;
+}
+
+nav {
+    position: relative;
+
+    width: 100%;
+    height: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 30px;
+
+    padding: 15px ;
+
+    background: rgba(0, 0, 0, 0.50);
+
+    z-index: 100;
+}
+nav a {
+    position: relative;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+}
+
+nav a:hover {
+    color: rgb(255, 204, 0);
+}
+
+nav > a::after,
+.submenu-contenedor > a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -5px;
+
+    width: 0;
+    height: 1px;
+
+    background: #00d4ff;
+
+    transform: translateX(-50%);
+
+    box-shadow:
+        0 0 5px #00d4ff,
+        0 0 10px #00d4ff,
+        0 0 20px #00d4ff;
+
+    transition: 0.4s;
+}
+
+
+nav > a:hover::after,
+.submenu-contenedor:hover > a::after {
+    width: 100%;
+}
+/* CONTENEDOR DE CADA OPCIÓN */
+.submenu-contenedor {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+
+/* SUBMENU */
+.submenu {
+    position: absolute;
+
+    top: calc(100% + 15px);
+    left: 50%;
+
+    transform: translateX(-50%) translateY(10px);
+
+    width: 210px;
+
+    background: rgba(0, 10, 20, 0.95);
+
+    border: 1px solid #00d4ff;
+
+    border-radius: 10px;
+
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.3s ease;
+
+    z-index: 9999;
+}
+
+
+/* APARECER */
+.submenu-contenedor:hover .submenu {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+
+
+/* ENLACES */
+.submenu a {
+
+    display: block;
+
+    width: 100%;
+
+    padding: 10px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    text-align: center;
+
+    border-radius: 7px;
+
+}
+
+
+/* HOVER */
+.submenu a:hover {
+
+    background: rgba(0, 212, 255, 0.2);
+
+    color: #00d4ff;
+
+}
+.entrada {
+    position: relative;
+    margin-left: 20%;
+    top: 200px;
+}
+.entrada h1{
+     font-size: 55px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10px;
+    letter-spacing: 3px;
+    
+    text-shadow: 2px 3px 10px rgba(0, 0, 0, 0.6);
+    animation: salir 2s;
+    
+    
+}
+@keyframes salir{
+    from{
+        transform: translateX(-100%);
+    }to{
+        transform: translateX(0);
+    }
+}
+.entrada p{
+     font-family: "Georgia", serif;
+    
+    font-size: 25px;
+    line-height: 1.2;
+    color: hsl(0, 0%, 100%);
+  width: 900px;
+
+    
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px rgb(9, 9, 9);
+}
+.mundo {
+    display: inline-block;
+    animation: flotar 1s infinite alternate ease-in-out;
+}
+
+@keyframes flotar {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-40px);
+    }
+}
+.viaje {
+    position: relative;
+    width: 700px;
+}
+
+.texto {
+    font-size: 40px;
+    font-weight: bold;
+
+    color: gray;
+
+    animation: colorear 5s linear infinite;
+}
+
+.hero-texto {
+    position: relative;
+    width: 900px;
+    margin: 100px auto;
+}
+.hero-texto a {
+    position: relative;
+    left: 500px;
+    display: inline-block;
+    top: 70px;
+
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+
+    background-color: #00d5ff75;
+    border: none;
+    border-radius: 35px;
+    padding: 15px;
+
+    transition: 0.4s;
+    animation: flt 5s infinite alternate ease-in-out;
+}
+@keyframes flt{
+    from{
+        transform: rotateY(0deg);
+    }to{
+        transform: rotateY(90deg);
+    }
+}
+.hero-texto a:hover{
+    background: #02fa51;
+    padding: 10px;
+    
+}
+.reserva{
+    
+     position: relative;
+     top: 80px;
+     right: -600px;
+     background: rgba(245, 222, 179, 0.54);
+     text-decoration: none;
+     color: rgb(5, 5, 5);
+     font-size: 30px;
+     border: none;
+     border-radius: 30px;
+     letter-spacing: 1px;
+     padding: 10px 15px;
+     font-size: 24px;
+     cursor: pointer;
+     font-weight: unset;
+     transition: 0.4s;
+     animation: flotar2 2s infinite alternate-reverse;
+}
+@keyframes flotar2{
+    from{
+        transform: rotateX(0deg);
+    }to{
+        transform: rotateX(95deg);
+    }
+}
+.reserva:hover{
+    background-color: rgba(48, 200, 227, 0.568);
+    color: rgb(243, 247, 247);
+}
+/* Texto que se va revelando */
+.texto-color {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    margin: 0;
+
+    font-size: 48px;
+    font-weight: 700;
+
+    color: #ffffff;
+
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+
+    animation: revelar 5s ease-in-out infinite;
+}
+
+/* Avión */
+.avion {
+    position: absolute;
+
+    top: -15px;
+    left: 0;
+
+    font-size: 42px;
+
+    filter: drop-shadow(0 5px 8px rgb(241, 237, 237));
+
+    animation: volar 5s ease-in-out infinite;
+}
+
+/* Movimiento del avión */
+@keyframes volar {
+
+    0% {
+        left: -50px;
+        transform: rotate(0deg);
+    }
+
+    10% {
+        transform: rotate(-5deg);
+    }
+
+    50% {
+        transform: rotate(0deg);
+    }
+
+    90% {
+        transform: rotate(5deg);
+    }
+
+    100% {
+        left: 800px;
+        transform: rotate(0deg);
+    }
+
+}
+
+/* Revelar el texto */
+@keyframes revelar {
+
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+
+}
+.texto-color {
+    background: linear-gradient(
+        90deg,
+        #00d4ff,
+        #ffffff,
+        #00d4ff
+    );
+
+    -webkit-background-clip: text;
+    color: transparent;
+}
+.hero-texto{
+    position: relative;
+    top: 100px;
+
+}
+#redes {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    width: 170px;
+    height: 100vh;
+
+    background: #00d5ff75;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 40px;
+
+    transform: translateX(100%);
+    transition: transform 0.4s ease;
+
+    z-index: 1001;
+}
+#redes a {
+    position: relative;
+
+    width: 70px;
+    height: 70px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+#redes a::after {
+    content: "";
+
+    position: absolute;
+
+    width: 65px;
+    height: 65px;
+
+    border: 3px solid transparent;
+    border-top-color: #00d4ff;
+    border-right-color: rgb(248, 251, 247);
+
+    border-radius: 50%;
+
+    opacity: 0;
+
+    transition: 0.3s;
+}
+
+
+/* Cuando pasas el mouse */
+#redes a:hover {
+    transform: scale(1.30);
+}
+
+
+/* Brillo del logo */
+#redes a:hover i {
+    color: #0c0c0c;
+
+    filter:
+        drop-shadow(0 0 5px #fbb003)
+        drop-shadow(0 0 15px #f9c003);
+}
+
+
+/* Activar círculo */
+#redes a:hover::after {
+    opacity: 1;
+
+    animation: girarRed 1s linear infinite;
+}
+
+
+@keyframes girarRed {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+#fondo {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.57);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.4s;
+
+    z-index: 1000;
+}
+
+#redes.mostrar {
+    transform: translateX(0);
+}
+
+#fondo.mostrar {
+    opacity: 1;
+    visibility: visible;
+}
+#redes i {
+    font-size: 50px;
+    color: white;
+
+    transition: 0.3s;
+
+    z-index: 2;
+}
+#contacto{
+position: relative;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+#contacto:hover {
+    color: rgb(255, 204, 0);
+}
+#contacto::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    width: 0;
+    height: 0.4px;
+    background: #00d4ff;
+    transform: translateX(-50%);
+    box-shadow: 
+        0 0 5px #00d4ff,
+        0 0 10px #00d4ff,
+        0 0 20px #00d4ff;
+    transition: 0.4s;
+}
+
+#contacto:hover::after {
+    width: 100%;
+}
+.destinos {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 100px 8%;
+
+    background: rgba(0, 0, 0, 0.65);
+
+    color: white;
+
+    text-align: center;
+}
+
+
+/* TÍTULO */
+
+.destinos h2 {
+    font-size: 45px;
+
+    margin-bottom: 10px;
+
+    letter-spacing: 3px;
+
+    text-shadow:
+        0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+
+/* SUBTÍTULO */
+
+.subtitulo {
+    font-size: 20px;
+
+    margin-bottom: 50px;
+
+    color: #ddd;
+}
+
+
+/* CONTENEDOR */
+
+.contenedor-destinos {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 25px;
+
+    max-width: 1300px;
+
+    margin: auto;
+}
+
+
+/* TARJETA */
+
+.tarjeta-destino {
+
+    position: relative;
+
+    height: 420px;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.5);
+
+    transition: 0.4s;
+}
+
+
+/* IMAGEN */
+
+.tarjeta-destino img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.5s;
+}
+
+
+/* DEGRADADO */
+
+.tarjeta-destino::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            transparent 30%,
+            rgba(0,0,0,0.9)
+        );
+
+    transition: 0.4s;
+}
+
+
+/* INFORMACIÓN */
+
+.info-destino {
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    padding: 25px;
+
+    text-align: left;
+
+    z-index: 2;
+}
+
+
+/* BANDERA */
+
+.info-destino span {
+
+    font-size: 30px;
+}
+
+
+/* NOMBRE */
+
+.info-destino h3 {
+
+    font-size: 30px;
+
+    margin: 5px 0;
+
+}
+
+
+/* DESCRIPCIÓN */
+
+.info-destino p {
+
+    font-size: 15px;
+
+    color: #ddd;
+
+    margin-bottom: 15px;
+
+}
+
+
+/* BOTÓN */
+
+.info-destino a {
+
+    display: inline-block;
+
+    padding: 9px 18px;
+
+    border-radius: 20px;
+
+    background: #00d4ff;
+
+    color: black;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+
+/* HOVER TARJETA */
+
+.tarjeta-destino:hover {
+
+    transform:
+        translateY(-10px)
+        scale(1.02);
+
+    box-shadow:
+        0 15px 40px rgba(0, 212, 255, 0.3);
+}
+
+
+/* ZOOM IMAGEN */
+
+.tarjeta-destino:hover img {
+
+    transform: scale(1.12);
+}
+
+
+/* BOTÓN HOVER */
+
+.info-destino a:hover {
+
+    background: white;
+
+    box-shadow:
+        0 0 15px #00d4ff;
+
+    transform: scale(1.05);
+}
+.destinos {
+    margin-top: 450px;
+}
+.mundo2{
+    display: inline-block;
+    animation: rodart 10s linear infinite;
+}
+@keyframes rodart{
+    from{
+        transform: rotate(0deg);
+    }to{
+        transform: rotate(600deg);
+    }
+}
+/* =================================
+   SECCIÓN EXPERIENCIAS
+================================= */
+
+.experiencias {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding: 100px 8%;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    color: white;
+
+    text-align: center;
+}
+
+
+/* =================================
+   TÍTULO
+================================= */
+
+.titulo-experiencias span:first-child {
+
+    display: block;
+
+    font-size: 14px;
+
+    letter-spacing: 5px;
+
+    color: #00d4ff;
+
+    margin-bottom: 15px;
+
+    text-shadow:
+        0 0 10px #00d4ff;
+
+}
+
+
+.titulo-experiencias h2 {
+
+    font-size: 50px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 15px;
+
+    text-shadow:
+        0 0 10px rgba(0, 212, 255, 0.6);
+
+}
+
+
+.mundo-experiencia {
+
+    display: inline-block;
+
+    font-size: 45px;
+
+    animation:
+        girar-experiencia
+        10s
+        linear
+        infinite;
+
+}
+
+
+@keyframes girar-experiencia {
+
+    from {
+
+        transform:
+            rotate(0deg);
+
+    }
+
+    to {
+
+        transform:
+            rotate(360deg);
+
+    }
+
+}
+
+
+.titulo-experiencias p {
+
+    color: #ccc;
+
+    font-size: 18px;
+
+    margin-bottom: 60px;
+
+}
+
+
+/* =================================
+   CONTENEDOR
+================================= */
+
+.contenedor-experiencias {
+
+    max-width: 1300px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 25px;
+
+}
+
+
+/* =================================
+   TARJETA
+================================= */
+
+.tarjeta-experiencia {
+
+    position: relative;
+
+    height: 450px;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    background: #111;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.6);
+
+    transition:
+        transform 0.4s,
+        box-shadow 0.4s;
+
+}
+
+
+/* =================================
+   IMAGEN
+================================= */
+
+.tarjeta-experiencia img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.6s;
+
+}
+
+
+/* =================================
+   DEGRADADO
+================================= */
+
+.tarjeta-experiencia::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            transparent 25%,
+            rgba(0, 0, 0, 0.95)
+        );
+
+    z-index: 1;
+
+}
+
+
+/* =================================
+   CONTENIDO
+================================= */
+
+.contenido-experiencia {
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 100%;
+
+    padding: 25px;
+
+    text-align: left;
+
+    z-index: 2;
+
+}
+
+
+/* =================================
+   ICONO
+================================= */
+
+.icono-experiencia {
+
+    display: block;
+
+    font-size: 38px;
+
+    margin-bottom: 8px;
+
+}
+
+
+/* =================================
+   TÍTULO TARJETA
+================================= */
+
+.contenido-experiencia h3 {
+
+    font-size: 25px;
+
+    margin-bottom: 10px;
+
+}
+
+
+/* =================================
+   DESCRIPCIÓN
+================================= */
+
+.contenido-experiencia p {
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    color: #ddd;
+
+    margin-bottom: 18px;
+
+}
+
+
+/* =================================
+   BOTÓN
+================================= */
+
+.contenido-experiencia a {
+
+    display: inline-block;
+
+    padding: 9px 18px;
+
+    border-radius: 20px;
+
+    border: 1px solid #00d4ff;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    transition: 0.3s;
+
+}
+
+
+/* =================================
+   HOVER BOTÓN
+================================= */
+
+.contenido-experiencia a:hover {
+
+    background: #00d4ff;
+
+    color: black;
+
+    box-shadow:
+        0 0 10px #00d4ff,
+        0 0 25px #00d4ff;
+
+}
+
+
+/* =================================
+   HOVER TARJETA
+================================= */
+
+.tarjeta-experiencia:hover {
+
+    transform:
+        translateY(-12px);
+
+    box-shadow:
+        0 15px 45px
+        rgba(0, 212, 255, 0.35);
+
+}
+
+
+/* =================================
+   ZOOM
+================================= */
+
+.tarjeta-experiencia:hover img {
+
+    transform:
+        scale(1.12);
+
+}
+
+/* =================================
+   OFERTAS ESPECIALES
+================================= */
+
+.ofertas {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding: 110px 8%;
+
+
+    color: white;
+
+    text-align: center;
+}
+
+
+/* =================================
+   TÍTULO
+================================= */
+
+.titulo-ofertas span {
+
+    display: block;
+
+    color: #00d4ff;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 15px;
+
+    text-shadow:
+        0 0 10px #00d4ff;
+
+}
+
+
+.titulo-ofertas h2 {
+
+    font-size: 50px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.titulo-ofertas p {
+
+    color: #ccc;
+
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 60px;
+    background: #1111119a;
+    padding: 20px;
+    border-radius: 25px;
+
+}
+
+
+/* =================================
+   CONTENEDOR
+================================= */
+
+.contenedor-ofertas {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 30px;
+
+}
+
+
+/* =================================
+   TARJETA
+================================= */
+
+.tarjeta-oferta {
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        rgba(10, 10, 15, 0.9);
+
+    border-radius: 20px;
+
+    border:
+        1px solid rgba(0, 212, 255, 0.25);
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.6);
+
+    transition:
+        transform 0.4s,
+        box-shadow 0.4s;
+
+}
+
+
+/* =================================
+   IMAGEN
+================================= */
+
+.imagen-oferta {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 230px;
+
+    overflow: hidden;
+
+}
+
+
+.imagen-oferta img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.6s;
+
+}
+
+
+/* =================================
+   DESCUENTO
+================================= */
+
+.descuento {
+
+    position: absolute;
+
+    top: 15px;
+
+    right: 15px;
+
+    padding: 8px 14px;
+
+    background: #00d4ff;
+
+    color: black;
+
+    font-weight: bold;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 0 15px
+        rgba(0, 212, 255, 0.7);
+
+}
+
+
+/* =================================
+   INFORMACIÓN
+================================= */
+
+.info-oferta {
+
+    padding: 25px;
+
+    text-align: left;
+
+}
+
+
+.pais-oferta {
+
+    font-size: 13px;
+
+    color: #00d4ff;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+}
+
+
+.info-oferta h3 {
+
+    font-size: 32px;
+
+    margin:
+        8px 0;
+
+}
+
+
+.info-oferta p {
+
+    color: #bbb;
+
+    margin-bottom: 15px;
+
+}
+
+
+/* =================================
+   PRECIOS
+================================= */
+
+.precios {
+
+    display: flex;
+
+    flex-direction: column;
+
+    margin-bottom: 20px;
+
+}
+
+
+.precio-anterior {
+
+    color: #777;
+
+    text-decoration:
+        line-through;
+
+    font-size: 14px;
+
+}
+
+
+.precio {
+
+    color: white;
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+    margin-top: 3px;
+
+}
+
+
+/* =================================
+   BOTÓN
+================================= */
+
+.info-oferta a {
+
+    display: inline-block;
+
+    padding:
+        10px 20px;
+
+    border:
+        1px solid #00d4ff;
+
+    border-radius: 25px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    transition: 0.3s;
+
+}
+
+
+.info-oferta a:hover {
+
+    background: #00d4ff;
+
+    color: black;
+
+    box-shadow:
+        0 0 10px #00d4ff,
+        0 0 25px #00d4ff;
+
+}
+
+
+/* =================================
+   HOVER TARJETA
+================================= */
+
+.tarjeta-oferta:hover {
+
+    transform:
+        translateY(-12px);
+
+    box-shadow:
+        0 20px 50px
+        rgba(0, 212, 255, 0.25);
+
+}
+
+
+.tarjeta-oferta:hover
+.imagen-oferta img {
+
+    transform:
+        scale(1.12);
+
+}
+/* =================================
+   CONTINENTES
+================================= */
+
+.continentes {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding: 110px 8%;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    color: white;
+
+    text-align: center;
+}
+
+
+/* =================================
+   TÍTULO
+================================= */
+
+.titulo-continentes span {
+
+    display: block;
+
+    color: #00d4ff;
+
+    font-size: 14px;
+
+    letter-spacing: 5px;
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+
+    text-shadow:
+        0 0 10px #00d4ff;
+
+}
+
+
+.titulo-continentes h2 {
+
+    font-size: 48px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.titulo-continentes p {
+
+    color: #ccc;
+
+    font-size: 18px;
+
+    margin-bottom: 60px;
+
+}
+
+
+/* =================================
+   CONTENEDOR
+================================= */
+
+.contenedor-continentes {
+
+    max-width: 1300px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+}
+
+
+/* =================================
+   TARJETA
+================================= */
+
+.continente {
+
+    position: relative;
+
+    height: 300px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    text-decoration: none;
+
+    color: white;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.6);
+
+    transition:
+        transform 0.4s,
+        box-shadow 0.4s;
+}
+
+
+/* =================================
+   IMAGEN
+================================= */
+
+.continente img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.6s;
+}
+
+
+/* =================================
+   OSCURECER
+================================= */
+
+.continente::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            transparent 40%,
+            rgba(0, 0, 0, 0.9)
+        );
+
+    z-index: 1;
+
+}
+
+
+/* =================================
+   INFORMACIÓN
+================================= */
+
+.info-continente {
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 100%;
+
+    padding: 25px;
+
+    text-align: left;
+
+    z-index: 2;
+
+}
+
+
+.info-continente span {
+
+    font-size: 25px;
+
+}
+
+
+.info-continente h3 {
+
+    font-size: 28px;
+
+    margin:
+        5px 0;
+
+}
+
+
+.info-continente p {
+
+    color: #ccc;
+
+    font-size: 14px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.info-continente strong {
+
+    color: #00d4ff;
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+
+    transition: 0.3s;
+
+}
+
+
+/* =================================
+   HOVER
+================================= */
+
+.continente:hover {
+
+    transform:
+        translateY(-10px);
+
+    box-shadow:
+        0 15px 45px
+        rgba(0, 212, 255, 0.35);
+
+}
+
+
+.continente:hover img {
+
+    transform:
+        scale(1.30);
+
+}
+
+
+.continente:hover strong{
+ 
+   border-radius: 30px;
+    letter-spacing: 3px;
+
+    text-shadow:
+        0 0 10px #00d4ff;
+
+}
+
+/* =================================
+   SECCIÓN VUELOS
+================================= */
+
+.vuelos {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding: 110px 8%;
+
+    background:none;
+
+    color: white;
+
+    text-align: center;
+
+}
+
+
+/* =================================
+   TÍTULO
+================================= */
+
+.titulo-vuelos span {
+
+    display: block;
+
+    color: #00d4ff;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 15px;
+
+    text-shadow:
+        0 0 10px #0c0c0c;
+
+}
+
+
+.titulo-vuelos h2 {
+
+    font-size: 45px;
+    color: #f5f4f3;
+    font-weight: bolder;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+    
+    text-shadow:
+        0 0 15px #0aaff6;
+    
+
+}
+
+
+.titulo-vuelos p {
+
+    color: #ffffff;
+   
+    font-size: 25px;
+   
+ 
+
+    margin-bottom: 55px;
+    
+    text-shadow:
+        0 0 10px #0c0c0c;
+
+}
+
+
+/* =================================
+   BUSCADOR
+================================= */
+
+.buscador-vuelos {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 35px;
+
+    background:
+        rgba(10, 15, 20, 0.90);
+
+    border:
+
+        1px solid
+        rgba(0, 212, 255, 0.35);
+
+    border-radius: 25px;
+
+    box-shadow:
+
+        0 20px 60px
+        rgba(0, 0, 0, 0.7),
+
+        0 0 30px
+        rgba(0, 212, 255, 0.08);
+
+}
+
+
+/* =================================
+   TIPO DE VUELO
+================================= */
+
+.tipo-vuelo {
+
+    display: flex;
+
+    gap: 30px;
+
+    margin-bottom: 30px;
+
+    justify-content: flex-start;
+
+}
+
+
+.tipo-vuelo label {
+
+    cursor: pointer;
+
+    color: #ddd;
+
+    font-size: 15px;
+
+}
+
+
+.tipo-vuelo input {
+
+    accent-color: #00d4ff;
+
+    margin-right: 7px;
+
+}
+
+
+/* =================================
+   CAMPOS
+================================= */
+
+.campos-vuelo {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        50px
+        1fr
+        1fr
+        1fr;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+/* =================================
+   CAMPO
+================================= */
+
+.campo-vuelo {
+
+    min-height: 80px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px;
+
+    background:
+        rgba(255, 255, 255, 0.05);
+
+    border:
+
+        1px solid
+        rgba(255, 255, 255, 0.10);
+
+    border-radius: 15px;
+
+    text-align: left;
+
+    transition: 0.3s;
+
+}
+
+
+.campo-vuelo:hover {
+
+    border-color:
+        rgba(0, 212, 255, 0.7);
+
+    box-shadow:
+        0 0 15px
+        rgba(0, 212, 255, 0.15);
+
+}
+
+
+.icono-campo {
+
+    font-size: 25px;
+
+}
+
+
+.campo-vuelo small {
+
+    display: block;
+
+    color: #00d4ff;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.campo-vuelo input,
+.campo-vuelo select {
+
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 14px;
+
+}
+
+
+.campo-vuelo input::placeholder {
+
+    color: #888;
+
+}
+
+
+.campo-vuelo select option {
+
+    background: #111;
+
+    color: white;
+
+}
+
+
+/* =================================
+   BOTÓN INTERCAMBIAR
+================================= */
+
+.intercambiar {
+
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid #00d4ff;
+
+    background:
+        #111;
+
+    color: #00d4ff;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    transition: 0.4s;
+
+}
+
+
+.intercambiar:hover {
+
+    transform:
+        rotate(180deg);
+
+    background: #00d4ff;
+
+    color: black;
+
+    box-shadow:
+        0 0 20px #00d4ff;
+
+}
+
+
+/* =================================
+   BOTÓN BUSCAR
+================================= */
+
+.buscar-vuelo {
+
+    margin-top: 30px;
+
+    padding:
+        15px 35px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #00d4ff,
+            #00a8cc
+        );
+
+    color: black;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.buscar-vuelo:hover {
+
+    transform:
+        scale(1.05);
+
+    box-shadow:
+
+        0 0 10px #00d4ff,
+
+        0 0 30px #00d4ff;
+
+}
+
+
+/* =================================
+   DESTINOS RÁPIDOS
+================================= */
+
+.destinos-rapidos {
+
+    margin-top: 45px;
+
+}
+
+
+.destinos-rapidos p {
+
+    color: #fcf8f8;
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.destinos-rapidos div {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+    background: #0c0c0cb7;
+    border: none;
+    border-radius: 20px;
+    padding: 15px;
+    
+
+}
+
+
+.destinos-rapidos button {
+
+    padding:
+        9px 16px;
+
+    border:
+        1px solid
+        rgba(0, 212, 255, 0.3);
+
+    border-radius: 20px;
+
+    background:
+        rgba(255, 255, 255, 0.04);
+
+    color: #ddd;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+    
+
+    transition: 0.3s;
+
+}
+
+
+.destinos-rapidos button:hover {
+
+    background:
+        rgba(0, 212, 255, 0.15);
+
+    color: white;
+
+    border-color:
+        #00d4ff;
+
+    box-shadow:
+        0 0 12px
+        rgba(0, 212, 255, 0.3);
+
+}
+.footer {
+
+    min-height:
+        220px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        30px;
+
+    padding:
+        50px 8%;
+
+    background:
+        rgba(0,0,0,0.85);
+
+    border-top:
+        1px solid
+        rgba(0,212,255,0.2);
+}
+
+
+.footer h2 {
+
+    color:
+        white;
+
+    letter-spacing:
+        2px;
+}
+
+
+.footer p {
+
+    margin-top:
+        10px;
+
+    color:
+        #777;
+}
+
+/* =========================================
+INTRO DE LA PÁGINA
+========================================= */
+
+#intro {
+position: fixed;
+inset: 0;
+
+
+width: 100%;
+height: 100vh;
+
+background: #000;
+
+z-index: 99999;
+
+display: flex;
+justify-content: center;
+align-items: center;
+
+overflow: hidden;
+
+animation: desaparecerIntro 1s ease forwards;
+animation-delay: 6s;
+
+}
+
+/* CONTENEDOR */
+
+.intro-contenido {
+
+
+position: relative;
+
+width: 900px;
+height: 200px;
+
+
+}
+
+/* =========================================
+TEXTO
+========================================= */
+
+.texto-intro {
+
+
+position: absolute;
+
+top: 50%;
+left: 0;
+
+transform: translateY(-50%);
+
+width: 100%;
+
+text-align: center;
+
+font-size: 55px;
+font-weight: bold;
+
+letter-spacing: 5px;
+
+color: transparent;
+
+background: linear-gradient(
+    90deg,
+    #00d4ff,
+    rgb(237, 240, 238),
+    #fd3a3acd
+);
+
+-webkit-background-clip: text;
+background-clip: text;
+
+/* AL PRINCIPIO NO SE VE */
+
+clip-path: inset(
+    0 100% 0 0
+);
+
+animation: revelarTexto 5s ease forwards;
+
+animation-delay: 0.7s;
+
+
+
+}
+
+/* =========================================
+AVIÓN
+========================================= */
+
+.avion-intro {
+
+
+position: absolute;
+
+top: 50%;
+
+left: -100px;
+
+transform: translateY(-50%);
+
+font-size: 55px;
+
+z-index: 5;
+
+filter:
+    drop-shadow(0 0 5px white)
+    drop-shadow(0 0 15px #00d4ff)
+    drop-shadow(0 0 30px #00d4ff);
+
+animation: moverAvion 5s ease-in-out forwards;
+
+
+}
+
+/* =========================================
+LUZ QUE SIGUE AL AVIÓN
+========================================= */
+
+.luz-avion {
+
+
+position: absolute;
+
+top: 50%;
+
+left: -180px;
+
+transform: translateY(-50%);
+
+width: 350px;
+height: 180px;
+
+border-radius: 50%;
+
+background: radial-gradient(
+    ellipse,
+
+    rgba(255,255,255,0.95) 0%,
+
+    rgba(0,212,255,0.75) 20%,
+
+    rgba(0,212,255,0.35) 40%,
+
+    rgba(249, 249, 249, 0.12) 60%,
+
+    transparent 75%
+);
+
+filter: blur(12px);
+
+z-index: 3;
+
+pointer-events: none;
+
+animation: moverLuz 5s ease-in-out forwards;
+
+
+}
+
+/* =========================================
+MOVIMIENTO DEL AVIÓN
+========================================= */
+
+@keyframes moverAvion {
+
+
+0% {
+    left: -100px;
+}
+
+100% {
+    left: 100%;
+}
+
+
+}
+
+/* =========================================
+MOVIMIENTO DE LA LUZ
+========================================= */
+
+@keyframes moverLuz {
+
+
+0% {
+    left: -180px;
+    opacity: 0;
+}
+
+10% {
+    opacity: 1;
+}
+
+90% {
+    opacity: 1;
+}
+
+100% {
+    left: 100%;
+    opacity: 0;
+}
+
+
+}
+
+/* =========================================
+REVELAR LAS LETRAS
+========================================= */
+
+@keyframes revelarTexto {
+
+
+0% {
+    clip-path: inset(
+        0 100% 0 0
+    );
+}
+
+100% {
+    clip-path: inset(
+        0 0 0 0
+    );
+}
+
+
+}
+
+/* =========================================
+DESAPARECER INTRO
+========================================= */
+
+@keyframes desaparecerIntro {
+
+
+0% {
+    opacity: 1;
+    visibility: visible;
+}
+
+100% {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+
+}
+.leo{
+    background: linear-gradient(rgba red blue);
+}

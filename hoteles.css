@@ -1,0 +1,2347 @@
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background: #000;
+    color: white;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   FONDO GENERAL
+========================================================= */
+
+.logo {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* Capa oscura sobre el fondo */
+
+.logo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.78)
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   LOGO DEL HEADER
+========================================================= */
+
+.logo-header {
+    position: absolute;
+    top: 5px;
+    left: 30px;
+    z-index: 10000;
+}
+
+.logo-header img {
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 50%;
+    
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header-hoteles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+
+    transition: top 0.4s ease;
+}
+
+/* Cuando baja */
+.header-hoteles.ocultar {
+    top: -100px;
+}
+
+/* =========================================================
+   NAV
+========================================================= */
+
+nav {
+    position: relative;
+
+    width: 100%;
+    min-height: 80px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 30px;
+
+    padding: 0 120px;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    border-bottom: 1px solid rgba(0, 212, 255, 0.15);
+
+    z-index: 100;
+}
+
+
+/* ENLACES PRINCIPALES */
+
+nav > a,
+.submenu-contenedor > a {
+
+    position: relative;
+
+    display: inline-block;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 19px;
+
+    padding: 8px 0;
+
+    transition: 0.3s;
+}
+
+
+/* Hover */
+
+nav > a:hover,
+.submenu-contenedor > a:hover {
+
+    color: #ffcc00;
+}
+
+
+/* =========================================================
+   LÍNEA NEÓN
+========================================================= */
+
+nav > a::after,
+.submenu-contenedor > a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    width: 0;
+    height: 0.5px;
+
+    background: #00d4ff;
+
+    transform: translateX(-50%);
+
+    box-shadow:
+        0 0 5px #00d4ff,
+        0 0 10px #00d4ff,
+        0 0 20px #00d4ff;
+
+    transition: width 0.4s ease;
+}
+
+
+/* Línea al pasar mouse */
+
+nav > a:hover::after,
+.submenu-contenedor:hover > a::after {
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   CONTENEDOR SUBMENÚ
+========================================================= */
+
+.submenu-contenedor {
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    height: 80px;
+}
+
+
+/* =========================================================
+   SUBMENÚ
+========================================================= */
+
+.submenu {
+
+    position: absolute;
+
+    top: 100%;
+    left: 50%;
+
+    transform:
+        translateX(-50%)
+        translateY(15px);
+
+    width: 220px;
+
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+
+    background:
+        rgba(3, 12, 20, 0.96);
+
+    border:
+        1px solid
+        rgba(0, 212, 255, 0.6);
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.8),
+        0 0 20px rgba(0, 212, 255, 0.15);
+
+    backdrop-filter: blur(15px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        visibility 0.3s ease;
+
+    z-index: 9999;
+}
+
+
+/* APARECER */
+
+.submenu-contenedor:hover > .submenu {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+
+
+/* =========================================================
+   ENLACES DEL SUBMENÚ
+========================================================= */
+
+.submenu a {
+
+    display: block;
+
+    width: 100%;
+
+    padding: 12px;
+
+    color: white;
+
+    text-decoration: none;
+
+    text-align: center;
+
+    font-size: 15px;
+
+    border-radius: 8px;
+
+    transition: 0.3s;
+}
+
+
+.submenu a::after {
+    display: none;
+}
+
+
+.submenu a:hover {
+
+    background:
+        rgba(0, 212, 255, 0.12);
+
+    color: #00d4ff;
+
+    box-shadow:
+        inset 0 0 10px
+        rgba(0, 212, 255, 0.08);
+}
+
+
+/* =========================================================
+   BOTÓN CONTACTO
+========================================================= */
+
+#contacto {
+
+    position: relative;
+
+    padding: 8px 0;
+
+    color: white;
+
+    background: none;
+
+    border: none;
+
+    font-size: 19px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+#contacto:hover {
+
+    color: #ffcc00;
+}
+
+
+#contacto::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    width: 0;
+    height: 0.4px;
+
+    background: #00d4ff;
+
+    transform: translateX(-50%);
+
+    box-shadow:
+        0 0 5px #00d4ff,
+        0 0 10px #00d4ff,
+        0 0 20px #00d4ff;
+
+    transition: 0.4s;
+}
+
+
+#contacto:hover::after {
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero-hoteles {
+
+    position: relative;
+
+    min-height:
+        calc(100vh - 80px);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        100px 8%;
+
+    overflow: hidden;
+}
+
+
+/* Luz ambiental */
+
+.hero-hoteles::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 600px;
+    height: 600px;
+
+    right: -180px;
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0, 212, 255, 0.16),
+            transparent 65%
+        );
+
+    filter: blur(10px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CONTENIDO HERO
+========================================================= */
+
+.hero-contenido {
+
+    position: relative;
+
+    max-width: 850px;
+
+    text-align: center;
+
+    z-index: 2;
+
+    animation:
+        aparecerHero 1.2s ease forwards;
+}
+
+
+@keyframes aparecerHero {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(40px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+.mini-titulo {
+
+    display: inline-block;
+
+    color: white;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    letter-spacing: 8px;
+
+    margin-bottom: 25px;
+
+    text-shadow:
+        0 0 12px #00d4ff;
+}
+
+
+.hero-contenido h1 {
+
+    font-size:
+        clamp(45px, 7vw, 85px);
+
+    line-height: 1.05;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 25px;
+
+    text-shadow:
+        0 0 15px rgba(0, 212, 255, 0.25),
+        0 0 35px rgba(0, 212, 255, 0.15);
+}
+
+
+.hero-contenido p {
+
+    max-width: 700px;
+
+    margin:
+        auto auto 35px;
+
+    color: #f3f5f6;
+
+    font-size: 20px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   BOTÓN HERO
+========================================================= */
+
+.btn-explorar {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding:
+        15px 28px;
+
+    border-radius: 30px;
+
+    color: #001018;
+
+    background: #00d4ff;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    box-shadow:
+        0 0 10px rgba(0,212,255,0.7),
+        0 0 30px rgba(0,212,255,0.3);
+
+    transition: 0.35s;
+}
+
+
+.btn-explorar:hover {
+
+    transform:
+        translateY(-4px)
+        scale(1.04);
+
+    box-shadow:
+        0 0 15px #00d4ff,
+        0 0 45px rgba(0,212,255,0.5);
+}
+
+
+.btn-explorar i {
+
+    animation:
+        bajar 1.3s ease-in-out infinite;
+}
+
+
+@keyframes bajar {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(5px);
+    }
+}
+
+
+/* =========================================================
+   ICONO HOTEL
+========================================================= */
+
+.hero-icono {
+
+    position: absolute;
+
+    right: 8%;
+    bottom: 12%;
+
+    width: 150px;
+    height: 150px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(0,212,255,0.04);
+
+    box-shadow:
+        0 0 25px rgba(0,212,255,0.15),
+        inset 0 0 30px rgba(0,212,255,0.08);
+
+    animation:
+        flotarHotel 4s ease-in-out infinite;
+}
+
+
+.hero-icono i {
+
+    font-size: 65px;
+
+    color: #ff4000;
+
+    filter:
+        drop-shadow(0 0 12px #ecf0f0);
+}
+
+
+@keyframes flotarHotel {
+
+    0%, 100% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50% {
+
+        transform:
+            translateY(-18px)
+            rotate(5deg);
+    }
+}
+
+
+/* =========================================================
+   TÍTULOS
+========================================================= */
+
+.titulo-seccion {
+    position: relative;
+
+    text-align: center;
+
+    bottom: 30px;
+   
+}
+
+
+.titulo-seccion span {
+
+    display: block;
+
+    color: #00d4ff;
+
+    font-size: 19px;
+
+    font-weight: bold;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 15px;
+
+    text-shadow:
+        0 0 14px #00d4ff;
+}
+
+
+.titulo-seccion h2 {
+
+    font-size:
+        clamp(30px, 8vw, 50px);
+
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+
+    color: white;
+}
+
+
+.titulo-seccion p {
+
+    color: #89959c;
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   BUSCADOR
+========================================================= */
+
+.busqueda {
+
+    position: relative;
+
+    padding:
+        110px 8%;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,0.3),
+            rgba(0,212,255,0.025)
+        );
+}
+
+
+.buscador {
+
+    max-width: 1250px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1.5fr 1fr 1fr 1fr auto;
+
+    gap: 12px;
+
+    padding: 20px;
+
+    background:
+        rgba(255,255,255,0.045);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.12);
+
+    border-radius: 22px;
+
+    backdrop-filter:
+        blur(20px);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,0.65),
+        inset 0 1px rgba(255,255,255,0.06);
+}
+
+
+/* =========================================================
+   CAMPOS
+========================================================= */
+
+.campo {
+
+    min-height: 75px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding:
+        12px 15px;
+
+    background:
+        rgba(0,0,0,0.84);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.08);
+
+    border-radius: 15px;
+
+    transition: 0.3s;
+}
+
+
+.campo:hover {
+
+    border-color:
+        rgba(0,212,255,0.7);
+
+    box-shadow:
+        0 0 20px
+        rgba(0,212,255,0.1);
+}
+
+
+.campo > i {
+
+    color: #eef3f5;
+
+    font-size: 22px;
+
+    filter:
+        drop-shadow(
+            0 0 5px
+            rgba(0,212,255,0.5)
+        );
+}
+
+
+.campo div { 
+    
+
+    min-width: 0;
+
+    flex: 1;
+}
+
+
+.campo label {
+
+    display: block;
+
+    color: #06cff8;
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 7px;
+}
+
+
+.campo input,
+.campo select {
+
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 13px;
+}
+
+
+.campo input::placeholder {
+
+    color: #68747a;
+}
+
+
+.campo select option {
+
+   background: #060606;
+   border: none;
+   border-radius: 20px;
+
+    color: rgb(248, 246, 246);
+    
+}
+
+
+/* =========================================================
+   BOTÓN BUSCAR
+========================================================= */
+
+.btn-buscar {
+
+    min-width: 140px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00d4ff,
+            #008fb0
+        );
+
+    color: #001018;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.35s;
+
+    box-shadow:
+        0 0 15px
+        rgba(0,212,255,0.25);
+}
+
+
+.btn-buscar:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 0 15px #00d4ff,
+        0 0 35px
+        rgba(0,212,255,0.45);
+}
+
+
+/* =========================================================
+   DESTINOS
+========================================================= */
+
+.destinos-hotel {
+
+    padding:
+        110px 8%;
+}
+
+
+.grid-destinos {
+
+    max-width: 1250px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+.destino-hotel {
+
+    position: relative;
+
+    height: 330px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.12);
+
+    cursor: pointer;
+
+    box-shadow:
+        0 15px 35px
+        rgba(0,0,0,0.5);
+
+    transition: 0.4s;
+}
+
+
+.destino-hotel img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.7s;
+}
+
+
+/* OSCURECER IMAGEN */
+
+.destino-hotel::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            transparent 20%,
+            rgba(0,0,0,0.9)
+        );
+
+    z-index: 1;
+}
+
+
+.destino-hotel > div {
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 100%;
+
+    padding: 22px;
+
+    z-index: 2;
+}
+
+
+.destino-hotel span {
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+.destino-hotel h3 {
+
+    font-size: 27px;
+
+    color: #00d4ff;
+
+    margin: 7px 0;
+}
+
+
+.destino-hotel p {
+
+    color: white;
+
+    font-size: 16px;
+}
+
+
+.destino-hotel:hover {
+
+    transform:
+        translateY(-10px);
+
+    box-shadow:
+        0 20px 45px
+        rgba(0,212,255,0.2);
+}
+
+
+.destino-hotel:hover img {
+
+    transform:
+        scale(1.12);
+}
+
+
+/* =========================================================
+   HOTELES DESTACADOS
+========================================================= */
+
+.hoteles-destacados {
+
+    padding:
+        110px 8%;
+
+    background:
+        rgba(0,0,0,0.25);
+}
+
+
+.grid-hoteles {
+
+    max-width: 1250px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+/* =========================================================
+   TARJETA HOTEL
+========================================================= */
+
+.hotel-card {
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.12);
+
+    border-radius: 22px;
+
+    background:
+        rgba(255,255,255,0.045);
+
+    backdrop-filter:
+        blur(15px);
+
+    box-shadow:
+        0 20px 50px
+        rgba(0,0,0,0.6),
+        inset 0 1px
+        rgba(255,255,255,0.06);
+
+    transition:
+        0.45s;
+}
+
+
+.hotel-card:hover {
+
+    transform:
+        translateY(-12px);
+
+    border-color:
+        rgba(0,212,255,0.5);
+
+    box-shadow:
+        0 25px 60px
+        rgba(0,0,0,0.7),
+        0 0 30px
+        rgba(0,212,255,0.12);
+}
+
+
+/* =========================================================
+   IMAGEN HOTEL
+========================================================= */
+
+.hotel-imagen {
+
+    position: relative;
+
+    height: 260px;
+
+    overflow: hidden;
+}
+
+
+.hotel-imagen img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.7s;
+}
+
+
+/* CAPA OSCURA SOBRE IMAGEN */
+
+.hotel-imagen::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,0.05),
+            rgba(0,0,0,0.75)
+        );
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+
+.hotel-card:hover
+.hotel-imagen img {
+
+    transform:
+        scale(1.1);
+}
+
+
+/* =========================================================
+   BADGE
+========================================================= */
+
+.badge {
+
+    position: absolute;
+
+    left: 15px;
+    top: 15px;
+
+    padding:
+        7px 12px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(0,0,0,0.65);
+
+    border:
+        1px solid
+        rgba(0,212,255,0.4);
+
+    backdrop-filter:
+        blur(10px);
+
+    color: white;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    z-index: 3;
+}
+
+
+/* =========================================================
+   FAVORITO
+========================================================= */
+
+.favorito {
+
+    position: absolute;
+
+    right: 15px;
+    top: 15px;
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.25);
+
+    background:
+        rgba(0,0,0,0.55);
+
+    backdrop-filter:
+        blur(10px);
+
+    color: white;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    z-index: 3;
+}
+
+
+.favorito:hover {
+
+    background:
+        #00d4ff;
+
+    color:
+        #001018;
+
+    transform:
+        scale(1.1);
+
+    box-shadow:
+        0 0 20px
+        rgba(0,212,255,0.6);
+}
+
+
+/* =========================================================
+   INFORMACIÓN HOTEL
+========================================================= */
+
+.hotel-info {
+
+    padding:
+        24px;
+}
+
+
+.ubicacion {
+
+    color:
+        #00d4ff;
+
+    font-size:
+        11px;
+}
+
+
+.hotel-info h3 {
+
+    font-size:
+        25px;
+
+    margin:
+        9px 0;
+}
+
+
+.estrellas {
+
+    color:
+        #ffd45a;
+
+    font-size:
+        13px;
+
+    letter-spacing:
+        2px;
+
+    margin-bottom:
+        15px;
+}
+
+
+.estrellas span {
+
+    color:
+        #aaa;
+
+    margin-left:
+        5px;
+
+    letter-spacing:
+        0;
+}
+
+
+.hotel-info p {
+
+    color:
+        #9fa9ae;
+
+    font-size:
+        14px;
+
+    line-height:
+        1.6;
+
+    margin-bottom:
+        22px;
+}
+
+
+.hotel-abajo {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        15px;
+}
+
+
+.hotel-abajo strong {
+
+    font-size:
+        21px;
+}
+
+
+.hotel-abajo small {
+
+    color:
+        #777;
+}
+
+
+.hotel-abajo a {
+
+    padding:
+        9px 14px;
+
+    border:
+        1px solid
+        #00d4ff;
+
+    border-radius:
+        20px;
+
+    color:
+        white;
+
+    text-decoration:
+        none;
+
+    font-size:
+        10px;
+
+    font-weight:
+        bold;
+
+    transition:
+        0.3s;
+}
+
+
+.hotel-abajo a:hover {
+
+    background:
+        #00d4ff;
+
+    color:
+        #001018;
+
+    box-shadow:
+        0 0 15px
+        #00d4ff;
+}
+
+
+/* =========================================================
+   BENEFICIOS
+========================================================= */
+
+.beneficios {
+
+    padding:
+        120px 8%;
+
+    text-align:
+        center;
+}
+
+
+.grid-beneficios {
+
+    max-width:
+        1100px;
+
+    margin:
+        auto;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap:
+        20px;
+}
+
+
+.beneficio {
+
+    padding:
+        35px 20px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.2);
+
+    border-radius:
+        20px;
+
+    background:
+        rgba(15,14,14,0.357);
+
+    backdrop-filter:
+        blur(15px);
+
+    transition:
+        0.4s;
+}
+
+
+.beneficio:hover {
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        #00d4ff;
+
+    box-shadow:
+        0 0 25px
+        rgba(0,213,255,0.4);
+}
+
+
+.beneficio i {
+
+    font-size:
+        35px;
+
+    color:
+        #00d4ff;
+
+    margin-bottom:
+        20px;
+
+    filter:
+        drop-shadow(
+            0 0 8px
+            rgba(0,212,255,0.6)
+        );
+}
+
+
+.beneficio h3 {
+
+    margin-bottom:
+        10px;
+}
+
+
+.beneficio p {
+
+    color:
+        #eff2f3;
+
+    font-size:
+        17px;
+
+    line-height:
+        1.4;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+
+    min-height:
+        220px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        30px;
+
+    padding:
+        50px 8%;
+
+    background:
+        rgba(0,0,0,0.85);
+
+    border-top:
+        1px solid
+        rgba(0,212,255,0.2);
+}
+
+
+.footer h2 {
+
+    color:
+        white;
+
+    letter-spacing:
+        2px;
+}
+
+
+.footer p {
+
+    margin-top:
+        10px;
+
+    color:
+        #777;
+}
+
+
+.footer-redes {
+
+    display:
+        flex;
+
+    gap:
+        15px;
+}
+
+
+.footer-redes a {
+
+    width:
+        45px;
+
+    height:
+        45px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        50%;
+
+    color:
+        white;
+
+    text-decoration:
+        none;
+
+    border:
+        1px solid
+        rgba(0,212,255,0.3);
+
+    transition:
+        0.3s;
+}
+
+
+.footer-redes a:hover {
+
+    color:
+        #001018;
+
+    background:
+        #00d4ff;
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 0 20px
+        #00d4ff;
+}
+
+
+/* =========================================================
+   PANEL REDES SOCIALES
+========================================================= */
+
+#redes {
+
+    position:
+        fixed;
+
+    top:
+        0;
+
+    right:
+        0;
+
+    width:
+        170px;
+
+    height:
+        100vh;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    gap:
+        40px;
+
+    background:
+        rgba(0, 198, 252, 0.378);
+
+    backdrop-filter:
+        blur(20px);
+
+    border-left:
+        1px solid
+        rgba(0,212,255,0.25);
+
+    transform:
+        translateX(100%);
+
+    transition:
+        transform 0.4s ease;
+
+    z-index:
+        1001;
+}
+
+
+#redes.mostrar {
+
+    transform:
+        translateX(0);
+}
+
+
+/* FONDO */
+
+#fondo {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    background:
+        rgba(5,5,5,0.54);
+
+    opacity:
+        0;
+
+    visibility:
+        hidden;
+
+    transition:
+        0.4s;
+
+    z-index:
+        1000;
+}
+
+
+#fondo.mostrar {
+
+    opacity:
+        1;
+
+    visibility:
+        visible;
+}
+
+
+/* REDES */
+
+#redes a {
+
+    position:
+        relative;
+
+    width:
+        70px;
+
+    height:
+        70px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    color:
+        white;
+
+    text-decoration:
+        none;
+
+    font-size:
+        50px;
+
+    transition:
+        0.3s;
+}
+
+
+#redes a:hover {
+
+    transform:
+        scale(1.3);
+}
+
+
+#redes a i {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    transition:
+        0.3s;
+}
+
+
+#redes a:hover i {
+
+    color:
+        #080808;
+
+    filter:
+        drop-shadow(
+            0 0 5px #f4f802
+        )
+        drop-shadow(
+            0 0 15px #00d4ff
+        );
+}
+
+
+/* CÍRCULO */
+
+#redes a::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        65px;
+
+    height:
+        65px;
+
+    border:
+        3px solid
+        transparent;
+
+    border-top-color:
+        #00d4ff;
+
+    border-right-color:
+        white;
+
+    border-radius:
+        50%;
+
+    opacity:
+        0;
+
+    transition:
+        0.3s;
+}
+
+
+#redes a:hover::after {
+
+    opacity:
+        1;
+
+    animation:
+        girarRed 1s linear infinite;
+}
+
+
+@keyframes girarRed {
+
+    from {
+        transform:
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    nav {
+
+        gap:
+            18px;
+
+        padding:
+            0 100px;
+    }
+
+
+    .buscador {
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    .btn-buscar {
+
+        min-height:
+            60px;
+    }
+
+
+    .grid-destinos {
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+
+    .grid-hoteles {
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+
+    .grid-beneficios {
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE CELULAR
+========================================================= */
+
+@media (max-width: 700px) {
+
+    /* HEADER */
+
+    nav {
+
+        min-height:
+            auto;
+
+        padding:
+            90px 20px 20px;
+
+        flex-direction:
+            column;
+
+        gap:
+            10px;
+    }
+
+
+    .logo-header {
+
+        left:
+            50%;
+
+        transform:
+            translateX(-50%);
+
+        top:
+            15px;
+    }
+
+
+    .logo-header img {
+
+        width:
+            55px;
+
+        height:
+            55px;
+    }
+
+
+    /* SUBMENÚ */
+
+    .submenu-contenedor {
+
+        height:
+            auto;
+
+        flex-direction:
+            column;
+
+        width:
+            100%;
+    }
+
+
+    .submenu {
+
+        position:
+            static;
+
+        transform:
+            none;
+
+        width:
+            100%;
+
+        margin-top:
+            5px;
+
+        opacity:
+            1;
+
+        visibility:
+            visible;
+
+        pointer-events:
+            auto;
+
+        display:
+            none;
+    }
+
+
+    .submenu-contenedor:hover > .submenu {
+
+        transform:
+            none;
+    }
+
+
+    .submenu-contenedor:hover > .submenu {
+
+        display:
+            flex;
+    }
+
+
+    /* HERO */
+
+    .hero-hoteles {
+
+        min-height:
+            calc(100vh - 400px);
+
+        padding:
+            80px 20px;
+    }
+
+
+    .hero-contenido h1 {
+
+        font-size:
+            42px;
+
+        letter-spacing:
+            1px;
+    }
+
+
+    .hero-contenido p {
+
+        font-size:
+            15px;
+    }
+
+
+    .hero-icono {
+
+        display:
+            none;
+    }
+
+
+    .mini-titulo {
+
+        font-size:
+            10px;
+
+        letter-spacing:
+            3px;
+    }
+
+
+    /* SECCIONES */
+
+    .busqueda,
+    .destinos-hotel,
+    .hoteles-destacados,
+    .beneficios {
+
+        padding:
+            80px 20px;
+    }
+
+
+    .titulo-seccion {
+
+        margin-bottom:
+            35px;
+    }
+
+
+    .titulo-seccion h2 {
+
+        font-size:
+            31px;
+    }
+
+
+    /* BUSCADOR */
+
+    .buscador {
+
+        grid-template-columns:
+            1fr;
+
+        padding:
+            15px;
+
+        border-radius:
+            18px;
+    }
+
+
+    .campo {
+
+        min-height:
+            70px;
+    }
+
+
+    .btn-buscar {
+
+        height:
+            55px;
+    }
+
+
+    /* DESTINOS */
+
+    .grid-destinos {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .destino-hotel {
+
+        height:
+            300px;
+    }
+
+
+    /* HOTELES */
+
+    .grid-hoteles {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .hotel-imagen {
+
+        height:
+            230px;
+    }
+
+
+    .hotel-info h3 {
+
+        font-size:
+            22px;
+    }
+
+
+    .hotel-abajo {
+
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+    }
+
+
+    .hotel-abajo a {
+
+        width:
+            100%;
+
+        text-align:
+            center;
+    }
+
+
+    /* BENEFICIOS */
+
+    .grid-beneficios {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    /* REDES */
+
+    #redes {
+
+        width:
+            100%;
+
+        height:
+            auto;
+
+        top:
+            auto;
+
+        bottom:
+            0;
+
+        padding:
+            25px;
+
+        flex-direction:
+            row;
+
+        transform:
+            translateY(100%);
+
+        border-left:
+            none;
+
+        border-top:
+            1px solid
+            rgba(0,212,255,0.25);
+    }
+
+
+    #redes.mostrar {
+
+        transform:
+            translateY(0);
+    }
+
+
+    #redes a {
+
+        width:
+            60px;
+
+        height:
+            60px;
+    }
+
+
+    #redes a::after {
+
+        width:
+            55px;
+
+        height:
+            55px;
+    }
+
+
+    #redes a i {
+
+        font-size:
+            35px;
+    }
+
+
+    /* FOOTER */
+
+    .footer {
+
+        flex-direction:
+            column;
+
+        text-align:
+            center;
+
+        padding:
+            50px 20px;
+    }
+}
+
+
+/* =========================================================
+   CELULARES PEQUEÑOS
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .hero-contenido h1 {
+
+        font-size:
+            34px;
+    }
+
+
+    .titulo-seccion h2 {
+
+        font-size:
+            27px;
+    }
+
+
+    .btn-explorar {
+
+        width:
+            100%;
+
+        justify-content:
+            center;
+    }
+
+
+    .hotel-abajo strong {
+
+        font-size:
+            19px;
+    }
+}
+

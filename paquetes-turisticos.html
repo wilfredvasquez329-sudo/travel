@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="paquetes-turisticos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <title>Document</title>
+</head>
+<body>
+     <header>
+        <div class="logo">
+            <img src="imagenes/aga2rk-madagascar-4601287_1920.jpg" alt="">
+        </div>
+        <div class="logo-header">
+              <img src="imagenes/ChatGPT Image 30 ago 2026, 07_42_31 p.m..png" alt="">
+        </div>
+      </header>
+        
+             
+
+ <nav>
+     <a href="index.html">Inicio</a>
+    <!-- DESTINOS -->
+    <div class="submenu-contenedor">
+
+        <a href="#">Destinos</a>
+
+        <div class="submenu">
+            <a href="continente-norteamericano.html">Norteamérica</a>
+            <a href="continente-sudamericano.html">Sudamérica</a>
+            <a href="continente-europa.html">Europa</a>
+            <a href="continente-asia.html">Asia</a>
+            <a href="continente-africa.html">Africa</a>
+            <a href="continente-oceania.html">Oceania</a>
+        </div>
+
+    </div>
+
+
+    <!-- OFERTAS -->
+    <div class="submenu-contenedor">
+
+        <a href="#">Ofertas</a>
+
+        <div class="submenu">
+            <a href="ofertas-especiales.html">Ofertas de temporada</a>
+            <a href="#">Paquetes turísticos</a>
+            <a href="#">Vuelos baratos</a>
+            <a href="#">Hoteles en oferta</a>
+            <a href="#">Última hora</a>
+        </div>
+
+    </div>
+
+
+    <!-- RESTO DEL MENÚ -->
+    <a href="hoteles.html">Hoteles</a>
+
+    <a href="vuelos.html">Vuelos</a>
+
+    <a href="#">Blog</a>
+
+
+    <!-- CONTACTO -->
+    <button id="contacto" onclick="abrirMenu()">
+        Contacto
+    </button>
+
+
+    <div id="fondo" onclick="cerrarMenu()"></div>
+ <!-- REDES -->
+    <div id="redes">
+
+        <a href="#">
+            <i class="fa-brands fa-facebook"></i>
+        </a>
+
+        <a href="#">
+            <i class="fa-brands fa-tiktok"></i>
+        </a>
+
+        <a href="#">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+
+    </div>
+    
+ </nav>
+
+<section class="seccion-paquetes">
+
+    <div class="titulo-paquetes">
+        <h5>LEO TRAVEL</h5>
+        <h2>Paquetes destacados</h2>
+        <p>Descubre nuestros destinos más populares</p>
+    </div>
+
+
+    <div class="carrusel">
+
+        <!-- FLECHA ATRÁS -->
+        <button class="flecha izquierda" onclick="moverPaquetes(-1)">
+            ←
+        </button>
+
+
+        <!-- TARJETAS -->
+        <div class="paquetes-contenedor">
+
+            <div class="paquete">
+                <img src="imagenes continentes/pignatta-paris-6510643_1920.jpg">
+
+                <div class="paquete-info">
+                    <span>🇪🇸 EUROPA</span>
+
+                    <h3>España</h3>
+
+                    <p>
+                        Madrid · Barcelona · Sevilla
+                    </p>
+
+                    <strong>8 días / 7 noches</strong>
+
+                    <a href="#">
+                        VER PAQUETE →
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="paquete">
+                <img src="imagenes continentes/michelle-maria-santorini-416136_1920.jpg">
+
+                <div class="paquete-info">
+                    <span>🇫🇷 EUROPA</span>
+
+                    <h3>Francia</h3>
+
+                    <p>
+                        París · Lyon · Niza
+                    </p>
+
+                    <strong>7 días / 6 noches</strong>
+
+                    <a href="#">
+                        VER PAQUETE →
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="paquete">
+                <img src="imagenes continentes/tammon-miami-1198921_1920.jpg">
+
+                <div class="paquete-info">
+                    <span>🇮🇹 EUROPA</span>
+
+                    <h3>Italia</h3>
+
+                    <p>
+                        Roma · Venecia · Milán
+                    </p>
+
+                    <strong>9 días / 8 noches</strong>
+
+                    <a href="#">
+                        VER PAQUETE →
+                    </a>
+                </div>
+            </div>
+
+
+            <!-- TARJETA 4 -->
+
+            <div class="paquete">
+                <img src="imagenes/bergslay-city-4457801_1920.jpg">
+
+                <div class="paquete-info">
+                    <span>🇬🇷 EUROPA</span>
+
+                    <h3>Grecia</h3>
+
+                    <p>
+                        Atenas · Santorini · Mykonos
+                    </p>
+
+                    <strong>8 días / 7 noches</strong>
+
+                    <a href="#">
+                        VER PAQUETE →
+                    </a>
+                </div>
+            </div>
+
+
+            <!-- TARJETA 5 -->
+
+            <div class="paquete">
+                <img src="imagenes/istockphoto-1299198919-1024x1024.jpg">
+
+                <div class="paquete-info">
+                    <span>🇨🇭 EUROPA</span>
+
+                    <h3>Suiza</h3>
+
+                    <p>
+                        Zúrich · Lucerna · Interlaken
+                    </p>
+
+                    <strong>7 días / 6 noches</strong>
+
+                    <a href="#">
+                        VER PAQUETE →
+                    </a>
+                </div>
+            </div>
+
+
+            <!-- TARJETA 6 -->
+
+            <div class="paquete">
+                <img src="imagenes continentes/pignatta-paris-6510643_1920.jpg">
+
+                <div class="paquete-info">
+                    <span>🇳🇴 EUROPA</span>
+
+                    <h3>Noruega</h3>
+
+                    <p>
+                        Oslo · Bergen · Tromsø
+                    </p>
+
+                    <strong>8 días / 7 noches</strong>
+
+                    <a href="#">
+                        VER PAQUETE →
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- FLECHA ADELANTE -->
+
+        <button class="flecha derecha" onclick="moverPaquetes(1)">
+            →
+        </button>
+
+    </div>
+
+</section>
+<script src="paquetes-turisticos.js"></script>
+</body>
+</html>
