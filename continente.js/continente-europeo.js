@@ -89,17 +89,15 @@ mostrarVideo(actual);
 
 videos.forEach((video, index) => {
 
+    video.addEventListener("ended", () => {
 
-video.addEventListener("ended", () => {
+        console.log("TERMINÓ EL VIDEO:", index);
 
-    if (index === actual) {
+        console.log("VIDEO ACTUAL:", actual);
 
         siguiente();
 
-    }
-
-});
-
+    });
 
 });
 
@@ -118,25 +116,3 @@ function cerrarMenu(){
      document.getElementById("fondo").classList.remove("mostrar")
 }
 
-let ultimaPosicion = 0;
-
-const header = document.querySelector("header");
-
-window.addEventListener("scroll", function () {
-
-    let posicionActual = window.scrollY;
-
-    if (posicionActual > ultimaPosicion && posicionActual > 100) {
-
-        // BAJANDO
-        header.classList.add("ocultar");
-
-    } else {
-
-        // SUBIENDO
-        header.classList.remove("ocultar");
-
-    }
-
-    ultimaPosicion = posicionActual;
-});

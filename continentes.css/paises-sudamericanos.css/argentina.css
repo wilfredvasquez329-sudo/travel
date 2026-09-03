@@ -53,12 +53,14 @@ body {
 
 
 .logo {
-
+     position: relative;
     font-size: 25px;
-
+   margin-top: 40px;
     font-weight: bold;
+    margin-left: 20px;
 
     letter-spacing: 1px;
+   
 }
 
 
@@ -68,7 +70,9 @@ body {
 }
 
 
-.volver {
+.volver { 
+    position: relative;
+    left: 80%;
 
     color: white;
 

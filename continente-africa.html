@@ -12,7 +12,16 @@
 
 <link rel="stylesheet" href="continentes.css/continente-africa.css">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
+<link rel="stylesheet" href="paginaprincipal.css">
+<script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1" data-cmp-ab="2">
+  (function () {
+      var script = document.createElement("script");
+      script.async = 1;
+      script.setAttribute("data-cmp-ab","2");
+      script.src = 'https://tp-em.com/NTY5NzYx.js?t=569761';
+      document.head.appendChild(script);
+  })();
+</script>
 </head>
 
 <body>
@@ -72,12 +81,65 @@
     <button id="contacto" onclick="abrirMenu()">
         Contacto
     </button>
+     <div id="fondo" onclick="cerrarMenu()"></div>
 
+   <!-- SELECTOR DE IDIOMA PREMIUM -->
+<div class="selector-idioma">
 
+    <button class="btn-idioma" type="button">
+        <span class="icono-idioma">🌐</span>
+
+        <span id="idiomaActual">
+            Español
+        </span>
+
+        <span class="flecha-idioma">
+            ⌄
+        </span>
+    </button>
+
+    <div class="submenu-idiomas">
+
+        <button type="button" data-lang="es">
+            <span class="bandera">🇪🇸</span>
+            <span>Español</span>
+        </button>
+
+        <button type="button" data-lang="en">
+            <span class="bandera">🇬🇧</span>
+            <span>English</span>
+        </button>
+
+        <button type="button" data-lang="fr">
+            <span class="bandera">🇫🇷</span>
+            <span>Français</span>
+        </button>
+
+        <button type="button" data-lang="de">
+            <span class="bandera">🇩🇪</span>
+            <span>Deutsch</span>
+        </button>
+
+        <button type="button" data-lang="it">
+            <span class="bandera">🇮🇹</span>
+            <span>Italiano</span>
+        </button>
+
+        <button type="button" data-lang="pt">
+            <span class="bandera">🇵🇹</span>
+            <span>Português</span>
+        </button>
+
+    </div>
+
+</div>
+
+<!-- Google Translate oculto -->
+<div id="google_translate_element"></div>
     
 </nav>
     </header>
-    <div id="fondo" onclick="cerrarMenu()"></div>
+   
 
 
     <!-- REDES -->
@@ -325,7 +387,28 @@
   
 
 </footer>
+<script>
+function googleTranslateElementInit() {
 
+    new google.translate.TranslateElement({
+
+        pageLanguage: 'es',
+
+        includedLanguages: 'es,en,fr,de,it,pt',
+
+        autoDisplay: false
+
+    }, 'google_translate_element');
+
+}
+</script>
+
+<script
+    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+</script>
+
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script src="paginaprincipal.js"></script>
 
 <script src="continente.js/continente-europeo.js"></script>
 
