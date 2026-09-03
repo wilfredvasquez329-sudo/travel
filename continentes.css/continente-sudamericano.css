@@ -17,32 +17,37 @@ color: white;
 
 .logo-header img {
     position: absolute;
-    width: 80px;
+
+    width: 120px;
+
     left: 30px;
     top: 15px;
-    z-index: 102;
+
+    z-index: 10000;
 }
 
 header {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
 
     width: 100%;
     height: 100px;
 
-    background: transparent;
+    z-index: 9999;
 
-    z-index: 101;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(5px);
+
+    transition: top 0.4s ease;
 }
-header.ocultar{
+
+header.ocultar {
     top: -100px;
 }
 
 nav {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
 
     width: 100%;
     height: 100px;
@@ -57,7 +62,7 @@ nav {
 
     background: transparent;
 
-    z-index: 1000;
+    z-index: 9999;
 }
 nav a {
     position: relative;
@@ -189,24 +194,35 @@ nav > a:hover::after,
     position: fixed;
     inset: 0;
 
-    background: rgba(0, 0, 0, 0.57);
+    width: 100%;
+    height: 100vh;
+
+    background: rgba(0, 0, 0, 0.70);
 
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
 
-    transition: 0.4s;
+    transition: opacity 0.4s ease;
 
-    z-index: 1000;
+    z-index: 99998;
+}
+
+#fondo.mostrar {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
 }
 #redes {
     position: fixed;
+
     top: 0;
     right: 0;
 
     width: 170px;
     height: 100vh;
 
-    background: #00d5ff75;
+    background: rgba(0, 212, 255, 0.45);
 
     display: flex;
     flex-direction: column;
@@ -216,9 +232,14 @@ nav > a:hover::after,
     gap: 40px;
 
     transform: translateX(100%);
+
     transition: transform 0.4s ease;
 
-    z-index: 1001;
+    z-index: 99999;
+}
+
+#redes.mostrar {
+    transform: translateX(0);
 }
 #redes a {
     position: relative;
@@ -289,14 +310,9 @@ nav > a:hover::after,
     }
 
 }
-#redes.mostrar {
-    transform: translateX(0);
-}
 
-#fondo.mostrar {
-    opacity: 1;
-    visibility: visible;
-}
+
+
 #redes i {
     font-size: 50px;
     color: white;
@@ -313,6 +329,7 @@ position: relative;
     background: none;
     border: none;
     cursor: pointer;
+     z-index: 100001;
 }
 #contacto:hover {
     color: rgb(255, 204, 0);
@@ -460,7 +477,6 @@ letter-spacing: 2px;
 
 transition: 0.3s;
 
-
 }
 
 .boton:hover {
@@ -585,7 +601,7 @@ DESTINOS
 .destinos {
     position: relative;
     z-index: 10;
-    margin-top: -70px;
+
     padding: 120px 8%;
 
    
@@ -616,10 +632,9 @@ DESTINOS
 
 .titulo p {
     display: block;
-    color: #d8d6d6;
+    color: #fcfbfb;
     font-size: 20px;
-  
-    
+   
     background: #0c0c0ca4;
     border-radius: 30px;
     padding: 26px 15px;
@@ -857,6 +872,4 @@ RESPONSIVE
     color:
         #777;
 }
-
-
 

@@ -118,3 +118,25 @@ function cerrarMenu(){
      document.getElementById("fondo").classList.remove("mostrar")
 }
 
+let ultimaPosicion = 0;
+
+const header = document.querySelector("header");
+
+window.addEventListener("scroll", function () {
+
+    let posicionActual = window.scrollY;
+
+    if (posicionActual > ultimaPosicion && posicionActual > 100) {
+
+        // BAJANDO
+        header.classList.add("ocultar");
+
+    } else {
+
+        // SUBIENDO
+        header.classList.remove("ocultar");
+
+    }
+
+    ultimaPosicion = posicionActual;
+});
