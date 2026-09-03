@@ -22,7 +22,12 @@ const total = document.getElementById("total");
 const botonReservar = document.getElementById("reservar");
 const fecha = document.getElementById("fecha");
 
+const hotelSeleccionado = document.getElementById("hotelSeleccionado");
+const suplementoHotel = document.getElementById("suplementoHotel");
 
+const botonesHotel = document.querySelectorAll(".elegir-hotel");
+
+let suplemento = 0;
 // ===============================
 // FORMATO DEL PRECIO
 // ===============================
@@ -44,21 +49,57 @@ function formatoPrecio(numero) {
 
 function actualizarPrecio() {
 
-    // Calculamos el precio total
-    const precioTotal = viajeros * precioPersona;
+    // Precio del paquete según cantidad de viajeros
+    const precioPaqueteTotal = viajeros * precioPersona;
 
+    // Precio final incluyendo el suplemento del hotel
+    const precioTotal = precioPaqueteTotal + suplemento;
 
-    // Mostramos cantidad de viajeros
+    // Mostrar cantidad de viajeros
     textoCantidad.textContent = viajeros;
 
-    // Mostramos viajeros en el resumen
+    // Mostrar viajeros en el resumen
     resumenViajeros.textContent = viajeros;
 
+    // Mostrar precio del paquete
+    document.getElementById("precioPaquete").textContent =
+        formatoPrecio(precioPaqueteTotal);
 
-    // Mostramos precio total
-    total.textContent = formatoPrecio(precioTotal);
+    // Mostrar suplemento del hotel
+    suplementoHotel.textContent =
+        formatoPrecio(suplemento);
 
+    // Mostrar total
+    total.textContent =
+        formatoPrecio(precioTotal);
 }
+// ===============================
+// SELECCIONAR HOTEL
+// ===============================
+
+botonesHotel.forEach(function(boton) {
+
+    boton.addEventListener("click", function() {
+
+        // Obtener información del botón
+        const nombreHotel = boton.dataset.hotel;
+        suplemento = Number(boton.dataset.suplemento);
+
+        // Mostrar hotel seleccionado
+        hotelSeleccionado.textContent = nombreHotel;
+
+        // Actualizar precios
+        actualizarPrecio();
+
+        // Llevar al usuario a la calculadora
+        document.querySelector(".calculadora").scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+    });
+
+});
 
 
 // ===============================
@@ -121,7 +162,7 @@ botonReservar.addEventListener("click", function () {
 
 
     alert(
-        "🌴 RESERVA MALDIVAS\n\n" +
+        "🌴 RESERVA COLOMBIA\n\n" +
 
         "Viajeros: " +
         viajeros +
@@ -162,7 +203,7 @@ const descripcionDia =
 const itinerario = {
 
     1: {
-        titulo: "Llegada a Maldivas",
+        titulo: "Llegada a Colombia",
         descripcion:
             "Llegada al aeropuerto internacional de Malé. Traslado en lancha o hidroavión hasta el resort. Check-in y tiempo libre para disfrutar de la isla."
     },
