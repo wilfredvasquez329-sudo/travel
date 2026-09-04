@@ -60,7 +60,7 @@
         justify-content: center !important;
         align-items: center !important;
 
-        background: rgba(247, 245, 245, 0.75) !important;
+        background: rgba(0, 0, 0, 0.75) !important;
 
         border: 1px solid #00d4ff !important;
         border-radius: 8px !important;
@@ -788,13 +788,13 @@
         justify-content: center !important;
         align-items: center !important;
 
-        background: rgba(11, 11, 11, 0.85) !important;
+        background: rgba(0, 0, 0, 0.85) !important;
 
         border: 1px solid #00d4ff !important;
 
         border-radius: 8px !important;
 
-        color: #b50a0a !important;
+        color: white !important;
 
         font-size: 20px !important;
 
@@ -946,6 +946,152 @@
    📱 MENÚ CELULAR
 ========================================= */
 
+.menu-celular {
+    display: none !important;
+}
 
 
-   
+@media (max-width: 768px) {
+
+    /* BOTÓN ☰ */
+    .menu-celular {
+        display: flex !important;
+
+        position: fixed !important;
+        top: 14px !important;
+        right: 15px !important;
+
+        width: 42px !important;
+        height: 42px !important;
+
+        justify-content: center !important;
+        align-items: center !important;
+
+        background: rgba(0, 0, 0, 0.90) !important;
+
+        border: 1px solid #00d4ff !important;
+        border-radius: 8px !important;
+
+        color: white !important;
+        font-size: 20px !important;
+
+        z-index: 999999 !important;
+    }
+
+
+    /* ==============================
+       OCULTAR NAVEGACIÓN
+    ============================== */
+
+    header nav {
+        position: fixed !important;
+
+        top: 0 !important;
+        right: -100% !important;
+
+        width: 65% !important;
+        max-width: 280px !important;
+
+        height: 100vh !important;
+
+        margin: 0 !important;
+        padding: 80px 15px 30px !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+
+        justify-content: flex-start !important;
+        align-items: center !important;
+
+        gap: 5px !important;
+
+        background: rgba(5, 8, 15, 0.98) !important;
+
+        backdrop-filter: blur(15px);
+
+        overflow-y: auto !important;
+
+        transition: right 0.35s ease !important;
+
+        z-index: 999998 !important;
+    }
+
+
+    /* ==============================
+       CUANDO SE ABRE
+    ============================== */
+
+    header nav.menu-abierto {
+        right: 0 !important;
+    }
+
+
+    /* ==============================
+       ENLACES
+    ============================== */
+
+    header nav > a,
+    header nav > button {
+        width: 100% !important;
+
+        padding: 13px 5px !important;
+
+        margin: 2px 0 !important;
+        font-size: 20px;
+
+        text-align: center !important;
+
+        display: flex !important;
+
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+
+    /* ==============================
+       DESTINOS / OFERTAS
+    ============================== */
+
+    header nav .submenu-contenedor {
+        position: relative !important;
+        width: 100% !important;
+    }
+
+
+    header nav .submenu {
+        position: static !important;
+
+        display: none !important;
+
+        width: 100% !important;
+
+        margin-top: 5px !important;
+
+        padding: 5px !important;
+
+        background: rgba(0, 0, 0, 0.7) !important;
+
+        border-radius: 8px !important;
+    }
+
+
+    /* SUBMENÚ ABIERTO */
+
+    header nav .submenu-contenedor.submenu-abierto .submenu {
+        display: flex !important;
+
+        flex-direction: column !important;
+    }
+
+
+    header nav .submenu a {
+        width: 100% !important;
+
+        padding: 10px !important;
+
+        text-align: center !important;
+
+        font-size: 13px !important;
+    }
+
+}
