@@ -1,234 +1,604 @@
+
 /* =====================================================
-   📱 LEOTRAVEL — DISEÑO RESPONSIVE PARA CELULAR
+   📱 LEOTRAVEL — RESPONSIVE COMPLETO PARA CELULAR
+===================================================== */
+
+
+/* =====================================================
+   📱 CELULARES Y TABLETS
 ===================================================== */
 
 @media (max-width: 768px) {
 
-    /* =========================
+    /* =========================================
        GENERAL
-    ========================= */
+    ========================================= */
 
     html,
     body {
         width: 100%;
+        max-width: 100%;
         overflow-x: hidden;
     }
 
     * {
-        max-width: 100%;
+        box-sizing: border-box;
     }
 
 
-    /* =========================
+    /* =========================================
        HEADER
-    ========================= */
+    ========================================= */
 
     header {
-        width: 100%;
-        padding: 12px 18px;
+        position: fixed !important;
+
+        top: 0 !important;
+        left: 0 !important;
+
+        width: 100% !important;
+        height: 65px !important;
+
+        padding: 8px 15px !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+
+        z-index: 9999 !important;
     }
 
-    header nav {
-        display: none;
+
+    /* =========================================
+       LOGO
+    ========================================= */
+
+    .logo-header {
+        display: block !important;
+        width: auto !important;
     }
 
     .logo-header img {
-        max-width: 150px;
+        width: 125px !important;
+        max-width: 125px !important;
+        height: auto !important;
     }
 
 
-    /* =========================
-       HERO
-    ========================= */
+    /* =========================================
+       BOTÓN HAMBURGUESA
+    ========================================= */
 
-    .hero,
-    .hero-europa {
-        width: 100%;
-        height: 100vh;
-        min-height: 600px;
+    .menu-celular {
+        display: flex !important;
+
+        position: absolute !important;
+
+        top: 10px !important;
+        right: 15px !important;
+
+        width: 42px !important;
+        height: 42px !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        padding: 0 !important;
+
+        background: rgba(0, 0, 0, 0.65) !important;
+
+        border: 1px solid rgba(255,255,255,0.6) !important;
+        border-radius: 10px !important;
+
+        color: white !important;
+
+        font-size: 21px !important;
+
+        cursor: pointer !important;
+
+        z-index: 10000 !important;
+
+        transition: transform 0.2s ease !important;
     }
 
-    .video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+    .menu-celular:active {
+        transform: scale(0.9);
+    }
+
+    .menu-celular i {
+        display: block !important;
+        color: white !important;
     }
 
 
-    /* =========================
-       TEXTOS DEL HERO
-    ========================= */
+    /* =========================================
+       MENÚ LATERAL
+    ========================================= */
 
-    .hero h1 {
-        font-size: 42px;
-        line-height: 1.1;
+    header nav {
+        display: flex !important;
+
+        position: fixed !important;
+
+        top: 0 !important;
+        right: -100% !important;
+
+        width: 58% !important;
+        max-width: 250px !important;
+
+        height: 100vh !important;
+
+        flex-direction: column !important;
+        align-items: center !important;
+
+        padding: 75px 0 20px !important;
+
+        gap: 2px !important;
+
+        background: rgba(5, 8, 15, 0.98) !important;
+
+        backdrop-filter: blur(18px) !important;
+
+        overflow-y: auto !important;
+
+        z-index: 9998 !important;
+
+        transition: right 0.35s ease !important;
     }
 
-    .hero h2 {
-        font-size: 25px;
+
+    /* =========================================
+       MENÚ ABIERTO
+    ========================================= */
+
+    header nav.menu-abierto {
+        right: 0 !important;
     }
 
-    .hero p {
-        font-size: 16px;
-        padding: 0 20px;
+
+    /* =========================================
+       ENLACES PRINCIPALES
+    ========================================= */
+
+    header nav > a,
+    header nav > button {
+        display: block !important;
+
+        width: 100% !important;
+
+        padding: 12px 8px !important;
+
+        margin: 1px 0 !important;
+
+        color: white !important;
+
+        background: transparent !important;
+
+        border: none !important;
+
+        border-radius: 8px !important;
+
+        text-align: center !important;
+
+        font-size: 23px !important;
+
+        line-height: 1.2 !important;
+
+        text-decoration: none !important;
+
+        cursor: pointer !important;
+    }
+
+    header nav > a:hover,
+    header nav > button:hover {
+        background: rgba(255,255,255,0.10) !important;
     }
 
 
-    /* =========================
+    /* =========================================
+       DESTINOS / OFERTAS
+    ========================================= */
+
+    .submenu-contenedor {
+        position: relative !important;
+
+        width: 100% !important;
+
+        text-align: center !important;
+    }
+
+    .submenu-contenedor > a {
+        display: block !important;
+
+        width: 100% !important;
+
+        padding: 12px 8px !important;
+
+        color: white !important;
+
+        text-align: center !important;
+
+        font-size: 23px !important;
+
+        text-decoration: none !important;
+    }
+
+
+    /* =========================================
+       SUBMENÚ — OCULTO
+    ========================================= */
+
+    header nav .submenu-contenedor > .submenu {
+
+        position: absolute !important;
+
+        top: 0 !important;
+
+        right: 100% !important;
+
+        left: auto !important;
+
+        width: 200px !important;
+
+        min-width: 200px !important;
+
+        height: auto !important;
+
+        margin: 0 !important;
+
+        padding: 8px 0 !important;
+
+        display: none !important;
+
+        background: rgba(5, 8, 15, 0.98) !important;
+
+        border: 1px solid rgba(255,255,255,0.15) !important;
+
+        border-radius: 10px !important;
+
+        z-index: 999999 !important;
+    }
+
+
+    /* =========================================
+       SUBMENÚ — ABIERTO
+    ========================================= */
+
+    header nav .submenu-contenedor.submenu-abierto > .submenu {
+        display: block !important;
+    }
+
+
+    /* =========================================
+       TEXTOS DEL SUBMENÚ
+    ========================================= */
+
+    header nav .submenu-contenedor > .submenu a {
+
+        display: block !important;
+
+        width: 100% !important;
+
+        padding: 10px 5px !important;
+
+        margin: 0 !important;
+
+        color: white !important;
+
+        text-align: center !important;
+
+        font-size: 13px !important;
+
+        line-height: 1.2 !important;
+
+        text-decoration: none !important;
+
+        white-space: nowrap !important;
+    }
+
+    header nav .submenu-contenedor > .submenu a:hover {
+        background: rgba(255,255,255,0.10) !important;
+    }
+
+
+    /* =========================================
+       CONTACTO
+    ========================================= */
+
+    #contacto {
+        width: 100% !important;
+
+        margin-top: 5px !important;
+
+        text-align: center !important;
+    }
+
+
+    /* =========================================
+       SELECTOR DE IDIOMA
+    ========================================= */
+
+    .selector-idioma {
+        width: 100% !important;
+
+        margin-top: 50px !important;
+
+        text-align: center !important;
+    }
+
+    .btn-idioma {
+        width: 100% !important;
+
+        justify-content: center !important;
+
+        text-align: center !important;
+    }
+
+    .submenu-idiomas {
+        right: 0 !important;
+
+        left: auto !important;
+
+        min-width: 170px !important;
+    }
+
+
+    /* =========================================
+       TÍTULO PRINCIPAL
+    ========================================= */
+
+    .entrada {
+        width: 120% !important;
+
+        padding: 10px 30px !important;
+        margin-left: -25%;
+       
+        margin-bottom: 100%;
+        font-size: 30px
+
+    }
+
+    .entrada h1 {
+        font-size: 28px !important;
+
+        line-height: 1.2 !important;
+
+        text-align: center !important;
+    }
+
+    .entrada .mundo {
+        font-size: 23px !important;
+    }
+
+    .entrada .leo {
+        font-size: 28px !important;
+    }
+
+
+    /* =========================================
+       TEXTO DEL HERO
+    ========================================= */
+
+    .hero-texto {
+
+        position: relative !important;
+
+         
+
+        width: 100% !important;
+
+        padding: 0 15px !important;
+
+        text-align: center !important;
+    }
+
+   
+
+  
+
+
+    /* =========================================
        DESTINOS
-    ========================= */
+    ========================================= */
 
     .destinos {
-        width: 100%;
-        min-height: auto;
-        margin-top: 0 !important;
-        padding: 60px 20px;
+        position: relative;
+
+        width: 100% !important;
+
+        min-height: auto !important;
+
+        margin-top: 100px !important;
+
+        padding: 55px 15px !important;
     }
 
     .contenedor-destinos {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 25px;
+
+        display: grid !important;
+
+        grid-template-columns: 1fr !important;
+
+        gap: 20px !important;
     }
 
 
-    /* =========================
+    /* =========================================
        TARJETAS
-    ========================= */
+    ========================================= */
 
     .tarjeta-destino {
-        width: 100%;
-        max-width: 420px;
-        margin: 0 auto;
+
+        width: 100% !important;
+
+        max-width: 400px !important;
+
+        margin: auto !important;
     }
 
     .tarjeta-destino img {
-        width: 100%;
-        height: 230px;
-        object-fit: cover;
+
+        width: 100% !important;
+
+        height: 230px !important;
+
+        object-fit: cover !important;
     }
 
 
-    /* =========================
+    /* =========================================
+       EXPERIENCIAS
+    ========================================= */
+
+    .experiencias {
+
+        width: 100% !important;
+
+        padding: 55px 15px !important;
+    }
+
+    .contenedor-experiencias {
+
+        display: grid !important;
+
+        grid-template-columns: 1fr !important;
+
+        gap: 20px !important;
+    }
+
+
+    /* =========================================
        CONTINENTES
-    ========================= */
+    ========================================= */
 
     .continentes {
-        width: 100%;
-        padding: 60px 20px;
+
+        width: 100% !important;
+
+        padding: 55px 15px !important;
+    }
+
+    .contenedor-continentes {
+
+        display: grid !important;
+
+        grid-template-columns: 1fr !important;
+
+        gap: 20px !important;
     }
 
 
-    /* =========================
+    /* =========================================
        PAQUETES
-    ========================= */
+    ========================================= */
 
     .contenedor-tarjetas {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 25px;
+
+        display: grid !important;
+
+        grid-template-columns: 1fr !important;
+
+        gap: 20px !important;
     }
 
     .tarjeta {
-        width: 100%;
-        margin: 0 auto;
+
+        width: 100% !important;
+
+        margin: auto !important;
     }
 
 
-    /* =========================
+    /* =========================================
        OFERTAS
-    ========================= */
+    ========================================= */
 
     .ofertas {
-        width: 100%;
-        padding: 60px 20px;
+
+        width: 100% !important;
+
+        padding: 55px 15px !important;
     }
 
 
-    /* =========================
+    /* =========================================
        VUELOS
-    ========================= */
+    ========================================= */
 
     .vuelos {
-        width: 100%;
-        padding: 40px 20px;
+
+        width: 100% !important;
+
+        padding: 40px 15px !important;
     }
 
     .vuelos form {
-        width: 100%;
+
+        width: 100% !important;
     }
 
     .vuelos input,
     .vuelos select,
     .vuelos button {
-        width: 100%;
-        margin-bottom: 12px;
+
+        width: 100% !important;
+
+        margin-bottom: 12px !important;
     }
 
 
-    /* =========================
+    /* =========================================
        HOTELES
-    ========================= */
+    ========================================= */
 
     .hoteles {
-        width: 100%;
-        padding: 40px 20px;
+
+        width: 100% !important;
+
+        padding: 40px 15px !important;
     }
 
     .contenedor-hoteles {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 25px;
+
+        display: grid !important;
+
+        grid-template-columns: 1fr !important;
+
+        gap: 20px !important;
     }
 
 
-    /* =========================
-       BOTONES
-    ========================= */
-
-    button {
-        max-width: 100%;
-    }
-
-
-    /* =========================
+    /* =========================================
        IMÁGENES
-    ========================= */
+    ========================================= */
 
     img {
         max-width: 100%;
-        height: auto;
     }
 
 
-    /* =========================
+    /* =========================================
        FOOTER
-    ========================= */
+    ========================================= */
 
     .footer {
-        width: 100%;
-        padding: 40px 20px;
+
+        width: 100% !important;
+
+        padding: 40px 20px !important;
+
+        text-align: center !important;
     }
 
     .footer-contenedor {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 30px;
-        text-align: center;
-    }
 
+        display: grid !important;
 
-    /* =========================
-       SELECTOR DE IDIOMA
-    ========================= */
+        grid-template-columns: 1fr !important;
 
-    .selector-idioma {
-        right: 15px;
-    }
+        gap: 30px !important;
 
-    .submenu-idiomas {
-        right: 0;
-        min-width: 170px;
+        text-align: center !important;
     }
 
 }
@@ -240,221 +610,173 @@
 
 @media (max-width: 480px) {
 
-    .hero h1 {
-        font-size: 34px;
+    /* LOGO */
+
+    .logo-header img {
+
+        width: 95px !important;
+
+        max-width: 95px !important;
+
+        position: relative !important;
+
+        top: -5px !important;
     }
 
-    .hero h2 {
-        font-size: 21px;
+
+    /* BOTÓN */
+
+    .menu-celular {
+
+        width: 40px !important;
+
+        height: 40px !important;
+
+        top: 10px !important;
+
+        right: 15px !important;
+
+        font-size: 19px !important;
     }
 
-    .hero p {
-        font-size: 14px;
+
+    /* TÍTULO */
+
+    .entrada h1 {
+
+        font-size: 50px !important;
+padding: 20px;
+        line-height: 1.1 !important;
+        margin-left: 20%;
+        margin-top: -20%;
     }
 
-    .destinos {
-        padding: 45px 15px;
+    .entrada .mundo {
+
+        font-size: 50px !important;
     }
+
+    .entrada .leo {
+
+        font-size: 50px !important;
+    }
+
+
+    /* TEXTO */
+
+    .hero-texto {
+
+        top: -100px !important;
+
+        padding: 0 10px !important;
+    }
+
+    .hero-texto .texto-color {
+   color: rgb(36, 165, 250);
+        font-size: 17px !important;
+
+        line-height: 1.4 !important;
+    }
+
+    .hero-texto > a {
+
+        font-size: 50px !important;
+
+        padding: 9px 15px !important;
+    }
+
+    .avion {
+
+        font-size: 50px !important;
+    }
+
+
+    /* TARJETAS */
 
     .tarjeta-destino img {
-        height: 200px;
+
+        height: 200px !important;
     }
-
 }
-/* =========================================
-   📱 MENÚ CELULAR LEOTRAVEL
-========================================= */
-
-.menu-celular {
-    display: none;
-}
-
-
-/* =========================================
-   📱 CELULAR
-========================================= */
+/* =====================================================
+   📱 SUBMENÚ LATERAL — SOLUCIÓN DEFINITIVA
+===================================================== */
 
 @media (max-width: 768px) {
 
-    header {
-        height: 70px;
-        padding: 10px 18px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .logo-header img {
-        width: 145px;
-        height: auto;
-    }
-
-    /* BOTÓN HAMBURGUESA */
-
-    .menu-celular {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        width: 45px;
-        height: 45px;
-
-        background: transparent;
-        border: 1px solid rgba(255,255,255,0.5);
-        border-radius: 10px;
-
-        color: white;
-        font-size: 22px;
-
-        cursor: pointer;
-        z-index: 1001;
-
-        transition: 0.3s;
-    }
-
-    .menu-celular:active {
-        transform: scale(0.9);
-    }
-
-
-    /* MENÚ */
-
+    /* El menú principal */
     header nav {
-        position: fixed;
-
-        top: 0;
-        right: -100%;
-
-        width: 82%;
-        max-width: 340px;
-        height: 100vh;
-
-        background: rgba(5, 5, 10, 0.97);
-        backdrop-filter: blur(18px);
-
-        display: flex;
-        flex-direction: column;
-
-        align-items: stretch;
-
-        padding: 90px 25px 30px;
-
-        gap: 8px;
-
-        z-index: 1000;
-
-        overflow-y: auto;
-
-        transition: right 0.4s ease;
+        overflow: visible !important;
     }
 
-
-    /* MENÚ ABIERTO */
-
-    header nav.menu-abierto {
-        right: 0;
+    /* Contenedor de Destinos y Ofertas */
+    header nav .submenu-contenedor {
+        position: relative !important;
+        width: 100% !important;
     }
 
+    /* SUBMENÚ OCULTO */
+    header nav .submenu-contenedor > .submenu {
+        position: absolute !important;
 
-    /* ENLACES */
+        /* Sale completamente por la izquierda */
+        right: 30% !important;
+        left: auto !important;
 
-    header nav > a,
-    header nav > button {
-        width: 100%;
+        top: 0 !important;
 
-        padding: 15px;
+        width: 200px !important;
+        min-width: 200px !important;
 
-        text-align: left;
+        height: auto !important;
 
-        color: white;
+        display: none !important;
 
-        background: transparent;
-        border: none;
+        margin: 0 !important;
+        padding: 8px 0 !important;
 
-        font-size: 17px;
+        background: rgba(5, 8, 15, 0.98) !important;
 
-        text-decoration: none;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
 
-        border-radius: 8px;
+        border-radius: 10px !important;
 
-        cursor: pointer;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
+
+        z-index: 999999 !important;
     }
 
-    header nav > a:hover,
-    header nav > button:hover {
-        background: rgba(255,255,255,0.1);
+    /* SUBMENÚ ABIERTO */
+    header nav .submenu-contenedor.submenu-abierto > .submenu {
+        display: block !important;
     }
 
+    /* TEXTOS */
+    header nav .submenu-contenedor > .submenu a {
+        display: block !important;
 
-    /* SUBMENÚS */
+        width: 100% !important;
 
-    .submenu-contenedor {
-        width: 100%;
+        padding: 10px 5px !important;
+
+        margin: 0 !important;
+
+        color: white !important;
+
+        text-align: center !important;
+
+        font-size: 13px !important;
+
+        line-height: 1.3 !important;
+
+        text-decoration: none !important;
+
+        white-space: nowrap !important;
     }
 
-    .submenu-contenedor > a {
-        display: block;
-        width: 100%;
-        padding: 15px;
-
-        color: white;
-        text-decoration: none;
-
-        font-size: 17px;
+    /* EFECTO AL TOCAR */
+    header nav .submenu-contenedor > .submenu a:hover {
+        background: rgba(255,255,255,0.10) !important;
     }
-
-    .submenu {
-        position: static !important;
-
-        width: 100%;
-
-        display: none;
-
-        background: rgba(255,255,255,0.05);
-
-        border-radius: 10px;
-
-        padding: 5px 0;
-    }
-
-    .submenu-contenedor:hover .submenu {
-        display: none;
-    }
-
-    .submenu-contenedor.submenu-abierto .submenu {
-        display: block;
-    }
-
-    .submenu a {
-        display: block;
-
-        padding: 12px 20px;
-
-        color: #ddd;
-
-        text-decoration: none;
-
-        font-size: 15px;
-    }
-
-
-    /* CONTACTO */
-
-    #contacto {
-        margin-top: 5px;
-    }
-
-
-    /* IDIOMA */
-
-    .selector-idioma {
-        margin-top: 10px;
-        width: 100%;
-    }
-
-    .btn-idioma {
-        width: 100%;
-        justify-content: space-between;
-    }
-
 }
+

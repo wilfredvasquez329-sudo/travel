@@ -1,7 +1,92 @@
+// ==========================================
+// MENÚ CELULAR
+// ==========================================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const botonMenu = document.getElementById("menuCelular");
+    const nav = document.querySelector("header nav");
+
+    if (!botonMenu || !nav) {
+        console.log("No se encontró el botón o el nav");
+        return;
+    }
+
+    const icono = botonMenu.querySelector("i");
+
+
+    // ==============================
+    // ABRIR / CERRAR MENÚ
+    // ==============================
+
+    botonMenu.addEventListener("click", function () {
+
+        nav.classList.toggle("menu-abierto");
+
+        if (nav.classList.contains("menu-abierto")) {
+
+            icono.classList.remove("fa-bars");
+            icono.classList.add("fa-xmark");
+
+        } else {
+
+            icono.classList.remove("fa-xmark");
+            icono.classList.add("fa-bars");
+
+        }
+
+    });
+
+
+    // ==============================
+    // SUBMENÚS
+    // ==============================
+
+    nav.querySelectorAll(".submenu-contenedor > a").forEach(function (boton) {
+
+        boton.addEventListener("click", function (e) {
+
+            e.preventDefault();
+
+            const contenedor = this.parentElement;
+
+            contenedor.classList.toggle("submenu-abierto");
+
+        });
+
+    });
+
+
+    // ==============================
+    // CERRAR AL ELEGIR UN ENLACE
+    // ==============================
+
+    nav.querySelectorAll(".submenu a").forEach(function (enlace) {
+
+        enlace.addEventListener("click", function () {
+
+            nav.classList.remove("menu-abierto");
+
+            icono.classList.remove("fa-xmark");
+            icono.classList.add("fa-bars");
+
+        });
+
+    });
+
+
+});
+
+
+// ==========================================
+// VIDEOS
+// ==========================================
+
 const videos = document.querySelectorAll(".video");
 const indicadores = document.querySelectorAll(".indicadores span");
 
 let actual = 0;
+
 
 // ==============================
 // MOSTRAR VIDEO
@@ -9,39 +94,50 @@ let actual = 0;
 
 function mostrarVideo(numero) {
 
-videos.forEach((video) => {
+    if (!videos.length) return;
 
-    video.classList.remove("activo");
+    videos.forEach(function (video) {
 
-    video.pause();
+        video.classList.remove("activo");
 
-    video.currentTime = 0;
+        video.pause();
 
-});
+        video.currentTime = 0;
 
-
-indicadores.forEach((indicador) => {
-
-    indicador.classList.remove("activo");
-
-});
+    });
 
 
-videos[numero].classList.add("activo");
+    indicadores.forEach(function (indicador) {
 
-indicadores[numero].classList.add("activo");
+        indicador.classList.remove("activo");
+
+    });
 
 
-videos[numero].muted = true;
+    if (!videos[numero]) return;
 
-videos[numero].play().catch(error => {
 
-    console.log("No se pudo reproducir el video:", error);
+    videos[numero].classList.add("activo");
 
-});
 
+    if (indicadores[numero]) {
+
+        indicadores[numero].classList.add("activo");
+
+    }
+
+
+    videos[numero].muted = true;
+
+
+    videos[numero].play().catch(function (error) {
+
+        console.log("No se pudo reproducir el video:", error);
+
+    });
 
 }
+
 
 // ==============================
 // SIGUIENTE
@@ -49,19 +145,20 @@ videos[numero].play().catch(error => {
 
 function siguiente() {
 
+    if (!videos.length) return;
 
-actual++;
+    actual++;
 
-if (actual >= videos.length) {
+    if (actual >= videos.length) {
 
-    actual = 0;
+        actual = 0;
+
+    }
+
+    mostrarVideo(actual);
 
 }
 
-mostrarVideo(actual);
-
-
-}
 
 // ==============================
 // ANTERIOR
@@ -69,31 +166,28 @@ mostrarVideo(actual);
 
 function anterior() {
 
+    if (!videos.length) return;
 
-actual--;
+    actual--;
 
-if (actual < 0) {
+    if (actual < 0) {
 
-    actual = videos.length - 1;
+        actual = videos.length - 1;
+
+    }
+
+    mostrarVideo(actual);
 
 }
 
-mostrarVideo(actual);
-
-
-}
 
 // ==============================
 // CUANDO TERMINA UN VIDEO
 // ==============================
 
-videos.forEach((video, index) => {
+videos.forEach(function (video, index) {
 
-    video.addEventListener("ended", () => {
-
-        console.log("TERMINÓ EL VIDEO:", index);
-
-        console.log("VIDEO ACTUAL:", actual);
+    video.addEventListener("ended", function () {
 
         siguiente();
 
@@ -101,18 +195,49 @@ videos.forEach((video, index) => {
 
 });
 
-// ==============================
-// INICIAR
-// ==============================
 
 mostrarVideo(0);
 
-function abrirMenu(){
-    document.getElementById("redes").classList.add("mostrar")
-     document.getElementById("fondo").classList.add("mostrar")
-}
-function cerrarMenu(){
-    document.getElementById("redes").classList.remove("mostrar")
-     document.getElementById("fondo").classList.remove("mostrar")
+
+// ==========================================
+// MENÚ CONTACTO
+// ==========================================
+
+function abrirMenu() {
+
+    const redes = document.getElementById("redes");
+    const fondo = document.getElementById("fondo");
+
+    if (redes) {
+
+        redes.classList.add("mostrar");
+
+    }
+
+    if (fondo) {
+
+        fondo.classList.add("mostrar");
+
+    }
+
 }
 
+
+function cerrarMenu() {
+
+    const redes = document.getElementById("redes");
+    const fondo = document.getElementById("fondo");
+
+    if (redes) {
+
+        redes.classList.remove("mostrar");
+
+    }
+
+    if (fondo) {
+
+        fondo.classList.remove("mostrar");
+
+    }
+
+}
