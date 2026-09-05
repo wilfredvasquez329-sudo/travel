@@ -226,3 +226,84 @@
     }
 
 }
+/* =========================================================
+   BUSCADOR TRAVELPAYOUTS
+========================================================= */
+
+.travelpayouts-widget {
+    width: 100%;
+    max-width: 1150px;
+    margin: 30px auto;
+    padding: 20px;
+    background: rgba(46, 49, 63, 0.513);
+    border-radius: 20px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.30);
+    position: relative;
+    z-index: 10;
+}
+
+/* Evita que el widget se salga del contenedor */
+.travelpayouts-widget iframe,
+.travelpayouts-widget > div {
+    max-width: 100%;
+}
+
+/* =========================================================
+   CAMPOS DE FECHA
+========================================================= */
+
+.travelpayouts-widget input[type="date"],
+.travelpayouts-widget input[type="text"] {
+    height: 52px;
+    min-height: 52px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    padding: 0 14px;
+    font-size: 15px;
+    background: #4f4545;
+    box-sizing: border-box;
+}
+
+/* =========================================================
+   CALENDARIO NATIVO
+========================================================= */
+
+.travelpayouts-widget input[type="date"] {
+    width: 100%;
+    cursor: pointer;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .travelpayouts-widget {
+        width: calc(100% - 20px);
+        margin: 20px auto;
+        padding: 12px;
+        border-radius: 15px;
+    }
+
+    .travelpayouts-widget input[type="date"],
+    .travelpayouts-widget input[type="text"] {
+        width: 100%;
+        height: 48px;
+        min-height: 48px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .travelpayouts-widget {
+        width: calc(100% - 12px);
+        padding: 10px;
+        margin: 15px auto;
+    }
+
+    .travelpayouts-widget input[type="date"] {
+        font-size: 13px;
+    }
+}

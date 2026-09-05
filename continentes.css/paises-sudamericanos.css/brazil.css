@@ -49,10 +49,14 @@ body {
     background: rgba(0, 0, 0, 0.35);
 
     backdrop-filter: blur(12px);
+  
 }
 
 
 .logo {
+    position: relative;
+    margin-top: 35px;
+    margin-left: 20px;
 
     font-size: 25px;
 
@@ -69,6 +73,8 @@ body {
 
 
 .volver {
+    position: relative;
+    left: 80%;
 
     color: white;
 
